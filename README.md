@@ -1,1 +1,1 @@
-# Asistente-leads-automatizar-CRM
+# Asistente de IA para predecir la calidad de leads y automatizar los seguimientos en un entorno tipo CRM
