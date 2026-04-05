@@ -1,0 +1,174 @@
+# ─────────────────────────────────────────────────────────────
+#  MoveUp Next-Action Predictor — Central Configuration
+# ─────────────────────────────────────────────────────────────
+
+# ── Dataset generation ────────────────────────────────────────
+num_leads: 2          # set to 500 for full dataset
+
+openai_model: "gpt-4o"
+max_retries: 3
+rate_limit_every_n_leads: 10  # sleep 1 s every N leads
+partial_save_every_n_leads: 50
+
+# ── Paths ─────────────────────────────────────────────────────
+paths:
+  raw_data:       "data/raw/moveup_crm_dataset.csv"
+  processed_data: "data/processed/embeddings_cache"   # .npz appended by code
+  model:          "models/moveup_nextstep_model.joblib"
+  plots:          "plots"
+
+# ── Embedding model ───────────────────────────────────────────
+embedding_model: "paraphrase-multilingual-MiniLM-L12-v2"
+embedding_dim: 384        # per embedding; total = 2 × 384 = 768
+
+# ── Target variable ───────────────────────────────────────────
+next_step_categories:
+  - "Recontactar en X días"
+  - "Enviar documentación"
+  - "Agendar demo/reunión con especialista"
+  - "Escalar a manager del lead"
+  - "Cerrar lead - no interesado"
+  - "Cerrar lead - nurturing"
+  - "Esperar confirmación cliente"
+
+# ── Lead journey ──────────────────────────────────────────────
+final_status_probs:
+  Converted:   0.30
+  Lost:        0.40
+  Nurturing:   0.20
+  "In Progress": 0.10
+
+calls_per_status:
+  Converted:     [3, 3, 3, 2]          # weights for [1,2,3] calls
+  Lost:          [2, 3, 3, 2]
+  Nurturing:     [3, 3, 2, 1]
+  "In Progress": [3, 3, 2, 1]
+
+# ── Feature engineering ───────────────────────────────────────
+categorical_features:
+  - company_sector
+  - company_country
+  - company_city
+  - lead_source
+  - contact_role
+  - prev_outcome
+  - prev_next_step
+
+numeric_features:
+  - company_num_employees
+  - company_annual_revenue_eur
+  - call_number
+  - days_since_entry
+  - days_since_last_call
+
+null_fill_value: "PRIMERA_LLAMADA"
+
+# ── Model hyperparameters ─────────────────────────────────────
+model_params:
+  n_estimators:      300
+  max_depth:         6
+  learning_rate:     0.1
+  subsample:         0.8
+  colsample_bytree:  0.8
+  min_child_weight:  3
+  objective:         "multi:softprob"
+  eval_metric:       "mlogloss"
+  use_label_encoder: false
+  random_state:      42
+
+train_test_split:
+  test_size:    0.20
+  random_state: 42
+
+cross_validation:
+  n_splits:     5
+  random_state: 42
+
+# ── Data pools ────────────────────────────────────────────────
+sectors:
+  - "Consultoría IT"
+  - "Logística"
+  - "Farmacéutica"
+  - "Banca"
+  - "Retail"
+  - "Manufactura"
+  - "Energía"
+  - "Telecomunicaciones"
+  - "Seguros"
+  - "Construcción"
+  - "Alimentación"
+  - "Automoción"
+  - "Educación"
+  - "Salud"
+  - "Medios y Publicidad"
+  - "Turismo y Hostelería"
+  - "Servicios Financieros"
+  - "Tecnología"
+  - "Distribución"
+  - "Química"
+
+lead_sources:
+  - "Formulario web"
+  - "Llamada en frío"
+  - "LinkedIn"
+  - "Referencia de cliente"
+  - "Feria o evento"
+  - "Email marketing"
+  - "Google Ads"
+  - "Partner comercial"
+  - "Inbound / Blog"
+
+contact_roles:
+  - "Director General"
+  - "CEO"
+  - "CFO"
+  - "Director de Operaciones"
+  - "Director Comercial"
+  - "Responsable de Movilidad"
+  - "Director de RRHH"
+  - "Gerente de Administración"
+  - "Director de Compras"
+  - "Responsable de Flota"
+  - "Director Financiero"
+  - "Jefe de Proyectos"
+  - "Director de Logística"
+  - "COO"
+  - "Head of Procurement"
+
+cities:
+  - {city: "Madrid",      country: "España"}
+  - {city: "Barcelona",   country: "España"}
+  - {city: "Valencia",    country: "España"}
+  - {city: "Sevilla",     country: "España"}
+  - {city: "Bilbao",      country: "España"}
+  - {city: "Zaragoza",    country: "España"}
+  - {city: "Málaga",      country: "España"}
+  - {city: "Murcia",      country: "España"}
+  - {city: "Alicante",    country: "España"}
+  - {city: "Valladolid",  country: "España"}
+  - {city: "Palma",       country: "España"}
+  - {city: "Las Palmas",  country: "España"}
+  - {city: "Vigo",        country: "España"}
+  - {city: "Córdoba",     country: "España"}
+  - {city: "Granada",     country: "España"}
+  - {city: "Lisboa",      country: "Portugal"}
+  - {city: "Oporto",      country: "Portugal"}
+  - {city: "Ciudad de México", country: "México"}
+  - {city: "Bogotá",      country: "Colombia"}
+  - {city: "Buenos Aires", country: "Argentina"}
+
+agent_names:
+  - "Carlos Martínez"
+  - "Laura Gómez"
+  - "Pablo Fernández"
+  - "Ana Ruiz"
+  - "Diego López"
+  - "Sofía Moreno"
+  - "Javier Torres"
+  - "Marta Díaz"
+
+specialist_names:
+  - "Roberto Sánchez"
+  - "Elena Navarro"
+  - "Tomás Iglesias"
+  - "Cristina Vera"

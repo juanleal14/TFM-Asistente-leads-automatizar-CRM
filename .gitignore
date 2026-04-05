@@ -1,2 +1,41 @@
-*env/
+# Generated data
+data/raw/*.csv
+data/processed/*.npz
+
+# Model artifacts
+models/*.joblib
+
+# Plots
+plots/*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
 .env
+
+# Secrets
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
