@@ -43,13 +43,19 @@ def train(
     -------
     model, X_test, y_test
     """
-    # Train / test split (stratified)
-    sss = StratifiedShuffleSplit(
-        n_splits=1,
-        test_size=SPLIT_CFG["test_size"],
-        random_state=SPLIT_CFG["random_state"],
-    )
-    train_idx, test_idx = next(sss.split(X, y))
+    # Train / test split — stratified when possible, plain otherwise
+    min_class_count = np.bincount(y).min()
+    if min_class_count >= 2:
+        from sklearn.model_selection import StratifiedShuffleSplit
+        sss = StratifiedShuffleSplit(
+            n_splits=1,
+            test_size=SPLIT_CFG["test_size"],
+            random_state=SPLIT_CFG["random_state"],
+        )
+        train_idx, test_idx = next(sss.split(X, y))
+    else:
+        print("  ⚠️  Dataset too small for stratified split — using all data for train/test.")
+        train_idx = test_idx = np.arange(len(X))
     X_train, X_test = X[train_idx], X[test_idx]
     y_train, y_test = y[train_idx], y[test_idx]
 
@@ -68,17 +74,20 @@ def train(
         verbosity=0,
     )
 
-    # 5-fold cross-validation on training set
-    cv = StratifiedKFold(
-        n_splits=CV_CFG["n_splits"],
-        shuffle=True,
-        random_state=CV_CFG["random_state"],
-    )
-    cv_scores = cross_val_score(model, X_train, y_train,
-                                cv=cv, scoring="f1_weighted", n_jobs=-1)
-    print(f"\nCross-validation F1 (weighted) — {CV_CFG['n_splits']} folds:")
-    print(f"  {cv_scores.round(4).tolist()}")
-    print(f"  Mean: {cv_scores.mean():.4f}  ±  {cv_scores.std():.4f}")
+    # 5-fold cross-validation on training set (skipped if too few samples)
+    if len(X_train) >= CV_CFG["n_splits"] * 2 and min_class_count >= 2:
+        cv = StratifiedKFold(
+            n_splits=CV_CFG["n_splits"],
+            shuffle=True,
+            random_state=CV_CFG["random_state"],
+        )
+        cv_scores = cross_val_score(model, X_train, y_train,
+                                    cv=cv, scoring="f1_weighted", n_jobs=-1)
+        print(f"\nCross-validation F1 (weighted) — {CV_CFG['n_splits']} folds:")
+        print(f"  {cv_scores.round(4).tolist()}")
+        print(f"  Mean: {cv_scores.mean():.4f}  ±  {cv_scores.std():.4f}")
+    else:
+        print("\n  ⚠️  Dataset too small for cross-validation — skipped.")
 
     # Final fit on full training set
     model.fit(X_train, y_train)
@@ -147,7 +156,7 @@ def main() -> None:
 
     # 5. Evaluate
     print("\n[5/6] Evaluating on test set …")
-    y_pred = model.predict(X_test)
+    y_pred = np.argmax(model.predict_proba(X_test), axis=1)
     print(classification_report(
         y_test, y_pred,
         target_names=label_encoder.classes_,

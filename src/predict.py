@@ -15,7 +15,6 @@ from pathlib import Path
 import joblib
 import numpy as np
 import pandas as pd
-from sentence_transformers import SentenceTransformer
 
 from src.config import CONFIG, resolve_path
 
@@ -93,6 +92,8 @@ def predict_next_step(
     df = pd.DataFrame([row])
 
     # ── Generate embeddings (no cache for single predictions) ─────────────────
+    # Lazy import: must happen AFTER joblib.load to avoid OpenMP/PyTorch deadlock on macOS
+    from sentence_transformers import SentenceTransformer  # noqa: PLC0415
     emb_model = SentenceTransformer(embedding_model_name)
     transcript_emb = emb_model.encode(
         [current_transcript], convert_to_numpy=True

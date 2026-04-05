@@ -120,7 +120,7 @@ def plot_results(
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    y_pred = model.predict(X_test)
+    y_pred = np.argmax(model.predict_proba(X_test), axis=1)
     class_names = label_encoder.classes_.tolist()
 
     print("  Plotting confusion matrix …")
