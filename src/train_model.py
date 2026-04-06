@@ -157,9 +157,11 @@ def main() -> None:
     # 5. Evaluate
     print("\n[5/6] Evaluating on test set …")
     y_pred = np.argmax(model.predict_proba(X_test), axis=1)
+    present = np.union1d(y_test, y_pred)
     print(classification_report(
         y_test, y_pred,
-        target_names=label_encoder.classes_,
+        labels=present,
+        target_names=label_encoder.inverse_transform(present),
         zero_division=0,
     ))
 

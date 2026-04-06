@@ -3,7 +3,7 @@
 # ─────────────────────────────────────────────────────────────
 
 # ── Dataset generation ────────────────────────────────────────
-num_leads: 2          # set to 500 for full dataset
+num_leads: 500          # set to 500 for full dataset
 
 openai_model: "gpt-4o"
 max_retries: 3

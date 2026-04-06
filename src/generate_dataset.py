@@ -286,6 +286,18 @@ def lead_to_rows(meta: dict, llm_data: dict, final_status: str) -> list[dict]:
     return rows
 
 
+def _find_latest_partial(output_dir: Path) -> tuple[list[dict], int]:
+    """Return (rows_so_far, last_lead_idx) from the most advanced partial CSV."""
+    partials = sorted(output_dir.glob("partial_*.csv"))
+    if not partials:
+        return [], 0
+    latest = partials[-1]
+    last_idx = int(latest.stem.split("_")[1])
+    rows = pd.read_csv(latest, encoding="utf-8-sig").to_dict(orient="records")
+    print(f"  Resuming from partial save: {latest.name} ({len(rows)} rows, {last_idx} leads done)")
+    return rows, last_idx
+
+
 def main() -> None:
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
@@ -297,12 +309,12 @@ def main() -> None:
     output_path = resolve_path("raw_data")
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    all_rows: list[dict] = []
+    all_rows, start_idx = _find_latest_partial(output_path.parent)
     skipped = 0
 
-    print(f"Generating {NUM_LEADS} leads …")
+    print(f"Generating {NUM_LEADS} leads … (starting from lead {start_idx + 1})")
 
-    for idx in range(1, NUM_LEADS + 1):
+    for idx in range(start_idx + 1, NUM_LEADS + 1):
         print(f"  Lead {idx}/{NUM_LEADS}", end="", flush=True)
 
         meta = generate_lead_metadata()
