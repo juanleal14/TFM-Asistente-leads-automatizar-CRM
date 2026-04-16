@@ -172,3 +172,41 @@ specialist_names:
   - "Elena Navarro"
   - "Tomás Iglesias"
   - "Cristina Vera"
+
+# ── Experiment tracking ────────────────────────────────────────
+# (añadir experiments a la sección paths existente se haría aquí,
+#  pero paths ya tiene entradas; se añade experiments como path adicional)
+experiments_dir: "experiments"
+
+# ── Model comparison ──────────────────────────────────────────
+comparison:
+  scoring_metric: "f1_weighted"
+  cv_splits: 5
+  random_state: 42
+  models:
+    - "dummy_most_frequent"
+    - "logistic_regression"
+    - "random_forest"
+    - "xgboost"
+    - "lightgbm"
+
+# ── Hyperparameter tuning ─────────────────────────────────────
+tuning:
+  n_iter: 20
+  cv_splits: 5
+  scoring: "f1_weighted"
+  random_state: 42
+  param_grids:
+    xgboost:
+      n_estimators: [100, 200, 300, 400]
+      max_depth: [3, 4, 5, 6, 7]
+      learning_rate: [0.05, 0.1, 0.15, 0.2]
+      subsample: [0.7, 0.8, 0.9]
+      colsample_bytree: [0.6, 0.7, 0.8, 0.9]
+      min_child_weight: [1, 3, 5, 7]
+    random_forest:
+      n_estimators: [100, 200, 300]
+      max_depth: [null, 5, 10, 15, 20]
+      min_samples_split: [2, 5, 10]
+      min_samples_leaf: [1, 2, 4]
+      max_features: ["sqrt", "log2", null]

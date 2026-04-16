@@ -133,6 +133,102 @@ def predict_next_step(
     }
 
 
+def _predict_from_artifacts(
+    arts: dict,
+    emb_model,
+    *,
+    lead_id: str,
+    contact_name: str,
+    contact_role: str,
+    company_name: str,
+    company_sector: str,
+    company_country: str,
+    company_city: str,
+    company_num_employees: int,
+    company_annual_revenue_eur: float,
+    lead_source: str,
+    call_number: int,
+    days_since_entry: int,
+    days_since_last_call: int,
+    prev_outcome: str,
+    prev_next_step: str,
+    current_transcript: str,
+    initial_interest_notes: str = "",
+) -> dict:
+    """Internal helper: predict using pre-loaded artefacts and SentenceTransformer.
+
+    Avoids repeated joblib.load() in batch scenarios (e.g. simulation loops).
+    The public API ``predict_next_step`` is unchanged and remains the recommended
+    entry point for single predictions.
+
+    Parameters
+    ----------
+    arts      : dict returned by ``joblib.load(model_path)``
+    emb_model : already-initialised ``SentenceTransformer`` instance
+    **kwargs  : same fields as ``predict_next_step`` (except model_path)
+
+    Returns
+    -------
+    Same dict schema as ``predict_next_step``.
+    """
+    model = arts["model"]
+    scaler = arts["scaler"]
+    cat_encoder = arts["cat_encoder"]
+    label_encoder = arts["label_encoder"]
+    null_fill: str = arts.get("null_fill_value", CONFIG["null_fill_value"])
+    cat_features: list[str] = arts.get("categorical_features", CONFIG["categorical_features"])
+    num_features: list[str] = arts.get("numeric_features", CONFIG["numeric_features"])
+
+    prev_outcome_val = prev_outcome if prev_outcome else null_fill
+    prev_next_step_val = prev_next_step if prev_next_step else null_fill
+
+    row = {
+        "lead_id": lead_id,
+        "contact_name": contact_name,
+        "contact_role": contact_role,
+        "company_name": company_name,
+        "company_sector": company_sector,
+        "company_country": company_country,
+        "company_city": company_city,
+        "company_num_employees": company_num_employees,
+        "company_annual_revenue_eur": company_annual_revenue_eur,
+        "lead_source": lead_source,
+        "call_number": call_number,
+        "days_since_entry": days_since_entry,
+        "days_since_last_call": days_since_last_call,
+        "prev_outcome": prev_outcome_val,
+        "prev_next_step": prev_next_step_val,
+        "current_transcript": current_transcript,
+        "initial_interest_notes": initial_interest_notes,
+    }
+    df = pd.DataFrame([row])
+
+    transcript_emb = emb_model.encode([current_transcript], convert_to_numpy=True)
+    context_text = f"{initial_interest_notes} | {prev_outcome_val}"
+    context_emb = emb_model.encode([context_text], convert_to_numpy=True)
+    embeddings = np.hstack([transcript_emb, context_emb])
+
+    X_num = df[num_features].values.astype(float)
+    X_num_scaled = scaler.transform(X_num)
+    X_cat_raw = df[cat_features].fillna(null_fill).astype(str)
+    X_cat_ohe = cat_encoder.transform(X_cat_raw)
+    X = np.hstack([X_num_scaled, X_cat_ohe, embeddings])
+
+    proba = model.predict_proba(X)[0]
+    pred_idx = int(np.argmax(proba))
+    predicted_label: str = label_encoder.inverse_transform([pred_idx])[0]
+    confidence: float = round(float(proba[pred_idx]), 4)
+    probabilities = {
+        label_encoder.inverse_transform([i])[0]: round(float(p), 4)
+        for i, p in enumerate(proba)
+    }
+    return {
+        "predicted_next_step": predicted_label,
+        "confidence": confidence,
+        "probabilities": probabilities,
+    }
+
+
 def main() -> None:
     """Run a hardcoded example prediction for quick testing."""
     example = dict(
