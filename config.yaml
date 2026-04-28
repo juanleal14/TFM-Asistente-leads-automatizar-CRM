@@ -51,7 +51,6 @@ categorical_features:
   - company_city
   - lead_source
   - contact_role
-  - prev_outcome
   - prev_next_step
 
 numeric_features:

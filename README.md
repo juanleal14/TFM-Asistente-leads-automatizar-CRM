@@ -6,7 +6,7 @@ Built as a Master's thesis (TFM) project. The fictional company **MoveUp** offer
 
 ---
 
-## Estado actual del proyecto — 16 abril 2026
+## Estado actual del proyecto — 28 abril 2026
 
 El proyecto ha evolucionado de un prototipo XGBoost funcional a un **pipeline ML completo y académicamente defendible**. A continuación el estado real tras la última sesión de trabajo.
 
@@ -24,15 +24,17 @@ El proyecto ha evolucionado de un prototipo XGBoost funcional a un **pipeline ML
 
 ### Resultados de comparación de modelos (test set 20%, seed=42)
 
+Features: 849 (5 numéricas + ~76 OHE + 768 embeddings). `prev_outcome` eliminado del OHE tras detectar que sus 499 valores únicos, 498 de los cuales aparecen solo 1 vez, no aportaban señal estadística. Su semántica queda capturada por los embeddings de contexto.
+
 | Modelo | F1-weighted | Accuracy | F1-macro | Top-3 Acc |
 |---|---|---|---|---|
-| **XGBoost** (referencia) | **0.6619** | 0.675 | 0.613 | 0.915 |
+| **XGBoost** (referencia) | **0.6389** | 0.650 | 0.592 | 0.915 |
 | LightGBM | 0.6286 | 0.645 | 0.568 | 0.910 |
-| Logistic Regression | 0.6225 | 0.630 | 0.581 | 0.920 |
-| Random Forest | 0.6055 | 0.640 | 0.509 | 0.920 |
+| Random Forest | 0.6266 | 0.655 | 0.543 | 0.910 |
+| Logistic Regression | 0.6181 | 0.625 | 0.578 | 0.925 |
 | Dummy (baseline trivial) | 0.1148 | 0.270 | 0.071 | 0.480 |
 
-XGBoost supera a todos los baselines. El gap frente a Dummy (~0.55 en F1-weighted) justifica el enfoque de ML. Top-3 accuracy de 0.915 indica que el modelo tiene buen conocimiento del espacio de acciones.
+XGBoost supera a todos los baselines. El gap frente a Dummy (~0.52 en F1-weighted) justifica el enfoque de ML. Top-3 accuracy de 0.915 indica que el modelo tiene buen conocimiento del espacio de acciones. La CV F1-weighted es idéntica antes y después de eliminar `prev_outcome` (0.6249), confirmando que el cambio no afecta a la capacidad de generalización.
 
 ### Tuning de hiperparámetros (RandomizedSearchCV, n_iter=20)
 
@@ -49,6 +51,7 @@ El tuning de XGBoost apenas mejora el modelo base (0.6589 vs 0.6619 en test), lo
 - **Correlación alta** employees↔revenue (r=0.93) — artefacto esperado del proceso de generación con GPT
 - **1 duplicado exacto** detectado
 - **Patrones uniformes por sector**: baja varianza en la distribución de next_step por sector (entropy std=0.073) — posible limitación del prompt de generación GPT
+- **`prev_outcome` eliminado del OHE**: análisis de frecuencias reveló 499 valores únicos con 498 apareciendo exactamente 1 vez — sin señal estadística posible. Eliminado de categorical_features; la semántica persiste en los embeddings de contexto. La CV F1-weighted no varía (0.6249 antes y después).
 
 ### Tests
 
@@ -232,14 +235,14 @@ One row per call interaction. A lead with 3 calls generates 3 rows.
 
 ```
 Feature matrix X = [numeric (5) | one-hot categorical (variable) | embeddings (768)]
-Total columns: ~1,348
+Total columns: 849
 ```
 
 - **Numeric (5):** employees, revenue, call_number, days_since_entry, days_since_last_call — scaled with `StandardScaler`
-- **Categorical (7):** sector, country, city, lead_source, contact_role, prev_outcome, prev_next_step — encoded with `OneHotEncoder`
+- **Categorical (6):** sector, country, city, lead_source, contact_role, prev_next_step — encoded with `OneHotEncoder` (`prev_outcome` eliminado: 499 valores únicos, 498 con frecuencia 1)
 - **Embeddings (768):** `paraphrase-multilingual-MiniLM-L12-v2` applied to:
-  - `current_transcript` -> 384 dims
-  - `initial_interest_notes + prev_outcome` -> 384 dims
+  - `current_transcript` → 384 dims
+  - `initial_interest_notes + prev_outcome` → 384 dims (semántica de prev_outcome preservada aquí)
 
 ### Reference model (XGBoost)
 

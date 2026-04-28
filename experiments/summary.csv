@@ -3,3 +3,4 @@ run_id,experiment_name,timestamp,model_name,accuracy,f1_macro,f1_weighted,precis
 20260416_213909_hyperparameter_tuning,hyperparameter_tuning,2026-04-16T21:39:09.726283,tuning,,,,,,,,,,,,207.637
 20260416_214456_model_comparison,model_comparison,2026-04-16T21:44:56.499878,comparison,,,,,,,,,,,,48.488
 20260416_214550_hyperparameter_tuning,hyperparameter_tuning,2026-04-16T21:45:50.038323,tuning,,,,,,,,,,,,211.882
+20260428_163100_model_comparison,model_comparison,2026-04-28T16:31:00.046707,comparison,,,,,,,,,,,,46.143
