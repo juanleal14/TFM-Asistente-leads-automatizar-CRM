@@ -23,12 +23,11 @@ embedding_dim: 384        # per embedding; total = 2 × 384 = 768
 
 # ── Target variable ───────────────────────────────────────────
 next_step_categories:
-  - "Recontactar en X días"
+  - "Aplazar lead"                          # fusión: Recontactar + Cerrar nurturing
   - "Enviar documentación"
   - "Agendar demo/reunión con especialista"
   - "Escalar a manager del lead"
   - "Cerrar lead - no interesado"
-  - "Cerrar lead - nurturing"
   - "Esperar confirmación cliente"
 
 # ── Lead journey ──────────────────────────────────────────────

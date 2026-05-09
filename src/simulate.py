@@ -70,7 +70,7 @@ TRANSCRIPT_TEMPLATES: dict[str, list[str]] = {
             "Esta semana hemos tenido mucho trabajo."
         ),
     ],
-    "Recontactar en X días": [
+    "Aplazar lead": [
         (
             "Agente: Buenos días {contact_name}, quedamos en hablar hoy. "
             "¿Cómo está el proyecto internamente? "
@@ -152,11 +152,14 @@ TRANSCRIPT_TEMPLATES: dict[str, list[str]] = {
 # terminal state (prob_terminal > 0 means stochastic resolution).
 
 DEFAULT_ACTION_OUTCOMES: dict[str, dict] = {
-    "Recontactar en X días": {
+    # Aplazar lead = fusión de "Recontactar en X días" + "Cerrar lead - nurturing".
+    # Probabilidad estocástica de que termine en nurturing (40%) vs continuar (60%).
+    "Aplazar lead": {
         "terminal": False,
-        "prob_terminal": 0.0,
-        "days_increment": (7, 21),
-        "outcome_summary": "El contacto indica que necesita más tiempo. Se agenda recontacto.",
+        "prob_terminal": 0.40,
+        "terminal_status": "nurturing",
+        "days_increment": (10, 21),
+        "outcome_summary": "El contacto necesita más tiempo. Lead pospuesto.",
     },
     "Enviar documentación": {
         "terminal": False,
@@ -191,13 +194,6 @@ DEFAULT_ACTION_OUTCOMES: dict[str, dict] = {
         "prob_terminal": 1.0,
         "days_increment": (0, 0),
         "outcome_summary": "El contacto declina continuar. Lead cerrado como perdido.",
-    },
-    "Cerrar lead - nurturing": {
-        "terminal": True,
-        "terminal_status": "nurturing",
-        "prob_terminal": 1.0,
-        "days_increment": (0, 0),
-        "outcome_summary": "El contacto pospone la decisión. Lead en nurturing a largo plazo.",
     },
 }
 
@@ -590,7 +586,7 @@ def _aggressive_strategy() -> dict:
     ao["Agendar demo/reunión con especialista"]["prob_terminal"] = 0.50
     ao["Escalar a manager del lead"]["prob_terminal"] = 0.35
     ao["Esperar confirmación cliente"]["prob_terminal"] = 0.25
-    ao["Recontactar en X días"]["days_increment"] = (3, 10)
+    ao["Aplazar lead"]["days_increment"] = (3, 10)
     return {"name": "aggressive", "action_outcomes": ao}
 
 
@@ -600,7 +596,7 @@ def _conservative_strategy() -> dict:
     ao["Agendar demo/reunión con especialista"]["prob_terminal"] = 0.15
     ao["Escalar a manager del lead"]["prob_terminal"] = 0.10
     ao["Esperar confirmación cliente"]["prob_terminal"] = 0.08
-    ao["Recontactar en X días"]["days_increment"] = (14, 30)
+    ao["Aplazar lead"]["days_increment"] = (14, 30)
     return {"name": "conservative", "action_outcomes": ao}
 
 

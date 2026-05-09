@@ -9,37 +9,34 @@
       "check_name": "class_distribution",
       "passed": false,
       "warnings": [
-        "High imbalance ratio (135.5×). Minority classes may not be learned reliably.",
         "Rare classes (< 5%): ['Escalar a manager del lead']",
-        "Class distribution is NOT uniform (chi2=400.3, p=0.0000). This is expected for a realistic CRM dataset."
+        "Class distribution is NOT uniform (chi2=239.9, p=0.0000). This is expected for a realistic CRM dataset."
       ],
       "errors": [],
       "stats": {
-        "n_classes": 7,
-        "total_samples": 996,
+        "n_classes": 6,
+        "total_samples": 1072,
         "counts": {
-          "Enviar documentación": 271,
-          "Agendar demo/reunión con especialista": 234,
+          "Enviar documentación": 295,
+          "Agendar demo/reunión con especialista": 253,
           "Cerrar lead - no interesado": 197,
-          "Esperar confirmación cliente": 143,
-          "Cerrar lead - nurturing": 82,
-          "Recontactar en X días": 67,
-          "Escalar a manager del lead": 2
+          "Aplazar lead": 149,
+          "Esperar confirmación cliente": 146,
+          "Escalar a manager del lead": 32
         },
         "percentages": {
-          "Enviar documentación": 27.21,
-          "Agendar demo/reunión con especialista": 23.49,
-          "Cerrar lead - no interesado": 19.78,
-          "Esperar confirmación cliente": 14.36,
-          "Cerrar lead - nurturing": 8.23,
-          "Recontactar en X días": 6.73,
-          "Escalar a manager del lead": 0.2
+          "Enviar documentación": 27.52,
+          "Agendar demo/reunión con especialista": 23.6,
+          "Cerrar lead - no interesado": 18.38,
+          "Aplazar lead": 13.9,
+          "Esperar confirmación cliente": 13.62,
+          "Escalar a manager del lead": 2.99
         },
-        "imbalance_ratio": 135.5,
+        "imbalance_ratio": 9.22,
         "rare_classes": [
           "Escalar a manager del lead"
         ],
-        "chisquare_stat": 400.289,
+        "chisquare_stat": 239.851,
         "chisquare_pvalue": 0.0
       }
     },
@@ -61,45 +58,45 @@
         "correlation_matrix": {
           "company_num_employees": {
             "company_num_employees": 1.0,
-            "company_annual_revenue_eur": 0.9275,
-            "call_number": 0.0161,
-            "days_since_entry": -0.0567,
-            "days_since_last_call": -0.0579
+            "company_annual_revenue_eur": 0.9288,
+            "call_number": 0.0099,
+            "days_since_entry": -0.0544,
+            "days_since_last_call": -0.0522
           },
           "company_annual_revenue_eur": {
-            "company_num_employees": 0.9275,
+            "company_num_employees": 0.9288,
             "company_annual_revenue_eur": 1.0,
-            "call_number": 0.0237,
-            "days_since_entry": -0.048,
-            "days_since_last_call": -0.0382
+            "call_number": 0.0184,
+            "days_since_entry": -0.0457,
+            "days_since_last_call": -0.0327
           },
           "call_number": {
-            "company_num_employees": 0.0161,
-            "company_annual_revenue_eur": 0.0237,
+            "company_num_employees": 0.0099,
+            "company_annual_revenue_eur": 0.0184,
             "call_number": 1.0,
-            "days_since_entry": 0.7706,
-            "days_since_last_call": 0.7486
+            "days_since_entry": 0.7711,
+            "days_since_last_call": 0.7457
           },
           "days_since_entry": {
-            "company_num_employees": -0.0567,
-            "company_annual_revenue_eur": -0.048,
-            "call_number": 0.7706,
+            "company_num_employees": -0.0544,
+            "company_annual_revenue_eur": -0.0457,
+            "call_number": 0.7711,
             "days_since_entry": 1.0,
-            "days_since_last_call": 0.8812
+            "days_since_last_call": 0.877
           },
           "days_since_last_call": {
-            "company_num_employees": -0.0579,
-            "company_annual_revenue_eur": -0.0382,
-            "call_number": 0.7486,
-            "days_since_entry": 0.8812,
+            "company_num_employees": -0.0522,
+            "company_annual_revenue_eur": -0.0327,
+            "call_number": 0.7457,
+            "days_since_entry": 0.877,
             "days_since_last_call": 1.0
           }
         },
         "kruskal_wallis": {
           "feature": "company_num_employees",
           "target": "next_step",
-          "stat": 18.737,
-          "pvalue": 0.004631,
+          "stat": 16.556,
+          "pvalue": 0.005423,
           "significant": true
         }
       }
@@ -114,8 +111,8 @@
       "stats": {
         "exact_duplicates": 1,
         "near_duplicate_transcripts": 0,
-        "total_rows": 996,
-        "unique_transcripts": 996
+        "total_rows": 1072,
+        "unique_transcripts": 1072
       }
     },
     "temporal_coherence": {
@@ -133,57 +130,57 @@
       "check_name": "artificial_patterns",
       "passed": false,
       "warnings": [
-        "Low variance in per-sector entropy (0.073). All sectors show very similar next_step distributions — possible dataset uniformity."
+        "Low variance in per-sector entropy (0.041). All sectors show very similar next_step distributions — possible dataset uniformity."
       ],
       "errors": [],
       "stats": {
         "sector_counts": {
-          "Tecnología": 69,
-          "Seguros": 67,
+          "Tecnología": 75,
+          "Seguros": 69,
           "Automoción": 61,
-          "Química": 58,
-          "Educación": 56,
-          "Distribución": 52,
-          "Manufactura": 50,
-          "Retail": 49,
-          "Servicios Financieros": 48,
-          "Logística": 48,
-          "Turismo y Hostelería": 48,
-          "Farmacéutica": 46,
+          "Química": 60,
+          "Educación": 59,
+          "Distribución": 58,
+          "Logística": 54,
+          "Retail": 54,
+          "Turismo y Hostelería": 53,
+          "Manufactura": 52,
+          "Servicios Financieros": 50,
+          "Banca": 50,
+          "Telecomunicaciones": 50,
+          "Medios y Publicidad": 50,
+          "Construcción": 49,
+          "Farmacéutica": 48,
+          "Alimentación": 48,
+          "Consultoría IT": 46,
           "Energía": 45,
-          "Banca": 45,
-          "Construcción": 44,
-          "Consultoría IT": 43,
-          "Telecomunicaciones": 43,
-          "Medios y Publicidad": 43,
-          "Salud": 41,
-          "Alimentación": 40
+          "Salud": 41
         },
         "over_represented_sectors": [],
         "sector_entropy": {
-          "Alimentación": 1.5155,
-          "Automoción": 1.7059,
-          "Banca": 1.6439,
-          "Construcción": 1.712,
-          "Consultoría IT": 1.6512,
-          "Distribución": 1.6046,
-          "Educación": 1.7594,
-          "Energía": 1.7296,
-          "Farmacéutica": 1.6316,
-          "Logística": 1.7077,
-          "Manufactura": 1.7295,
-          "Medios y Publicidad": 1.519,
-          "Química": 1.6102,
-          "Retail": 1.5838,
+          "Alimentación": 1.6196,
+          "Automoción": 1.5807,
+          "Banca": 1.6276,
+          "Construcción": 1.679,
+          "Consultoría IT": 1.6447,
+          "Distribución": 1.6281,
+          "Educación": 1.6569,
+          "Energía": 1.5863,
+          "Farmacéutica": 1.6396,
+          "Logística": 1.6781,
+          "Manufactura": 1.6515,
+          "Medios y Publicidad": 1.6287,
+          "Química": 1.5937,
+          "Retail": 1.6239,
           "Salud": 1.5157,
-          "Seguros": 1.6387,
-          "Servicios Financieros": 1.7311,
-          "Tecnología": 1.6849,
-          "Telecomunicaciones": 1.6287,
-          "Turismo y Hostelería": 1.6214
+          "Seguros": 1.5639,
+          "Servicios Financieros": 1.6746,
+          "Tecnología": 1.6491,
+          "Telecomunicaciones": 1.6697,
+          "Turismo y Hostelería": 1.6375
         },
-        "sector_entropy_std": 0.0726,
-        "pca_explained_variance": 0.3158,
+        "sector_entropy_std": 0.0408,
+        "pca_explained_variance": 0.2997,
         "pca_computed": true
       }
     }

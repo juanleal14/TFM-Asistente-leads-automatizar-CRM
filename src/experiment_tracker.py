@@ -71,6 +71,32 @@ _SUMMARY_COLS = [
 ]
 
 
+def _extract_standard_metric(metrics: dict, standard_name: str) -> float | None:
+    """Localiza el valor correspondiente a una métrica estándar dentro de un dict
+    que puede usar nombres prefijados.
+
+    Reglas de búsqueda (en orden):
+    1. Coincidencia exacta:       metrics[standard_name]
+    2. Sufijo estándar:           cualquier key que termine en "_{standard_name}"
+                                  (ej: "best_f1_weighted", "xgboost_f1_weighted")
+                                  → devuelve el MÁXIMO de los valores numéricos.
+    3. None si no hay coincidencia.
+
+    Esto permite que el summary CSV se rellene correctamente cuando
+    model_comparison.py y tune_model.py loggean métricas con prefijo de modelo.
+    """
+    if standard_name in metrics:
+        v = metrics[standard_name]
+        return float(v) if isinstance(v, (int, float)) else None
+
+    suffix = f"_{standard_name}"
+    candidates = [
+        v for k, v in metrics.items()
+        if k.endswith(suffix) and isinstance(v, (int, float))
+    ]
+    return float(max(candidates)) if candidates else None
+
+
 # ── ExperimentTracker class ───────────────────────────────────────────────────
 
 class ExperimentTracker:
@@ -149,9 +175,15 @@ class ExperimentTracker:
             "model_name": model_info.get("model_name", ""),
             "duration_seconds": run["duration_seconds"],
         })
+        # Skip non-metric columns when scanning
+        _meta_cols = {"run_id", "experiment_name", "timestamp",
+                      "model_name", "duration_seconds"}
         for col in _SUMMARY_COLS:
-            if col in metrics:
-                summary_row[col] = metrics[col]
+            if col in _meta_cols:
+                continue
+            value = _extract_standard_metric(metrics, col)
+            if value is not None:
+                summary_row[col] = value
 
         exists = self._summary_path.exists()
         pd.DataFrame([summary_row]).to_csv(
@@ -196,6 +228,52 @@ def list_experiments(experiments_dir: Path | None = None) -> pd.DataFrame:
     return df.sort_values("timestamp", ascending=False).reset_index(drop=True)
 
 
+def rebuild_summary(experiments_dir: Path | None = None) -> pd.DataFrame:
+    """Reconstruye summary.csv leyendo todos los run JSONs en runs/.
+
+    Útil cuando se cambia la lógica de extracción de métricas y los runs
+    antiguos quedan con valores incorrectos o NaN.
+    """
+    base = _resolve_experiments_dir(experiments_dir)
+    runs_dir = base / "runs"
+    summary_path = base / "summary.csv"
+
+    if not runs_dir.exists():
+        return pd.DataFrame(columns=_SUMMARY_COLS)
+
+    rows: list[dict] = []
+    for json_path in sorted(runs_dir.glob("*.json")):
+        with open(json_path, "r", encoding="utf-8") as f:
+            run = json.load(f)
+        metrics = run.get("metrics", {})
+        model_info = run.get("model_info", {})
+
+        row = {col: None for col in _SUMMARY_COLS}
+        row.update({
+            "run_id": run.get("run_id", json_path.stem),
+            "experiment_name": run.get("experiment_name", ""),
+            "timestamp": run.get("timestamp", ""),
+            "model_name": model_info.get("model_name", ""),
+            "duration_seconds": run.get("duration_seconds"),
+        })
+
+        _meta_cols = {"run_id", "experiment_name", "timestamp",
+                      "model_name", "duration_seconds"}
+        for col in _SUMMARY_COLS:
+            if col in _meta_cols:
+                continue
+            value = _extract_standard_metric(metrics, col)
+            if value is not None:
+                row[col] = value
+
+        rows.append(row)
+
+    df = pd.DataFrame(rows, columns=_SUMMARY_COLS)
+    df.to_csv(summary_path, index=False)
+    print(f"  [tracker] Summary reconstruido ({len(df)} runs) → {summary_path}")
+    return df
+
+
 def get_best_run(
     metric: str = "f1_weighted",
     experiments_dir: Path | None = None,
@@ -224,6 +302,11 @@ def get_best_run(
 # ── Standalone entry point ────────────────────────────────────────────────────
 
 if __name__ == "__main__":
+    import sys
+
+    if "--rebuild" in sys.argv:
+        rebuild_summary()
+
     df = list_experiments()
     if df.empty:
         print("No experiments recorded yet.")

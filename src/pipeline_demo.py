@@ -16,9 +16,11 @@ Uso:
     python -m src.pipeline_demo                 # lead de ejemplo hardcodeado
     python -m src.pipeline_demo --random        # lead generado aleatoriamente
     python -m src.pipeline_demo --seed 7        # semilla concreta para reproducibilidad
+    python -m src.pipeline_demo --no-llm        # usar plantillas en vez de GPT-4o-mini
 """
 from __future__ import annotations
 
+import os
 import random
 import sys
 import time
@@ -92,16 +94,20 @@ def run_demo(
     seed: int = 42,
     pause: float = 0.0,
     model_path: Path | None = None,
+    use_llm_summary: bool = True,
 ) -> dict:
     """Ejecuta el pipeline demo paso a paso con salida visual en consola.
 
     Parameters
     ----------
-    lead_data  : dict con los campos del lead (usa DEMO_LEAD si None)
-    max_steps  : número máximo de iteraciones
-    seed       : semilla para transiciones estocásticas
-    pause      : segundos entre pasos (0 = sin pausa, útil para demos en vivo)
-    model_path : ruta al .joblib (usa la de config si None)
+    lead_data       : dict con los campos del lead (usa DEMO_LEAD si None)
+    max_steps       : número máximo de iteraciones
+    seed            : semilla para transiciones estocásticas
+    pause           : segundos entre pasos (0 = sin pausa, útil para demos en vivo)
+    model_path      : ruta al .joblib (usa la de config si None)
+    use_llm_summary : si True, usa GPT-4o-mini para generar prev_outcome
+                      tras cada llamada (cierre del loop de producción).
+                      Requiere OPENAI_API_KEY. Si no disponible, fallback a plantillas.
 
     Returns
     -------
@@ -110,6 +116,16 @@ def run_demo(
     rng = random.Random(seed)
     lead = lead_data or DEMO_LEAD
     ao = DEFAULT_ACTION_OUTCOMES
+
+    # ── Configurar resumidor LLM ──────────────────────────────────────────────
+    summarizer = None
+    if use_llm_summary:
+        if os.environ.get("OPENAI_API_KEY"):
+            from src.summarize import summarize_call
+            summarizer = summarize_call
+        else:
+            print("  [WARN] OPENAI_API_KEY no encontrada — fallback a plantillas.")
+            print("         Exporta tu key para activar el resumen LLM en producción.\n")
 
     # ── Cargar modelo ──────────────────────────────────────────────────────────
     if model_path is None:
@@ -262,14 +278,31 @@ def run_demo(
             print(_sep("═"))
             break
 
-        # Actualizar estado para el siguiente paso
+        # ── Generar prev_outcome para la siguiente llamada ────────────────────
+        # En producción, este resumen se genera con un LLM tras cada llamada y
+        # se guarda en el CRM para alimentar la siguiente predicción. Cierra el
+        # loop de producción que en el dataset original generaba GPT-4o.
+        if summarizer is not None:
+            print("  [ RESUMEN LLM (prev_outcome para próxima llamada) ]")
+            try:
+                next_prev_outcome = summarizer(
+                    state.current_transcript, predicted_action
+                )
+                print(f"  > {next_prev_outcome}")
+            except Exception as e:
+                print(f"  [WARN] LLM falló ({e}); usando plantilla.")
+                next_prev_outcome = outcome_cfg.get("outcome_summary", predicted_action)
+        else:
+            next_prev_outcome = outcome_cfg.get("outcome_summary", predicted_action)
+
+        # ── Actualizar estado para el siguiente paso ──────────────────────────
         days_lo, days_hi = outcome_cfg.get("days_increment", (7, 14))
         days_gap = rng.randint(days_lo, max(days_lo, days_hi))
         state.days_since_entry += days_gap
         state.days_since_last_call = days_gap
         state.call_number += 1
         state.prev_next_step = predicted_action
-        state.prev_outcome = outcome_cfg.get("outcome_summary", predicted_action)
+        state.prev_outcome = next_prev_outcome
 
         print()
         print(f"  Próxima llamada en {days_gap} días  (día {state.days_since_entry} desde entrada)")
@@ -313,6 +346,7 @@ def run_demo(
 
 if __name__ == "__main__":
     use_random = "--random" in sys.argv
+    use_llm = "--no-llm" not in sys.argv
     seed = 42
     pause = 0.0
 
@@ -328,4 +362,4 @@ if __name__ == "__main__":
     else:
         lead = DEMO_LEAD
 
-    run_demo(lead_data=lead, seed=seed, pause=pause)
+    run_demo(lead_data=lead, seed=seed, pause=pause, use_llm_summary=use_llm)

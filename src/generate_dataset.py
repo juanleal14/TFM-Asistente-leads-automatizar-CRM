@@ -119,8 +119,20 @@ def assign_lead_journey(meta: dict) -> tuple[str, int]:
     return final_status, num_calls
 
 
-def build_generation_prompt(meta: dict, final_status: str, num_calls: int) -> str:
-    """Build a GPT-4o prompt that produces a realistic multi-call journey."""
+def build_generation_prompt(
+    meta: dict,
+    final_status: str,
+    num_calls: int,
+    forced_next_step: str | None = None,
+) -> str:
+    """Build a GPT-4o prompt that produces a realistic multi-call journey.
+
+    Parameters
+    ----------
+    forced_next_step : si se especifica, fuerza al LLM a que esa acción aparezca
+                       como next_step en alguna de las llamadas. Útil para
+                       balancear clases minoritarias del dataset.
+    """
     categories_str = "\n".join(f"  - \"{c}\"" for c in NEXT_STEP_CATEGORIES)
     specialist = random.choice(SPECIALIST_NAMES)
 
@@ -147,6 +159,19 @@ def build_generation_prompt(meta: dict, final_status: str, num_calls: int) -> st
 
     guidance = status_guidance.get(final_status, "")
 
+    forced_block = ""
+    if forced_next_step:
+        forced_block = (
+            f"\n\nIMPORTANTE — RESTRICCIÓN OBLIGATORIA:\n"
+            f"Una de las llamadas DEBE tener next_step = \"{forced_next_step}\".\n"
+            f"Diseña el diálogo y el outcome de esa llamada para que sea coherente "
+            f"con esa decisión. Por ejemplo, si es 'Escalar a manager del lead', "
+            f"el contacto debe mencionar que necesita aprobación de un superior, "
+            f"o el agente debe darse cuenta de que la decisión excede al contacto "
+            f"actual y conviene implicar a su jefe directo. Mantén el realismo "
+            f"narrativo pero garantiza que la acción aparezca."
+        )
+
     return f"""Eres un generador de datos sintéticos para un CRM de ventas B2B.
 La empresa es MoveUp, un servicio de movilidad corporativa (tipo Uber for Business).
 
@@ -161,7 +186,7 @@ Genera el recorrido de venta de un lead con las siguientes características:
 - Estado final: {final_status}
 
 Contexto narrativo:
-{guidance}
+{guidance}{forced_block}
 
 INSTRUCCIONES:
 1. Genera diálogos realistas en ESPAÑOL entre el agente y el contacto.
@@ -189,10 +214,15 @@ Devuelve ÚNICAMENTE JSON válido con este esquema exacto (sin texto adicional, 
 Genera exactamente {num_calls} elemento(s) en el array "calls"."""
 
 
-def generate_lead_with_llm(client: OpenAI, meta: dict,
-                            final_status: str, num_calls: int) -> dict | None:
+def generate_lead_with_llm(
+    client: OpenAI,
+    meta: dict,
+    final_status: str,
+    num_calls: int,
+    forced_next_step: str | None = None,
+) -> dict | None:
     """Call GPT-4o and return parsed JSON, retrying up to MAX_RETRIES times."""
-    prompt = build_generation_prompt(meta, final_status, num_calls)
+    prompt = build_generation_prompt(meta, final_status, num_calls, forced_next_step)
 
     for attempt in range(1, MAX_RETRIES + 1):
         try:

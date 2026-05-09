@@ -1,6 +1,12 @@
 run_id,experiment_name,timestamp,model_name,accuracy,f1_macro,f1_weighted,precision_macro,precision_weighted,recall_macro,recall_weighted,top3_accuracy,brier_score_avg,cv_f1_weighted_mean,cv_f1_weighted_std,duration_seconds
-20260416_213810_model_comparison,model_comparison,2026-04-16T21:38:10.611013,comparison,,,,,,,,,,,,32.688
-20260416_213909_hyperparameter_tuning,hyperparameter_tuning,2026-04-16T21:39:09.726283,tuning,,,,,,,,,,,,207.637
-20260416_214456_model_comparison,model_comparison,2026-04-16T21:44:56.499878,comparison,,,,,,,,,,,,48.488
-20260416_214550_hyperparameter_tuning,hyperparameter_tuning,2026-04-16T21:45:50.038323,tuning,,,,,,,,,,,,211.882
-20260428_163100_model_comparison,model_comparison,2026-04-28T16:31:00.046707,comparison,,,,,,,,,,,,46.143
+20260416_213810_model_comparison,model_comparison,2026-04-16T21:38:10.611013,comparison,0.675,,0.6619,,,,,,,,,32.688
+20260416_213909_hyperparameter_tuning,hyperparameter_tuning,2026-04-16T21:39:09.726283,tuning,0.665,,0.6589417397776978,,,,,,,,,207.637
+20260416_214456_model_comparison,model_comparison,2026-04-16T21:44:56.499878,comparison,0.675,,0.6619,,,,,,,,,48.488
+20260416_214550_hyperparameter_tuning,hyperparameter_tuning,2026-04-16T21:45:50.038323,tuning,0.665,,0.6589417397776978,,,,,,,,,211.882
+20260428_163100_model_comparison,model_comparison,2026-04-28T16:31:00.046707,comparison,0.655,,0.6389,,,,,,,,,46.143
+20260509_171619_model_comparison,model_comparison,2026-05-09T17:16:19.951160,comparison,0.655,,0.6389,,,,,,,,,49.595
+20260509_172108_model_comparison,model_comparison,2026-05-09T17:21:08.589883,comparison,0.655,,0.6389,,,,,,,,,47.617
+20260509_173041_model_comparison,model_comparison,2026-05-09T17:30:41.729355,comparison,0.6558,,0.6342,,,,,,,,,54.659
+20260509_175829_model_comparison,model_comparison,2026-05-09T17:58:29.022975,comparison,0.6605,,0.6461,,,,,,,,,49.312
+20260509_180349_model_comparison,model_comparison,2026-05-09T18:03:49.123770,comparison,0.6605,,0.6461,,,,,,,,,47.77
+20260509_180441_hyperparameter_tuning,hyperparameter_tuning,2026-05-09T18:04:41.790359,tuning,0.6604651162790698,,0.6480219616118961,,,,,,,,,220.63

@@ -1,4 +1,4 @@
-﻿interaction_id,lead_id,contact_name,contact_role,company_name,company_sector,company_country,company_city,company_num_employees,company_annual_revenue_eur,lead_source,lead_entry_date,initial_interest_notes,call_number,call_timestamp,days_since_entry,days_since_last_call,prev_outcome,prev_next_step,current_transcript,current_outcome,next_step,final_status
+interaction_id,lead_id,contact_name,contact_role,company_name,company_sector,company_country,company_city,company_num_employees,company_annual_revenue_eur,lead_source,lead_entry_date,initial_interest_notes,call_number,call_timestamp,days_since_entry,days_since_last_call,prev_outcome,prev_next_step,current_transcript,current_outcome,next_step,final_status
 853be5cb-c55,0bf062a6,Laura Romero,CEO,Digi Dynamics,Distribución,España,Valencia,88,20511000,Feria o evento,2025-12-14,"La empresa mostró interés en optimizar su movilidad corporativa, pero sin urgencia inmediata.",1,2025-12-18,4,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Laura, soy Marta Díaz de MoveUp. ¿Cómo estás?
 Contacto: Hola Marta, bien, gracias. ¿Y tú?
 Agente: Muy bien, gracias. Quería hablar sobre cómo MoveUp puede ayudar a Digi Dynamics a mejorar su movilidad corporativa. ¿Tienes algunos minutos?
@@ -23,7 +23,7 @@ Contacto: Tal vez unas dos semanas. No hay urgencia inmediata, pero estamos inte
 Agente: Entiendo, entonces lo mejor será que recontacte contigo después de ese tiempo. ¿Te parece bien?
 Contacto: Sí, eso suena bien. Así podremos darte una respuesta más clara.
 Agente: Perfecto, entonces estaré en contacto en unas semanas para ver cómo van las cosas. Gracias por tu tiempo, Laura.
-Contacto: Gracias a ti, Marta. Hablamos pronto.",Laura y su equipo necesitan más tiempo para discutir y obtener la aprobación del presupuesto.,Cerrar lead - nurturing,Nurturing
+Contacto: Gracias a ti, Marta. Hablamos pronto.",Laura y su equipo necesitan más tiempo para discutir y obtener la aprobación del presupuesto.,Aplazar lead,Nurturing
 02195fe0-824,30e98883,Rafael Ruiz,Head of Procurement,Corp Consulting,Distribución,España,Bilbao,118,18818000,Inbound / Blog,2025-12-19,"Rafael mostró interés inicial en optimizar los gastos de transporte corporativo, habiendo leído sobre eficiencias de costes en nuestro blog.",1,2025-12-20,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Rafael. Soy Ana Ruiz de MoveUp. ¿Cómo estás?
 Contacto: Hola, Ana. Estoy bien, gracias. ¿En qué puedo ayudarte?
 Agente: Quería hablar sobre cómo MoveUp puede ayudar a optimizar vuestros gastos de movilidad corporativa. Vi que habías mostrado interés en nuestro blog.
