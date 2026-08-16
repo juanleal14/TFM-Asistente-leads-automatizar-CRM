@@ -1,0 +1,30 @@
+{
+  "run_id": "20260416_214550_hyperparameter_tuning",
+  "experiment_name": "hyperparameter_tuning",
+  "timestamp": "2026-04-16T21:45:50.038323",
+  "config_snapshot": {
+    "n_iter": 20,
+    "cv_splits": 5,
+    "scoring": "f1_weighted"
+  },
+  "model_info": {
+    "model_name": "tuning",
+    "params": {
+      "models": [
+        "xgboost",
+        "random_forest"
+      ]
+    }
+  },
+  "metrics": {
+    "xgboost_best_cv_f1_weighted": 0.6304290767701188,
+    "xgboost_tuning_n_iter": 20,
+    "random_forest_best_cv_f1_weighted": 0.6257801737685472,
+    "random_forest_tuning_n_iter": 20,
+    "xgboost_tuned_f1_weighted": 0.6589417397776978,
+    "xgboost_tuned_accuracy": 0.665,
+    "rf_tuned_f1_weighted": 0.6321160996252475,
+    "rf_tuned_accuracy": 0.655
+  },
+  "duration_seconds": 211.882
+}

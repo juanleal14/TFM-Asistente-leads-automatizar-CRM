@@ -133,6 +133,172 @@ def plot_results(
     _plot_distribution_comparison(y_test, y_pred, class_names, output_dir)
 
 
+# ── Extended evaluation functions ────────────────────────────────────────────
+
+def evaluate_model(
+    model,
+    X_test: np.ndarray,
+    y_test: np.ndarray,
+    label_encoder,
+    k: int = 3,
+) -> dict:
+    """Compute a comprehensive set of evaluation metrics.
+
+    Works with any sklearn-compatible classifier that exposes predict_proba().
+
+    Parameters
+    ----------
+    model        : fitted classifier
+    X_test       : feature matrix (n_samples, n_features)
+    y_test       : integer-encoded true labels (n_samples,)
+    label_encoder: fitted LabelEncoder used to decode class indices
+    k            : top-k for top-k accuracy (default 3)
+
+    Returns
+    -------
+    dict with keys:
+        accuracy, f1_macro, f1_weighted,
+        precision_macro, precision_weighted,
+        recall_macro, recall_weighted,
+        classification_report (dict),
+        top3_accuracy, calibration_metrics,
+        confusion_matrix (list[list[int]]),
+        per_class_metrics
+    """
+    from sklearn.metrics import (
+        accuracy_score,
+        f1_score,
+        precision_score,
+        recall_score,
+        classification_report as _cr,
+        confusion_matrix as _cm,
+        brier_score_loss,
+    )
+
+    proba = model.predict_proba(X_test)
+    y_pred = np.argmax(proba, axis=1)
+    class_names = label_encoder.classes_.tolist()
+
+    # ── Standard metrics ──────────────────────────────────────────────────────
+    metrics: dict = {
+        "accuracy": float(accuracy_score(y_test, y_pred)),
+        "f1_macro": float(f1_score(y_test, y_pred, average="macro", zero_division=0)),
+        "f1_weighted": float(f1_score(y_test, y_pred, average="weighted", zero_division=0)),
+        "precision_macro": float(precision_score(y_test, y_pred, average="macro", zero_division=0)),
+        "precision_weighted": float(precision_score(y_test, y_pred, average="weighted", zero_division=0)),
+        "recall_macro": float(recall_score(y_test, y_pred, average="macro", zero_division=0)),
+        "recall_weighted": float(recall_score(y_test, y_pred, average="weighted", zero_division=0)),
+    }
+
+    # ── Classification report (dict form) ─────────────────────────────────────
+    # Use only labels present in y_test or y_pred to avoid size mismatch when
+    # a class has 0 test samples (e.g. "Escalar a manager" with 2 total rows).
+    present_labels = sorted(set(y_test) | set(y_pred))
+    present_names = [class_names[i] for i in present_labels]
+    metrics["classification_report"] = _cr(
+        y_test, y_pred,
+        labels=present_labels,
+        target_names=present_names,
+        output_dict=True,
+        zero_division=0,
+    )
+
+    # ── Top-k accuracy ────────────────────────────────────────────────────────
+    # For each sample, check whether the true label is among the top-k predicted
+    top_k_indices = np.argsort(proba, axis=1)[:, -k:]  # shape (N, k)
+    top_k_correct = np.any(top_k_indices == y_test[:, None], axis=1)
+    metrics[f"top{k}_accuracy"] = float(np.mean(top_k_correct))
+
+    # ── Calibration — Brier score per class (one-vs-rest) ─────────────────────
+    brier_per_class: dict[str, float] = {}
+    for i, label in enumerate(class_names):
+        y_bin = (y_test == i).astype(int)
+        brier_per_class[label] = float(brier_score_loss(y_bin, proba[:, i]))
+    metrics["calibration_metrics"] = {
+        "brier_score_per_class": brier_per_class,
+        "brier_score_avg": float(np.mean(list(brier_per_class.values()))),
+    }
+    # Also expose brier_score_avg at top level for easy CSV logging
+    metrics["brier_score_avg"] = metrics["calibration_metrics"]["brier_score_avg"]
+
+    # ── Confusion matrix ──────────────────────────────────────────────────────
+    metrics["confusion_matrix"] = _cm(y_test, y_pred).tolist()
+
+    # ── Per-class breakdown ───────────────────────────────────────────────────
+    cr_dict = metrics["classification_report"]
+    per_class: dict[str, dict] = {}
+    for label in class_names:
+        entry = cr_dict.get(label, {})
+        per_class[label] = {
+            "precision": entry.get("precision", 0.0),
+            "recall": entry.get("recall", 0.0),
+            "f1": entry.get("f1-score", 0.0),
+            "support": int(entry.get("support", 0)),
+        }
+    metrics["per_class_metrics"] = per_class
+
+    return metrics
+
+
+def plot_calibration(
+    model,
+    X_test: np.ndarray,
+    y_test: np.ndarray,
+    label_encoder,
+    output_dir: "Path | None" = None,
+    n_bins: int = 10,
+) -> None:
+    """Plot reliability diagrams (one per class) and save calibration_plot.png.
+
+    Uses sklearn.calibration.calibration_curve with strategy='uniform'.
+    Subplot layout: 2 rows × 4 cols for 7 classes (last subplot left blank).
+    """
+    from sklearn.calibration import calibration_curve
+
+    if output_dir is None:
+        output_dir = resolve_path("plots")
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    class_names = label_encoder.classes_.tolist()
+    proba = model.predict_proba(X_test)
+    n_classes = len(class_names)
+
+    ncols = 4
+    nrows = (n_classes + ncols - 1) // ncols  # ceil division
+    fig, axes = plt.subplots(nrows, ncols, figsize=(4 * ncols, 4 * nrows))
+    axes_flat = axes.flatten()
+
+    for i, label in enumerate(class_names):
+        ax = axes_flat[i]
+        y_bin = (y_test == i).astype(int)
+        if y_bin.sum() == 0:
+            ax.set_title(f"{label}\n(no samples)", fontsize=8)
+            ax.axis("off")
+            continue
+        try:
+            fraction_pos, mean_pred = calibration_curve(
+                y_bin, proba[:, i], n_bins=n_bins, strategy="uniform"
+            )
+            ax.plot(mean_pred, fraction_pos, "s-", label="Model")
+            ax.plot([0, 1], [0, 1], "--", color="gray", label="Perfect")
+            ax.set_xlabel("Mean predicted probability", fontsize=7)
+            ax.set_ylabel("Fraction positive", fontsize=7)
+            ax.set_title(label, fontsize=8)
+            ax.legend(fontsize=6)
+        except Exception:
+            ax.set_title(f"{label}\n(calibration error)", fontsize=8)
+            ax.axis("off")
+
+    # Hide unused subplots
+    for j in range(n_classes, len(axes_flat)):
+        axes_flat[j].axis("off")
+
+    fig.suptitle("Calibration Reliability Diagrams", fontsize=13, y=1.01)
+    plt.tight_layout()
+    _save(fig, output_dir / "calibration_plot.png")
+
+
 # ── Standalone (requires trained model) ──────────────────────────────────────
 
 if __name__ == "__main__":

@@ -1,0 +1,902 @@
+[
+  {
+    "lead_id": "b0b8abff",
+    "company_name": "Digital Solutions",
+    "company_sector": "Salud",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 5,
+    "confidence_avg": 0.5744
+  },
+  {
+    "lead_id": "eb9b97ad",
+    "company_name": "Euro Partners",
+    "company_sector": "Consultoría IT",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 9,
+    "confidence_avg": 0.5998
+  },
+  {
+    "lead_id": "c95417f2",
+    "company_name": "Iberia Corp",
+    "company_sector": "Seguros",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 13,
+    "confidence_avg": 0.5827
+  },
+  {
+    "lead_id": "0bf2452d",
+    "company_name": "Tech Solutions",
+    "company_sector": "Telecomunicaciones",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4726
+  },
+  {
+    "lead_id": "1d24be0b",
+    "company_name": "Iberia Solutions",
+    "company_sector": "Manufactura",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 11,
+    "confidence_avg": 0.4148
+  },
+  {
+    "lead_id": "3b3bbbb6",
+    "company_name": "Global Corp",
+    "company_sector": "Seguros",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 6,
+    "confidence_avg": 0.4694
+  },
+  {
+    "lead_id": "aa3ca496",
+    "company_name": "Iberia Group",
+    "company_sector": "Tecnología",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 7,
+    "confidence_avg": 0.4988
+  },
+  {
+    "lead_id": "87ae62f0",
+    "company_name": "Euro Solutions",
+    "company_sector": "Logística",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.3916
+  },
+  {
+    "lead_id": "c194d797",
+    "company_name": "Iberia Partners",
+    "company_sector": "Consultoría IT",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 9,
+    "confidence_avg": 0.5712
+  },
+  {
+    "lead_id": "efa31ee5",
+    "company_name": "Tech Partners",
+    "company_sector": "Banca",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 13,
+    "confidence_avg": 0.4633
+  },
+  {
+    "lead_id": "db51297f",
+    "company_name": "Iberia Services",
+    "company_sector": "Banca",
+    "final_status": "nurturing",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.5371
+  },
+  {
+    "lead_id": "c4dbf31f",
+    "company_name": "Global Partners",
+    "company_sector": "Retail",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.5388
+  },
+  {
+    "lead_id": "f11ed687",
+    "company_name": "Iberia Services",
+    "company_sector": "Automoción",
+    "final_status": "nurturing",
+    "total_steps": 3,
+    "total_days": 21,
+    "confidence_avg": 0.5377
+  },
+  {
+    "lead_id": "6711e093",
+    "company_name": "Tech Solutions",
+    "company_sector": "Logística",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.538
+  },
+  {
+    "lead_id": "cc81a3a8",
+    "company_name": "Tech Partners",
+    "company_sector": "Turismo y Hostelería",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 12,
+    "confidence_avg": 0.5472
+  },
+  {
+    "lead_id": "2f9b3243",
+    "company_name": "Global Solutions",
+    "company_sector": "Educación",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 10,
+    "confidence_avg": 0.4105
+  },
+  {
+    "lead_id": "c33fc124",
+    "company_name": "Tech Solutions",
+    "company_sector": "Tecnología",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4345
+  },
+  {
+    "lead_id": "660e0c4a",
+    "company_name": "Euro Solutions",
+    "company_sector": "Educación",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 6,
+    "confidence_avg": 0.5651
+  },
+  {
+    "lead_id": "ed48f19f",
+    "company_name": "Global Partners",
+    "company_sector": "Tecnología",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.6402
+  },
+  {
+    "lead_id": "9771bb9a",
+    "company_name": "Tech Solutions",
+    "company_sector": "Farmacéutica",
+    "final_status": "nurturing",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4562
+  },
+  {
+    "lead_id": "ed43af77",
+    "company_name": "Digital Partners",
+    "company_sector": "Alimentación",
+    "final_status": "nurturing",
+    "total_steps": 4,
+    "total_days": 23,
+    "confidence_avg": 0.7048
+  },
+  {
+    "lead_id": "b03e204b",
+    "company_name": "Euro Partners",
+    "company_sector": "Banca",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 12,
+    "confidence_avg": 0.5032
+  },
+  {
+    "lead_id": "e4fb498b",
+    "company_name": "Iberia Group",
+    "company_sector": "Tecnología",
+    "final_status": "nurturing",
+    "total_steps": 4,
+    "total_days": 31,
+    "confidence_avg": 0.6188
+  },
+  {
+    "lead_id": "8793c2df",
+    "company_name": "Global Solutions",
+    "company_sector": "Tecnología",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 9,
+    "confidence_avg": 0.6321
+  },
+  {
+    "lead_id": "996da361",
+    "company_name": "Euro Corp",
+    "company_sector": "Logística",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 9,
+    "confidence_avg": 0.5538
+  },
+  {
+    "lead_id": "b4ab27e2",
+    "company_name": "Euro Partners",
+    "company_sector": "Salud",
+    "final_status": "nurturing",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.3237
+  },
+  {
+    "lead_id": "e42d8cec",
+    "company_name": "Tech Solutions",
+    "company_sector": "Automoción",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 13,
+    "confidence_avg": 0.5491
+  },
+  {
+    "lead_id": "d003f648",
+    "company_name": "Tech Group",
+    "company_sector": "Salud",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 6,
+    "confidence_avg": 0.4679
+  },
+  {
+    "lead_id": "fe15a07b",
+    "company_name": "Global Services",
+    "company_sector": "Energía",
+    "final_status": "nurturing",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4082
+  },
+  {
+    "lead_id": "990263ca",
+    "company_name": "Global Corp",
+    "company_sector": "Servicios Financieros",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 13,
+    "confidence_avg": 0.4688
+  },
+  {
+    "lead_id": "9566c398",
+    "company_name": "Iberia Services",
+    "company_sector": "Servicios Financieros",
+    "final_status": "nurturing",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.427
+  },
+  {
+    "lead_id": "7ad34b89",
+    "company_name": "Euro Solutions",
+    "company_sector": "Alimentación",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 6,
+    "confidence_avg": 0.517
+  },
+  {
+    "lead_id": "2b8ca53e",
+    "company_name": "Tech Group",
+    "company_sector": "Educación",
+    "final_status": "nurturing",
+    "total_steps": 3,
+    "total_days": 27,
+    "confidence_avg": 0.6714
+  },
+  {
+    "lead_id": "dda63ba6",
+    "company_name": "Digital Partners",
+    "company_sector": "Alimentación",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.5268
+  },
+  {
+    "lead_id": "5f0467b8",
+    "company_name": "Digital Corp",
+    "company_sector": "Telecomunicaciones",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 12,
+    "confidence_avg": 0.3998
+  },
+  {
+    "lead_id": "d5daf280",
+    "company_name": "Euro Partners",
+    "company_sector": "Educación",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 10,
+    "confidence_avg": 0.4358
+  },
+  {
+    "lead_id": "405dc2ee",
+    "company_name": "Digital Services",
+    "company_sector": "Tecnología",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4679
+  },
+  {
+    "lead_id": "16daea9a",
+    "company_name": "Digital Services",
+    "company_sector": "Tecnología",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 12,
+    "confidence_avg": 0.6605
+  },
+  {
+    "lead_id": "96070dfb",
+    "company_name": "Tech Corp",
+    "company_sector": "Farmacéutica",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 11,
+    "confidence_avg": 0.3518
+  },
+  {
+    "lead_id": "0e641fd3",
+    "company_name": "Tech Group",
+    "company_sector": "Salud",
+    "final_status": "nurturing",
+    "total_steps": 4,
+    "total_days": 25,
+    "confidence_avg": 0.6524
+  },
+  {
+    "lead_id": "76071e6b",
+    "company_name": "Digital Services",
+    "company_sector": "Consultoría IT",
+    "final_status": "nurturing",
+    "total_steps": 4,
+    "total_days": 38,
+    "confidence_avg": 0.6408
+  },
+  {
+    "lead_id": "73c501ad",
+    "company_name": "Euro Solutions",
+    "company_sector": "Alimentación",
+    "final_status": "nurturing",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4379
+  },
+  {
+    "lead_id": "8d166b8d",
+    "company_name": "Euro Group",
+    "company_sector": "Medios y Publicidad",
+    "final_status": "nurturing",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.3792
+  },
+  {
+    "lead_id": "abbed164",
+    "company_name": "Euro Corp",
+    "company_sector": "Farmacéutica",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.5794
+  },
+  {
+    "lead_id": "b74c0b0a",
+    "company_name": "Global Group",
+    "company_sector": "Consultoría IT",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4808
+  },
+  {
+    "lead_id": "1334f573",
+    "company_name": "Iberia Group",
+    "company_sector": "Química",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 8,
+    "confidence_avg": 0.5038
+  },
+  {
+    "lead_id": "095a1638",
+    "company_name": "Tech Solutions",
+    "company_sector": "Telecomunicaciones",
+    "final_status": "nurturing",
+    "total_steps": 4,
+    "total_days": 29,
+    "confidence_avg": 0.7365
+  },
+  {
+    "lead_id": "bfa327c0",
+    "company_name": "Iberia Solutions",
+    "company_sector": "Salud",
+    "final_status": "nurturing",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.3509
+  },
+  {
+    "lead_id": "380a05be",
+    "company_name": "Digital Services",
+    "company_sector": "Salud",
+    "final_status": "nurturing",
+    "total_steps": 4,
+    "total_days": 32,
+    "confidence_avg": 0.6553
+  },
+  {
+    "lead_id": "299cecc2",
+    "company_name": "Global Services",
+    "company_sector": "Alimentación",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.3672
+  },
+  {
+    "lead_id": "ae359f96",
+    "company_name": "Tech Services",
+    "company_sector": "Tecnología",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 13,
+    "confidence_avg": 0.479
+  },
+  {
+    "lead_id": "8746bd0c",
+    "company_name": "Digital Corp",
+    "company_sector": "Tecnología",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.5834
+  },
+  {
+    "lead_id": "040bc1fc",
+    "company_name": "Global Group",
+    "company_sector": "Banca",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4066
+  },
+  {
+    "lead_id": "57c4dc20",
+    "company_name": "Tech Corp",
+    "company_sector": "Construcción",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.3579
+  },
+  {
+    "lead_id": "c3148773",
+    "company_name": "Euro Solutions",
+    "company_sector": "Consultoría IT",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 10,
+    "confidence_avg": 0.5321
+  },
+  {
+    "lead_id": "eb08a80d",
+    "company_name": "Global Services",
+    "company_sector": "Farmacéutica",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4606
+  },
+  {
+    "lead_id": "bf5afbd3",
+    "company_name": "Digital Partners",
+    "company_sector": "Servicios Financieros",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.606
+  },
+  {
+    "lead_id": "e8d119a6",
+    "company_name": "Tech Group",
+    "company_sector": "Farmacéutica",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 11,
+    "confidence_avg": 0.448
+  },
+  {
+    "lead_id": "3ede0831",
+    "company_name": "Global Group",
+    "company_sector": "Construcción",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4826
+  },
+  {
+    "lead_id": "745b6c4a",
+    "company_name": "Tech Corp",
+    "company_sector": "Retail",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.5754
+  },
+  {
+    "lead_id": "549ed1e8",
+    "company_name": "Iberia Services",
+    "company_sector": "Servicios Financieros",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.4632
+  },
+  {
+    "lead_id": "f7eab5f7",
+    "company_name": "Global Group",
+    "company_sector": "Distribución",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 8,
+    "confidence_avg": 0.5448
+  },
+  {
+    "lead_id": "3417f328",
+    "company_name": "Euro Services",
+    "company_sector": "Turismo y Hostelería",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 8,
+    "confidence_avg": 0.59
+  },
+  {
+    "lead_id": "c47ba4b2",
+    "company_name": "Euro Partners",
+    "company_sector": "Medios y Publicidad",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4742
+  },
+  {
+    "lead_id": "a7c6a2d3",
+    "company_name": "Global Group",
+    "company_sector": "Automoción",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4757
+  },
+  {
+    "lead_id": "954b15c0",
+    "company_name": "Global Partners",
+    "company_sector": "Telecomunicaciones",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.4577
+  },
+  {
+    "lead_id": "6c75e6de",
+    "company_name": "Global Group",
+    "company_sector": "Construcción",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 6,
+    "confidence_avg": 0.6966
+  },
+  {
+    "lead_id": "664d754c",
+    "company_name": "Global Corp",
+    "company_sector": "Salud",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.5873
+  },
+  {
+    "lead_id": "3ea1e2dd",
+    "company_name": "Euro Corp",
+    "company_sector": "Tecnología",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.5474
+  },
+  {
+    "lead_id": "684be727",
+    "company_name": "Iberia Services",
+    "company_sector": "Educación",
+    "final_status": "nurturing",
+    "total_steps": 3,
+    "total_days": 20,
+    "confidence_avg": 0.7833
+  },
+  {
+    "lead_id": "d4840e8d",
+    "company_name": "Digital Services",
+    "company_sector": "Retail",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.541
+  },
+  {
+    "lead_id": "9ca57f41",
+    "company_name": "Digital Services",
+    "company_sector": "Turismo y Hostelería",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 9,
+    "confidence_avg": 0.6731
+  },
+  {
+    "lead_id": "fa90ffce",
+    "company_name": "Global Solutions",
+    "company_sector": "Manufactura",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.3215
+  },
+  {
+    "lead_id": "08009caf",
+    "company_name": "Euro Partners",
+    "company_sector": "Manufactura",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 8,
+    "confidence_avg": 0.5128
+  },
+  {
+    "lead_id": "b7bf1c77",
+    "company_name": "Euro Corp",
+    "company_sector": "Seguros",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 5,
+    "confidence_avg": 0.4649
+  },
+  {
+    "lead_id": "3c4c6d06",
+    "company_name": "Euro Corp",
+    "company_sector": "Construcción",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 7,
+    "confidence_avg": 0.4607
+  },
+  {
+    "lead_id": "4b6f6b13",
+    "company_name": "Euro Corp",
+    "company_sector": "Distribución",
+    "final_status": "converted",
+    "total_steps": 2,
+    "total_days": 9,
+    "confidence_avg": 0.7393
+  },
+  {
+    "lead_id": "1f582a5a",
+    "company_name": "Iberia Group",
+    "company_sector": "Banca",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 7,
+    "confidence_avg": 0.4238
+  },
+  {
+    "lead_id": "6f098627",
+    "company_name": "Euro Group",
+    "company_sector": "Retail",
+    "final_status": "nurturing",
+    "total_steps": 3,
+    "total_days": 29,
+    "confidence_avg": 0.6084
+  },
+  {
+    "lead_id": "df95fc53",
+    "company_name": "Iberia Solutions",
+    "company_sector": "Farmacéutica",
+    "final_status": "nurturing",
+    "total_steps": 4,
+    "total_days": 25,
+    "confidence_avg": 0.5963
+  },
+  {
+    "lead_id": "fc3f4964",
+    "company_name": "Iberia Corp",
+    "company_sector": "Educación",
+    "final_status": "nurturing",
+    "total_steps": 3,
+    "total_days": 15,
+    "confidence_avg": 0.6771
+  },
+  {
+    "lead_id": "0ffde3c3",
+    "company_name": "Global Services",
+    "company_sector": "Construcción",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 9,
+    "confidence_avg": 0.545
+  },
+  {
+    "lead_id": "88749388",
+    "company_name": "Euro Corp",
+    "company_sector": "Tecnología",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4409
+  },
+  {
+    "lead_id": "04f1d0db",
+    "company_name": "Iberia Group",
+    "company_sector": "Medios y Publicidad",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 8,
+    "confidence_avg": 0.5399
+  },
+  {
+    "lead_id": "7858c961",
+    "company_name": "Euro Solutions",
+    "company_sector": "Energía",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.3915
+  },
+  {
+    "lead_id": "7ea17f8e",
+    "company_name": "Tech Group",
+    "company_sector": "Retail",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.5902
+  },
+  {
+    "lead_id": "8ddbb4be",
+    "company_name": "Global Corp",
+    "company_sector": "Telecomunicaciones",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 11,
+    "confidence_avg": 0.488
+  },
+  {
+    "lead_id": "a4cff077",
+    "company_name": "Euro Corp",
+    "company_sector": "Distribución",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 5,
+    "confidence_avg": 0.5526
+  },
+  {
+    "lead_id": "593d2e41",
+    "company_name": "Euro Services",
+    "company_sector": "Banca",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 9,
+    "confidence_avg": 0.394
+  },
+  {
+    "lead_id": "74609470",
+    "company_name": "Digital Partners",
+    "company_sector": "Medios y Publicidad",
+    "final_status": "converted",
+    "total_steps": 2,
+    "total_days": 9,
+    "confidence_avg": 0.6006
+  },
+  {
+    "lead_id": "74eb21c4",
+    "company_name": "Iberia Services",
+    "company_sector": "Salud",
+    "final_status": "nurturing",
+    "total_steps": 4,
+    "total_days": 24,
+    "confidence_avg": 0.5706
+  },
+  {
+    "lead_id": "20456911",
+    "company_name": "Global Solutions",
+    "company_sector": "Salud",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.5093
+  },
+  {
+    "lead_id": "7d46aab2",
+    "company_name": "Euro Solutions",
+    "company_sector": "Química",
+    "final_status": "nurturing",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4541
+  },
+  {
+    "lead_id": "cf00ba06",
+    "company_name": "Digital Corp",
+    "company_sector": "Seguros",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.5838
+  },
+  {
+    "lead_id": "392cf04e",
+    "company_name": "Tech Corp",
+    "company_sector": "Construcción",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 13,
+    "confidence_avg": 0.5914
+  },
+  {
+    "lead_id": "0be02f00",
+    "company_name": "Digital Group",
+    "company_sector": "Salud",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.6318
+  },
+  {
+    "lead_id": "a4aa29e3",
+    "company_name": "Digital Solutions",
+    "company_sector": "Farmacéutica",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4843
+  },
+  {
+    "lead_id": "f37a8a50",
+    "company_name": "Euro Solutions",
+    "company_sector": "Distribución",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.3348
+  },
+  {
+    "lead_id": "9639d96d",
+    "company_name": "Tech Corp",
+    "company_sector": "Alimentación",
+    "final_status": "lost",
+    "total_steps": 1,
+    "total_days": 0,
+    "confidence_avg": 0.4426
+  },
+  {
+    "lead_id": "37536e00",
+    "company_name": "Euro Solutions",
+    "company_sector": "Consultoría IT",
+    "final_status": "nurturing",
+    "total_steps": 2,
+    "total_days": 14,
+    "confidence_avg": 0.552
+  }
+]

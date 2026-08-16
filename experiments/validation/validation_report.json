@@ -1,0 +1,188 @@
+{
+  "summary": {
+    "checks_passed": 2,
+    "checks_total": 5,
+    "all_passed": false
+  },
+  "checks": {
+    "class_distribution": {
+      "check_name": "class_distribution",
+      "passed": false,
+      "warnings": [
+        "Rare classes (< 5%): ['Escalar a manager del lead']",
+        "Class distribution is NOT uniform (chi2=239.9, p=0.0000). This is expected for a realistic CRM dataset."
+      ],
+      "errors": [],
+      "stats": {
+        "n_classes": 6,
+        "total_samples": 1072,
+        "counts": {
+          "Enviar documentación": 295,
+          "Agendar demo/reunión con especialista": 253,
+          "Cerrar lead - no interesado": 197,
+          "Aplazar lead": 149,
+          "Esperar confirmación cliente": 146,
+          "Escalar a manager del lead": 32
+        },
+        "percentages": {
+          "Enviar documentación": 27.52,
+          "Agendar demo/reunión con especialista": 23.6,
+          "Cerrar lead - no interesado": 18.38,
+          "Aplazar lead": 13.9,
+          "Esperar confirmación cliente": 13.62,
+          "Escalar a manager del lead": 2.99
+        },
+        "imbalance_ratio": 9.22,
+        "rare_classes": [
+          "Escalar a manager del lead"
+        ],
+        "chisquare_stat": 239.851,
+        "chisquare_pvalue": 0.0
+      }
+    },
+    "feature_correlations": {
+      "check_name": "feature_correlations",
+      "passed": true,
+      "warnings": [
+        "High correlation num_employees ↔ revenue (r=0.93). Expected artefact of synthetic data generation."
+      ],
+      "errors": [],
+      "stats": {
+        "numeric_features_used": [
+          "company_num_employees",
+          "company_annual_revenue_eur",
+          "call_number",
+          "days_since_entry",
+          "days_since_last_call"
+        ],
+        "correlation_matrix": {
+          "company_num_employees": {
+            "company_num_employees": 1.0,
+            "company_annual_revenue_eur": 0.9288,
+            "call_number": 0.0099,
+            "days_since_entry": -0.0544,
+            "days_since_last_call": -0.0522
+          },
+          "company_annual_revenue_eur": {
+            "company_num_employees": 0.9288,
+            "company_annual_revenue_eur": 1.0,
+            "call_number": 0.0184,
+            "days_since_entry": -0.0457,
+            "days_since_last_call": -0.0327
+          },
+          "call_number": {
+            "company_num_employees": 0.0099,
+            "company_annual_revenue_eur": 0.0184,
+            "call_number": 1.0,
+            "days_since_entry": 0.7711,
+            "days_since_last_call": 0.7457
+          },
+          "days_since_entry": {
+            "company_num_employees": -0.0544,
+            "company_annual_revenue_eur": -0.0457,
+            "call_number": 0.7711,
+            "days_since_entry": 1.0,
+            "days_since_last_call": 0.877
+          },
+          "days_since_last_call": {
+            "company_num_employees": -0.0522,
+            "company_annual_revenue_eur": -0.0327,
+            "call_number": 0.7457,
+            "days_since_entry": 0.877,
+            "days_since_last_call": 1.0
+          }
+        },
+        "kruskal_wallis": {
+          "feature": "company_num_employees",
+          "target": "next_step",
+          "stat": 16.556,
+          "pvalue": 0.005423,
+          "significant": true
+        }
+      }
+    },
+    "duplicates": {
+      "check_name": "duplicates",
+      "passed": false,
+      "warnings": [
+        "1 exact duplicate rows found (same company+contact+call_number)."
+      ],
+      "errors": [],
+      "stats": {
+        "exact_duplicates": 1,
+        "near_duplicate_transcripts": 0,
+        "total_rows": 1072,
+        "unique_transcripts": 1072
+      }
+    },
+    "temporal_coherence": {
+      "check_name": "temporal_coherence",
+      "passed": true,
+      "warnings": [],
+      "errors": [],
+      "stats": {
+        "n_inconsistencies": 0,
+        "coherence_rate": 1.0,
+        "inconsistency_examples": []
+      }
+    },
+    "artificial_patterns": {
+      "check_name": "artificial_patterns",
+      "passed": false,
+      "warnings": [
+        "Low variance in per-sector entropy (0.041). All sectors show very similar next_step distributions — possible dataset uniformity."
+      ],
+      "errors": [],
+      "stats": {
+        "sector_counts": {
+          "Tecnología": 75,
+          "Seguros": 69,
+          "Automoción": 61,
+          "Química": 60,
+          "Educación": 59,
+          "Distribución": 58,
+          "Logística": 54,
+          "Retail": 54,
+          "Turismo y Hostelería": 53,
+          "Manufactura": 52,
+          "Servicios Financieros": 50,
+          "Banca": 50,
+          "Telecomunicaciones": 50,
+          "Medios y Publicidad": 50,
+          "Construcción": 49,
+          "Farmacéutica": 48,
+          "Alimentación": 48,
+          "Consultoría IT": 46,
+          "Energía": 45,
+          "Salud": 41
+        },
+        "over_represented_sectors": [],
+        "sector_entropy": {
+          "Alimentación": 1.6196,
+          "Automoción": 1.5807,
+          "Banca": 1.6276,
+          "Construcción": 1.679,
+          "Consultoría IT": 1.6447,
+          "Distribución": 1.6281,
+          "Educación": 1.6569,
+          "Energía": 1.5863,
+          "Farmacéutica": 1.6396,
+          "Logística": 1.6781,
+          "Manufactura": 1.6515,
+          "Medios y Publicidad": 1.6287,
+          "Química": 1.5937,
+          "Retail": 1.6239,
+          "Salud": 1.5157,
+          "Seguros": 1.5639,
+          "Servicios Financieros": 1.6746,
+          "Tecnología": 1.6491,
+          "Telecomunicaciones": 1.6697,
+          "Turismo y Hostelería": 1.6375
+        },
+        "sector_entropy_std": 0.0408,
+        "pca_explained_variance": 0.2997,
+        "pca_computed": true
+      }
+    }
+  }
+}

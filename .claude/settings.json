@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 .venv/bin/python -m src.pipeline_demo --no-llm)",
+      "Bash(TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 .venv/bin/python -m pytest tests/test_integration.py -v)",
+      "Bash(TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 .venv/bin/python -m pytest tests/ -v)",
+      "Bash(TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 .venv/bin/python -c ' *)",
+      "Bash(.venv/bin/python -c ' *)",
+      "Bash(TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 .venv/bin/python -m src.experiment_tracker --rebuild)",
+      "Bash(command -v gh)",
+      "Bash(git -C /Users/juanleal/Desktop/Master/TFM/TFM-Asistente-leads-automatizar-CRM remote -v)"
+    ]
+  }
+}

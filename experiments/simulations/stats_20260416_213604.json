@@ -1,0 +1,15 @@
+{
+  "n_leads": 100,
+  "timestamp": "20260416_213604",
+  "max_steps": 10,
+  "status_distribution": {
+    "nurturing": 78,
+    "lost": 19,
+    "converted": 3
+  },
+  "avg_steps": 1.8,
+  "avg_days": 8.1,
+  "avg_confidence": 0.5162,
+  "conversion_rate": 0.03,
+  "loss_rate": 0.19
+}
