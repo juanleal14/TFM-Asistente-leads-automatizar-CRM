@@ -1,0 +1,1031 @@
+﻿interaction_id,lead_id,contact_name,contact_role,company_name,company_sector,company_country,company_city,company_num_employees,company_annual_revenue_eur,lead_source,lead_entry_date,initial_interest_notes,call_number,call_timestamp,days_since_entry,days_since_last_call,prev_outcome,prev_next_step,current_transcript,current_outcome,next_step,final_status
+853be5cb-c55,0bf062a6,Laura Romero,CEO,Digi Dynamics,Distribución,España,Valencia,88,20511000,Feria o evento,2025-12-14,"La empresa mostró interés en optimizar su movilidad corporativa, pero sin urgencia inmediata.",1,2025-12-18,4,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Laura, soy Marta Díaz de MoveUp. ¿Cómo estás?
+Contacto: Hola Marta, bien, gracias. ¿Y tú?
+Agente: Muy bien, gracias. Quería hablar sobre cómo MoveUp puede ayudar a Digi Dynamics a mejorar su movilidad corporativa. ¿Tienes algunos minutos?
+Contacto: Claro, dime.
+Agente: Nuestra plataforma permite gestionar viajes corporativos de manera más eficiente. ¿Cuántos viajes suelen realizar mensualmente?
+Contacto: Aproximadamente unos 150 viajes al mes.
+Agente: Excelente, eso es exactamente el tipo de volumen con el que trabajamos eficazmente. ¿Cuál sería tu principal preocupación a mejorar en este momento?
+Contacto: Principalmente, estamos buscando optimizar costos y mejorar la gestión de los viajes.
+Agente: Perfecto, podemos ofrecerte una solución personalizada que podría ayudarte con eso. ¿Te gustaría recibir más información por correo?
+Contacto: Sí, por favor. Quisiéramos comparar opciones antes de tomar una decisión.
+Agente: Claro, te enviaré toda la documentación necesaria. ¿Podemos agendar una demo para que veas cómo funciona nuestra plataforma en acción?
+Contacto: De momento prefiero revisar la información primero. Luego podemos ver lo de la demo.
+Agente: Entiendo. Entonces te enviaré los detalles y quedo a la espera de tus comentarios.
+Contacto: Perfecto, muchas gracias.
+Agente: A ti, Laura. Hablamos pronto.",Laura mostró interés pero quiere revisar la documentación antes de proceder con una demo.,Enviar documentación,Nurturing
+a5486c4f-485,0bf062a6,Laura Romero,CEO,Digi Dynamics,Distribución,España,Valencia,88,20511000,Feria o evento,2025-12-14,"La empresa mostró interés en optimizar su movilidad corporativa, pero sin urgencia inmediata.",2,2025-12-21,7,3,Laura mostró interés pero quiere revisar la documentación antes de proceder con una demo.,Enviar documentación,"Agente: Hola Laura, soy Marta Díaz de nuevo. Espero que hayas tenido tiempo de revisar la información que te envié.
+Contacto: Hola Marta. Sí, revisamos los documentos.
+Agente: Genial. ¿Te parece que podría encajar con lo que estáis buscando?
+Contacto: Sí, aunque todavía tenemos que discutirlo internamente y esperar la aprobación del presupuesto.
+Agente: Comprendo, eso es importante. ¿Cuánto tiempo crees que tomarán esas discusiones?
+Contacto: Tal vez unas dos semanas. No hay urgencia inmediata, pero estamos interesados.
+Agente: Entiendo, entonces lo mejor será que recontacte contigo después de ese tiempo. ¿Te parece bien?
+Contacto: Sí, eso suena bien. Así podremos darte una respuesta más clara.
+Agente: Perfecto, entonces estaré en contacto en unas semanas para ver cómo van las cosas. Gracias por tu tiempo, Laura.
+Contacto: Gracias a ti, Marta. Hablamos pronto.",Laura y su equipo necesitan más tiempo para discutir y obtener la aprobación del presupuesto.,Cerrar lead - nurturing,Nurturing
+02195fe0-824,30e98883,Rafael Ruiz,Head of Procurement,Corp Consulting,Distribución,España,Bilbao,118,18818000,Inbound / Blog,2025-12-19,"Rafael mostró interés inicial en optimizar los gastos de transporte corporativo, habiendo leído sobre eficiencias de costes en nuestro blog.",1,2025-12-20,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Rafael. Soy Ana Ruiz de MoveUp. ¿Cómo estás?
+Contacto: Hola, Ana. Estoy bien, gracias. ¿En qué puedo ayudarte?
+Agente: Quería hablar sobre cómo MoveUp puede ayudar a optimizar vuestros gastos de movilidad corporativa. Vi que habías mostrado interés en nuestro blog.
+Contacto: Sí, lo leí. Pero actualmente ya trabajamos con un proveedor y, sinceramente, no estamos buscando cambiar.
+Agente: Entiendo, pero nuestra plataforma puede ofrecerte una gestión más eficiente y con costes potencialmente menores. ¿Cuál es vuestro volumen de viajes actuales?
+Contacto: No tengo la cifra exacta ahora mismo, pero no estamos insatisfechos con el servicio actual.
+Agente: Claro, a veces un cambio puede resultar beneficioso. ¿Hay alguna preocupación específica que te impida considerar una nueva opción?
+Contacto: Principalmente el presupuesto. Este año no tenemos espacio para cambios importantes y hay una reorganización interna en marcha.
+Agente: Comprendo. Quizás podríamos agendar una reunión con nuestro especialista, Tomás Iglesias, para explorar si alguna de nuestras soluciones se ajusta a vuestras restricciones presupuestarias.
+Contacto: Aprecio la oferta, pero sinceramente dudo que sea viable ahora mismo.
+Agente: Está bien, Rafael. Si en el futuro decides explorar esta posibilidad, estaré aquí para ayudarte. Muchas gracias por tu tiempo.
+Contacto: Gracias, Ana. Que tengas un buen día.",Rafael expresó que actualmente no buscan cambiar de proveedor debido a limitaciones presupuestarias y una reorganización interna.,Cerrar lead - no interesado,Lost
+c62d13b7-7b8,3b028bab,María Moreno,Director de Compras,Grupo Group,Consultoría IT,España,Palma,7983,506623000,Inbound / Blog,2026-03-15,María mostró un fuerte interés en optimizar los costes de movilidad debido al alto volumen de desplazamientos de sus empleados.,1,2026-03-21,6,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola María, soy Pablo Fernández de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Pablo, muy bien, gracias. Estuve revisando su blog y creo que su solución podría ser justo lo que necesitamos.
+Agente: Me alegra escuchar eso. Entiendo que en Grupo Group están experimentando un crecimiento significativo y un alto volumen de desplazamientos, ¿correcto?
+Contacto: Exactamente, y eso ha incrementado nuestros costes de movilidad. Necesitamos una solución eficiente y rápida.
+Agente: Definitivamente podemos ayudar con eso. ¿Hay alguna preocupación específica que tengan sobre la implementación de nuestra plataforma?
+Contacto: Nuestra principal preocupación es la adaptación rápida del personal y asegurar que el coste se mantenga bajo control.
+Agente: Claro, nuestra solución es fácil de usar y hemos tenido éxito en la incorporación rápida. Además, podemos trabajar con ustedes para establecer un presupuesto controlado.
+Contacto: Eso suena bien. ¿Podríamos ver una demostración para entender mejor cómo funcionaría en nuestra empresa?
+Agente: Por supuesto, puedo agendar una reunión con nuestro especialista, Roberto Sánchez, para una demo detallada.
+Contacto: Perfecto, ¿qué tal el próximo jueves?
+Agente: El próximo jueves funciona bien. Agendaré la demo con Roberto y les enviaré la confirmación.
+Contacto: Genial, quedo a la espera de la confirmación. Gracias, Pablo.
+Agente: No hay de qué, María. Hablamos pronto.",La llamada fue positiva y María mostró interés en agendar una demostración para evaluar la solución de MoveUp.,Agendar demo/reunión con especialista,Converted
+d104176c-8b5,e3594cfc,Sofía Jiménez,Gerente de Administración,Pro Partners,Servicios Financieros,España,Valladolid,528,116075000,Formulario web,2025-11-01,La empresa mostró un alto interés debido a su crecimiento y la necesidad urgente de gestionar mejor sus costes de movilidad.,1,2025-11-03,2,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Sofía, soy Ana Ruiz de MoveUp. Gracias por contactarnos a través de nuestro formulario web. ¿Podrías contarme un poco más sobre tus necesidades actuales de movilidad corporativa?
+Contacto: Hola Ana, claro. En Pro Partners estamos creciendo rápidamente y nuestros empleados realizan numerosos desplazamientos a diario. Queremos reducir los costes y mejorar la eficiencia.
+Agente: Entiendo perfectamente. Nuestra plataforma está diseñada para ofrecer soluciones personalizadas que pueden ayudar a reducir significativamente los gastos de movilidad.
+Contacto: Eso suena interesante. Actualmente estamos gastando mucho y necesitamos una solución eficaz lo antes posible.
+Agente: Perfecto, puedo coordinar una reunión con nuestro especialista en movilidad, Roberto Sánchez, para explorar cómo podemos ayudarte.
+Contacto: Me parece bien. ¿Cuándo podría ser?
+Agente: ¿Qué tal si lo agendamos para esta misma semana?
+Contacto: Sí, esta semana estaría bien.
+Agente: Genial, coordinaré los detalles y te enviaré una invitación.
+Contacto: Perfecto, espero la invitación. Gracias, Ana.",Sofía expresó una alta necesidad de soluciones de movilidad y se acordó agendar una reunión con el especialista.,Agendar demo/reunión con especialista,Converted
+cc67d08c-b7d,e3594cfc,Sofía Jiménez,Gerente de Administración,Pro Partners,Servicios Financieros,España,Valladolid,528,116075000,Formulario web,2025-11-01,La empresa mostró un alto interés debido a su crecimiento y la necesidad urgente de gestionar mejor sus costes de movilidad.,2,2025-11-06,5,3,Sofía expresó una alta necesidad de soluciones de movilidad y se acordó agendar una reunión con el especialista.,Agendar demo/reunión con especialista,"Agente: Hola Sofía, soy Ana de nuevo. ¿Cómo estás?
+Contacto: Hola Ana, estoy bien, gracias. Ayer revisé la propuesta enviada por correo.
+Agente: Excelente. ¿Tienes alguna pregunta o inquietud sobre los detalles?
+Contacto: Me gustaría saber más sobre cómo podríamos optimizar el presupuesto actual.
+Agente: Claro, Roberto puede explicar en detalle cómo adaptamos nuestras tarifas a tu uso específico. Además, él puede sugerir estrategias para maximizar tu presupuesto.
+Contacto: Eso sería muy útil. Nos urge encontrar una solución pronto.
+Agente: Perfecto, entonces ¿cuándo podrías tener una sesión con Roberto?
+Contacto: Podría ser el viernes a primera hora.
+Agente: Excelente, agendaré la reunión y confirmaré contigo.
+Contacto: Perfecto, gracias, Ana.",Se confirmó una reunión con el especialista para atender dudas específicas sobre optimización del presupuesto.,Escalar a manager del lead,Converted
+6bd704c2-c87,e3594cfc,Sofía Jiménez,Gerente de Administración,Pro Partners,Servicios Financieros,España,Valladolid,528,116075000,Formulario web,2025-11-01,La empresa mostró un alto interés debido a su crecimiento y la necesidad urgente de gestionar mejor sus costes de movilidad.,3,2025-11-08,7,2,Se confirmó una reunión con el especialista para atender dudas específicas sobre optimización del presupuesto.,Escalar a manager del lead,"Agente: Hola Sofía, soy Ana. Quería saber cómo resultó la reunión con Roberto.
+Contacto: Hola Ana, la reunión fue excelente. Roberto explicó muy bien cómo podemos reducir costes y ya queremos proceder con el contrato.
+Agente: ¡Genial! Me alegra mucho escuchar eso. ¿Te gustaría que preparemos la documentación de inmediato?
+Contacto: Sí, por favor. Queremos implementar esto cuanto antes.
+Agente: Perfecto, procederé con la preparación del contrato y te lo enviaré para su revisión final.
+Contacto: Muchas gracias, Ana. Esperamos poder comenzar pronto.
+Agente: Gracias a ti, Sofía. Estaremos en contacto para cerrar todo.
+Contacto: Muy bien, hablamos pronto.",Sofía confirmó que desean proceder con el contrato y se decidió enviar la documentación para cerrar el acuerdo.,Esperar confirmación cliente,Converted
+bf509217-b6d,a0f97b65,María Navarro,Jefe de Proyectos,Euro Services,Educación,España,Palma,23,5505000,Inbound / Blog,2025-12-02,La empresa está interesada en optimizar sus costes de movilidad debido al alto volumen de desplazamientos.,1,2025-12-04,2,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, María. Soy Diego López de MoveUp. ¿Cómo estás?
+Contacto: Hola, Diego. Estoy bien, gracias. Estoy muy interesada en charlar sobre cómo podemos mejorar nuestros costes de movilidad.
+Agente: Perfecto. Veo que Euro Services tiene un volumen alto de desplazamientos. ¿Nos puedes contar más sobre eso?
+Contacto: Claro, tenemos un equipo de 23 empleados que se desplaza frecuentemente, y estamos buscando optimizar esos costes.
+Agente: Entiendo. Nuestro servicio está diseñado precisamente para eso. ¿Hay algún aspecto específico en el que necesitas apoyo urgente?
+Contacto: Principalmente en la transparencia de tarifas y la rapidez en la disponibilidad de los conductores.
+Agente: Podemos ofrecer tarifas fijas y un servicio de prioridad en la asignación de conductores corporativos. ¿Te gustaría una demostración de cómo funciona?
+Contacto: Sí, definitivamente. Necesitamos implementar una solución pronto.
+Agente: Excelente, voy a coordinar para que Roberto Sánchez, nuestro especialista, te muestre cómo funciona todo.
+Contacto: Perfecto, Diego. Quedo pendiente de la reunión.
+Agente: Gracias, María. Coordinaré para que sea lo antes posible. ¿Te parece bien la próxima semana?
+Contacto: Sí, cuanto antes mejor. Así podemos tomar una decisión rápidamente.
+Agente: De acuerdo, te enviaré la invitación para la demo. Muchas gracias por tu tiempo, María.
+Contacto: Gracias a ti, Diego. Hasta pronto.",Se acordó agendar una demo para mostrar cómo MoveUp puede ayudarles a optimizar costes de movilidad.,Agendar demo/reunión con especialista,Converted
+3da7facf-bfc,c94b6592,Patricia Ruiz,Gerente de Administración,Corp Systems,Química,Argentina,Buenos Aires,39,10802000,Feria o evento,2025-11-18,Patricia mostró un interés inmediato en MoveUp debido al crecimiento de la empresa y la necesidad de gestionar mejor los costes de movilidad.,1,2025-11-23,5,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Patricia, ¿cómo estás? Soy Laura Gómez de MoveUp. Nos conocimos en la feria la semana pasada.
+Contacto: Hola Laura, muy bien, gracias. Sí, te recuerdo. Estábamos muy interesados en vuestro servicio.
+Agente: Genial, quería saber más sobre vuestras necesidades de movilidad. ¿Cuántos desplazamientos realizan al mes?
+Contacto: Últimamente, hemos tenido un alto volumen, alrededor de 150-200 desplazamientos mensuales.
+Agente: Entiendo. ¿Tenéis algún problema específico que queráis resolver con nuestro servicio?
+Contacto: Sí, estamos buscando reducir los costes y mejorar el control de los gastos de movilidad.
+Agente: Perfecto, MoveUp puede ayudar con eso. ¿Cuál es vuestro presupuesto aproximado para estos servicios?
+Contacto: Nos gustaría mantenernos dentro de un rango adecuado, pero estamos abiertos a propuestas que optimicen nuestro gasto.
+Agente: Excelente, podemos trabajar en eso. ¿Te parece bien si te envío documentación detallada sobre nuestras tarifas y servicios?
+Contacto: Sí, por favor, eso me vendría muy bien.
+Agente: Perfecto, te la envío enseguida.
+Contacto: Muchas gracias, estaré atenta.
+Agente: Gracias a ti, Patricia. Un placer hablar contigo.",Laura introdujo a Patricia en los servicios de MoveUp y acordaron enviar documentación detallada sobre tarifas y servicios.,Enviar documentación,Converted
+cc698953-513,c94b6592,Patricia Ruiz,Gerente de Administración,Corp Systems,Química,Argentina,Buenos Aires,39,10802000,Feria o evento,2025-11-18,Patricia mostró un interés inmediato en MoveUp debido al crecimiento de la empresa y la necesidad de gestionar mejor los costes de movilidad.,2,2025-11-28,10,5,Laura introdujo a Patricia en los servicios de MoveUp y acordaron enviar documentación detallada sobre tarifas y servicios.,Enviar documentación,"Agente: Hola Patricia, ¿cómo estás? Soy Laura de nuevo, ¿recibiste la documentación que te envié?
+Contacto: Hola Laura, sí la revisé. Me parece muy interesante y creo que podría ajustarse a lo que buscamos.
+Agente: Me alegra escuchar eso. ¿Te gustaría que organizáramos una demo para mostrarte nuestro sistema en acción?
+Contacto: Sí, lo agradecería mucho. Estoy interesada en ver cómo podríamos aplicarlo en Corp Systems.
+Agente: ¿Te parece bien si organizamos una demo con nuestro especialista, Roberto Sánchez? Él podrá resolver cualquier duda técnica que tengas.
+Contacto: Claro, la próxima semana el miércoles me vendría bien.
+Agente: Perfecto, agendaré la reunión para el miércoles. Te enviaré una invitación con los detalles.
+Contacto: Muchas gracias, Laura. Espero la reunión con interés.
+Agente: De nada, Patricia. Nos vemos pronto.",Patricia revisó la documentación y mostró interés en una demo. Se agendó una reunión con el especialista.,Agendar demo/reunión con especialista,Converted
+0082849b-4cd,c94b6592,Patricia Ruiz,Gerente de Administración,Corp Systems,Química,Argentina,Buenos Aires,39,10802000,Feria o evento,2025-11-18,Patricia mostró un interés inmediato en MoveUp debido al crecimiento de la empresa y la necesidad de gestionar mejor los costes de movilidad.,3,2025-12-05,17,7,Patricia revisó la documentación y mostró interés en una demo. Se agendó una reunión con el especialista.,Agendar demo/reunión con especialista,"Agente: Hola Patricia, ¿cómo estás? Laura aquí. ¿Cómo te fue con la demo?
+Contacto: Hola Laura, la demo fue muy esclarecedora. Roberto explicó todo de manera excelente.
+Agente: Me alegra oír eso. ¿Crees que MoveUp podría ser útil para Corp Systems?
+Contacto: Definitivamente. Nos interesa mucho avanzar y firmar el contrato lo antes posible. Tenemos bastante urgencia.
+Agente: Perfecto, ¿necesitáis alguna documentación adicional o aclaración antes de proceder?
+Contacto: No, creo que todo está claro. Solo necesitamos confirmar los términos finales.
+Agente: Excelente. Prepararé el contrato y te lo enviaré para revisión final.
+Contacto: Muy bien, estaré esperando para dar el visto bueno.
+Agente: Gracias, Patricia. Enviaremos todo en breve. Ha sido un placer trabajar contigo.
+Contacto: Igualmente, Laura. Esperaré el contrato para confirmar.
+Agente: Genial, hablaremos pronto.",La demo fue satisfactoria y Patricia expresó su interés en cerrar el contrato rápidamente.,Esperar confirmación cliente,Converted
+8ce93435-da2,384589cb,Marta Romero,Director Comercial,Omega Consulting,Farmacéutica,España,Córdoba,24,2955000,Llamada en frío,2026-01-26,Marta mostró interés inicial en entender cómo nuestro servicio podría optimizar el transporte corporativo.,1,2026-01-30,4,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Marta, ¿cómo estás? Soy Ana Ruiz de MoveUp. Quería hablarte sobre cómo podríamos mejorar la movilidad de tu equipo en Omega Consulting.
+Contacto: Hola Ana, gracias por llamar. Tenemos un proveedor actual y no estamos buscando cambios.
+Agente: Entiendo, pero me gustaría saber si están satisfechos con el servicio y las tarifas actuales. Tenemos opciones muy competitivas.
+Contacto: Bueno, la verdad es que tenemos un presupuesto bastante ajustado este año y no creo que podamos comprometernos con un nuevo gasto.
+Agente: Comprendo, pero ¿sabías que podríamos reducir sus costes actuales de transporte? Podríamos analizar juntos sus necesidades.
+Contacto: Apuntamos a mantener nuestros gastos bajo control, y en este momento no estamos en posición de cambiar de proveedor.
+Agente: Entiendo la situación. ¿Crees que podríamos agendar una demo para mostrarte cómo podría funcionar para ustedes?
+Contacto: Sinceramente, no creo que sea posible en este momento, estamos pasando por una reorganización interna.
+Agente: Perfecto, Marta. En ese caso, lo dejamos por aquí. Si la situación cambia, estaré encantada de ayudar.
+Contacto: De acuerdo, gracias por entender.
+Agente: Gracias a ti por tu tiempo, Marta. Cualquier cosa, estaré a tu disposición.
+Contacto: Gracias, Ana.","Marta expresó que actualmente están satisfechos con su proveedor, tienen un presupuesto ajustado y están en reorganización interna. No se mostró interés en cambiar de proveedor.",Cerrar lead - no interesado,Lost
+33fa0343-b27,41147f62,Rafael Ruiz,CEO,Max Consulting,Construcción,Argentina,Buenos Aires,84,16264000,LinkedIn,2026-03-02,Rafael Ruiz mostró un alto interés en MoveUp debido a la necesidad de optimizar los costes de movilidad de su empresa.,1,2026-03-07,5,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Rafael, soy Laura Gómez de MoveUp. ¿Cómo estás?
+Contacto: Hola Laura, muy bien, gracias. Hemos estado viendo su servicio en LinkedIn y nos parece interesante.
+Agente: ¡Qué bien! Cuéntame, ¿cómo están manejando actualmente los desplazamientos corporativos?
+Contacto: Usamos una combinación de taxis y transporte privado, pero está resultando costoso.
+Agente: Entiendo, MoveUp puede ayudar a reducir esos costes con un sistema de gestión eficiente.
+Contacto: Eso es justamente lo que buscamos. Además, estamos en pleno crecimiento y aumentará el volumen de viajes.
+Agente: Perfecto, Rafael. Me gustaría agendar una reunión con nuestra especialista para analizar más detalles.
+Contacto: Claro, me parece bien.
+Agente: Genial, voy a coordinarlo con Elena Navarro para que puedan revisar juntos un plan personalizado.
+Contacto: Perfecto, quedo atento.
+Agente: Muy bien, Rafael. Te contacto pronto para fijar la fecha.
+Contacto: Muchas gracias, Laura.",El contacto mostró interés en optimizar la movilidad y acordaron una reunión con el especialista.,Agendar demo/reunión con especialista,Converted
+85229d69-4f8,41147f62,Rafael Ruiz,CEO,Max Consulting,Construcción,Argentina,Buenos Aires,84,16264000,LinkedIn,2026-03-02,Rafael Ruiz mostró un alto interés en MoveUp debido a la necesidad de optimizar los costes de movilidad de su empresa.,2,2026-03-10,8,3,El contacto mostró interés en optimizar la movilidad y acordaron una reunión con el especialista.,Agendar demo/reunión con especialista,"Agente: Hola Rafael, soy Laura nuevamente, ¿cómo estás?
+Contacto: Hola Laura, todo bien, gracias por preguntar.
+Agente: Perfecto. Quería confirmar que hemos agendado la reunión con Elena para el jueves a las 10 a.m.
+Contacto: Excelente, justo a tiempo, ya que necesitamos implementar algo pronto.
+Agente: Entiendo la urgencia, nuestro sistema es muy flexible y rápido de implementar.
+Contacto: Eso sería ideal, especialmente con el volumen de viajes que manejamos.
+Agente: Además, ayuda a controlar los gastos y mejorar la planificación.
+Contacto: Es exactamente lo que necesitamos para seguir creciendo sin problemas.
+Agente: Entonces, confirmamos la reunión para el jueves. Elena abordará todas sus preguntas.
+Contacto: Perfecto, estaremos listos para esa fecha.
+Agente: Nos vemos entonces, Rafael.
+Contacto: Gracias, Laura.",Se confirmó la reunión con la especialista para discutir la implementación urgente.,Esperar confirmación cliente,Converted
+1c7d256f-118,41147f62,Rafael Ruiz,CEO,Max Consulting,Construcción,Argentina,Buenos Aires,84,16264000,LinkedIn,2026-03-02,Rafael Ruiz mostró un alto interés en MoveUp debido a la necesidad de optimizar los costes de movilidad de su empresa.,3,2026-03-12,10,2,Se confirmó la reunión con la especialista para discutir la implementación urgente.,Esperar confirmación cliente,"Agente: Hola Rafael, ¿cómo te fue en la reunión con Elena?
+Contacto: Hola Laura, fue excelente. Elena nos aclaró todas las dudas y el plan nos convence.
+Agente: ¡Qué buena noticia! ¿Crees que están listos para proceder?
+Contacto: Sí, exactamente lo que necesitamos para mejorar nuestros desplazamientos.
+Agente: Fantástico. Entonces, sólo necesitamos la firma de confirmación para iniciar.
+Contacto: Ya lo tenemos todo listo, te enviaremos la confirmación hoy mismo.
+Agente: Perfecto, empezaremos con la configuración tan pronto recibamos el documento.
+Contacto: Suena bien, gracias por todo el apoyo.
+Agente: A ti, Rafael. Seguiremos en contacto para cualquier cosa adicional.
+Contacto: Claro, muchas gracias, Laura.
+Agente: Gracias a ti.","El cliente confirmó que procederá con el cambio a MoveUp, mostrando alto interés y urgencia.",Esperar confirmación cliente,Converted
+caf67424-07f,1ca8d87c,Rafael González,Director General,Tech Services,Distribución,España,Barcelona,923,96119000,Google Ads,2026-02-16,"La empresa mostró un gran interés en MoveUp debido al crecimiento y el alto volumen de desplazamientos, buscando una solución urgente para los costos de movilidad.",1,2026-02-22,6,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, ¿es el señor Rafael González?
+Contacto: Sí, él habla. ¿Con quién tengo el gusto?
+Agente: Soy Sofía Moreno de MoveUp. Me alegra hablar con usted. Su empresa está interesada en nuestros servicios de movilidad, ¿correcto?
+Contacto: Exactamente, estamos buscando optimizar nuestros costes de movilidad, ya que hemos tenido un crecimiento sustancial recientemente.
+Agente: ¡Eso es fantástico! MoveUp puede ayudar a manejar un alto volumen de desplazamientos de manera eficiente. ¿Cuántos viajes suelen tener al mes?
+Contacto: Aproximadamente unos 500, y esperamos que ese número crezca.
+Agente: Perfecto, nuestro sistema puede ser muy beneficioso para ahorrar tiempo y costes con ese volumen. ¿Cómo de urgente es para ustedes encontrar una solución?
+Contacto: Muy urgente, realmente nos gustaría implementar algo en el próximo mes como máximo.
+Agente: Entiendo. Podríamos agendar una demostración de nuestro servicio con nuestro especialista, Roberto Sánchez, para esta misma semana. ¿Le parece bien?
+Contacto: Sí, me gustaría mucho ver cómo funciona todo. Estoy libre este jueves por la tarde.
+Agente: Excelente. ¿Podemos entonces agendar la demo para el jueves a las 4 PM?
+Contacto: Perfecto, ahí estaré.
+Agente: Genial, le enviaré una confirmación de la reunión por correo electrónico. Muchas gracias, Rafael.
+Contacto: Gracias a usted, Sofía. Nos vemos el jueves.",Se acordó una demostración con el especialista para mostrar el sistema y sus beneficios.,Agendar demo/reunión con especialista,Converted
+d3e4aba7-404,fc3d30ea,Isabel Jiménez,Jefe de Proyectos,Prime Networks,Servicios Financieros,España,Córdoba,3067,472013000,Inbound / Blog,2026-03-20,Inicialmente interesada en explorar opciones de movilidad para reducir costos y mejorar la eficiencia en los desplazamientos corporativos.,1,2026-03-24,4,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Isabel, soy Ana Ruiz de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Ana, estoy bien, gracias. Cuéntame, ¿en qué puedo ayudarte?
+Agente: Nos gustaría presentarte nuestro servicio de movilidad corporativa. Hemos visto que Prime Networks busca mejorar la gestión de sus viajes. Ofrecemos una solución que podría ayudar a reducir costos.
+Contacto: Sí, hemos estado mirando opciones, pero la verdad es que ya trabajamos con otro proveedor y nos sentimos cómodos por ahora.
+Agente: Entiendo. ¿Tienen algún problema específico con su proveedor actual que les gustaría solucionar?
+Contacto: No realmente, pero siempre estamos abiertos a escuchar nuevas propuestas. Sin embargo, este año nuestro presupuesto es bastante ajustado.
+Agente: Claro, sabemos que el presupuesto es un factor importante. ¿Puedo preguntar cuántos viajes realizan aproximadamente al mes para ver si podemos ofrecerles una propuesta competitiva?
+Contacto: Aproximadamente unos 500, pero como te digo, estamos muy limitados económicamente ahora mismo.
+Agente: Comprendo. Creemos que podemos ofrecer un ahorro significativo, ¿te gustaría que te enviara más información detallada sobre nuestros paquetes?
+Contacto: Por ahora, preferiría no complicarnos más. Estamos en medio de una reorganización interna y no es el mejor momento.
+Agente: Entiendo, Isabel. No quiero ocupar más de tu tiempo. ¿Te parece bien si te contacto más adelante cuando la situación interna esté más estable?
+Contacto: Me parece bien, pero no te prometo que cambie mucho la situación.
+Agente: Gracias por tu tiempo. Hablaremos cuando sea más conveniente.
+Contacto: De acuerdo, gracias Ana.",Isabel mostró poco interés debido a un presupuesto ajustado y una reorganización interna. No está interesada en cambiar de proveedor actualmente.,Cerrar lead - no interesado,Lost
+50d69990-1b9,77220f5b,Alejandro López,Gerente de Administración,Pro Dynamics,Servicios Financieros,Colombia,Bogotá,669,187441000,Referencia de cliente,2026-03-17,"Pro Dynamics mostró interés inicial debido a una referencia de cliente, pero tienen preocupaciones sobre el presupuesto y ya cuentan con otro proveedor.",1,2026-03-18,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Alejandro, soy Marta Díaz de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Marta, bien, gracias. ¿En qué puedo ayudarte?
+Agente: Quería hablar sobre cómo MoveUp podría optimizar la movilidad corporativa en Pro Dynamics. Entiendo que un cliente nuestro los refirió.
+Contacto: Sí, nos hablaron de ustedes, pero actualmente ya trabajamos con otro proveedor.
+Agente: Lo entiendo. Nuestro servicio puede ofrecer tarifas competitivas y una mejor experiencia. ¿Cuál es su volumen mensual de viajes?
+Contacto: Estamos hablando de unos 200 viajes al mes.
+Agente: Con ese volumen, podríamos ofrecer un paquete atractivo. ¿Tienen algún problema específico con su proveedor actual?
+Contacto: No realmente, pero siempre estamos abiertos a escuchar.
+Agente: Perfecto, puedo enviar más información detallada sobre nuestros servicios y tarifas. ¿Te parece bien?
+Contacto: Claro, envíame lo que tengas.
+Agente: Genial, te lo mando hoy mismo. Hablamos pronto.
+Contacto: Bien, estaré pendiente.","Alejandro mostró cierto interés en recibir información adicional, aunque mencionó que ya tienen un proveedor.",Enviar documentación,Lost
+16c6fa18-782,77220f5b,Alejandro López,Gerente de Administración,Pro Dynamics,Servicios Financieros,Colombia,Bogotá,669,187441000,Referencia de cliente,2026-03-17,"Pro Dynamics mostró interés inicial debido a una referencia de cliente, pero tienen preocupaciones sobre el presupuesto y ya cuentan con otro proveedor.",2,2026-03-25,8,7,"Alejandro mostró cierto interés en recibir información adicional, aunque mencionó que ya tienen un proveedor.",Enviar documentación,"Agente: Hola Alejandro, soy Marta de nuevo. Quería confirmarte que envié la información la semana pasada. ¿Pudiste revisarla?
+Contacto: Hola Marta, sí, la revisé. Parece interesante, pero como te comenté, estamos satisfechos con nuestro proveedor actual.
+Agente: Entiendo, Alejandro. ¿Te preocupa el presupuesto? Podemos ajustar nuestras ofertas.
+Contacto: Sí, eso es un factor, especialmente con el presupuesto ajustado para este año.
+Agente: Comprendo. Si te parece, podemos agendar una reunión con nuestra especialista, Elena Navarro, para ver opciones más personalizadas.
+Contacto: Podría ser, pero tengo mucha carga de trabajo ahora mismo.
+Agente: Claro, te entiendo. ¿Quieres que lo dejemos para más adelante?
+Contacto: Sí, por favor, recontacta en unas semanas.
+Agente: De acuerdo, así lo haré.",Alejandro mostró interés pero no pudo comprometerse a una reunión debido a la carga de trabajo y el presupuesto limitado.,Recontactar en X días,Lost
+ca6b83c7-7e5,77220f5b,Alejandro López,Gerente de Administración,Pro Dynamics,Servicios Financieros,Colombia,Bogotá,669,187441000,Referencia de cliente,2026-03-17,"Pro Dynamics mostró interés inicial debido a una referencia de cliente, pero tienen preocupaciones sobre el presupuesto y ya cuentan con otro proveedor.",3,2026-04-08,22,14,Alejandro mostró interés pero no pudo comprometerse a una reunión debido a la carga de trabajo y el presupuesto limitado.,Recontactar en X días,"Agente: Hola Alejandro, soy Marta. Quería hacer seguimiento al interés anterior y ver si ahora es un buen momento para reevaluar nuestra propuesta.
+Contacto: Hola Marta, aprecio el seguimiento, pero estamos en medio de una reorganización interna que nos impide tomar decisiones de cambio ahora.
+Agente: Lo entiendo, Alejandro. La situación a veces es complicada. ¿Te gustaría que mantuviéramos contacto para el futuro cuando las cosas se estabilicen?
+Contacto: Honestamente, en este momento no buscamos cambiar de proveedor.
+Agente: Entiendo perfectamente. Gracias por tu tiempo y si en el futuro las cosas cambian, estamos aquí para ayudarte.
+Contacto: Gracias, Marta. Lo tomaré en cuenta.
+Agente: De acuerdo, cerraré nuestro lead por ahora. Espero que todo vaya bien con la reorganización.
+Contacto: Gracias. Que tengas un buen día.","Alejandro confirmó que no están interesados en cambiar de proveedor debido a una reorganización interna, cerrando el lead como no interesado.",Cerrar lead - no interesado,Lost
+b27c4af1-9cd,6884d1be,Miguel López,Responsable de Flota,Iberia Logistics,Farmacéutica,España,Málaga,200,17838000,Formulario web,2026-02-05,Miguel mostró interés inicial en conocer las opciones de movilidad para su flota corporativa.,1,2026-02-12,7,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Miguel. Soy Carlos Martínez de MoveUp. ¿Cómo estás?
+Contacto: Hola, Carlos. Bien, gracias. Estaba esperando tu llamada.
+Agente: Perfecto. Quería saber cómo podemos ayudar a Iberia Logistics con sus necesidades de movilidad.
+Contacto: Estamos considerando opciones para mejorar la eficiencia de nuestra flota. Ahora mismo tenemos 200 empleados y queremos algo que sea escalable.
+Agente: Entiendo. MoveUp podría ofrecer una solución muy flexible para vosotros. ¿Tienes idea del volumen de viajes que manejáis al mes?
+Contacto: Aproximadamente unos 150 a 200 viajes mensuales, pero queremos ver si podemos reducir costes o mejorar la logística.
+Agente: Claro, eso suena manejable. Puedo enviaros un análisis de costes comparativo. ¿Qué tal os va el presupuesto para este tipo de servicios?
+Contacto: Bueno, actualmente estamos revisando varios proveedores, pero necesitamos más información antes de movernos.
+Agente: Comprendo. Puedo también coordinar una reunión con nuestra especialista, Cristina Vera, para que os explique cómo podríamos optimizar vuestra flota.
+Contacto: Eso suena bien, pero por ahora estamos en una fase de evaluación y no tenemos urgencia.
+Agente: Perfecto, Miguel. Entonces, para seguir adelante, ¿te parece si te envío algunos documentos detallando nuestros servicios?
+Contacto: Sí, eso sería útil. Los revisaremos internamente.
+Agente: Estupendo. Te los enviaré hoy mismo. Quedamos en contacto.
+Contacto: Perfecto, Carlos. Muchas gracias por la información.",Miguel está evaluando opciones y ha solicitado documentación para más detalles.,Cerrar lead - nurturing,Nurturing
+98072d72-868,a9f7572a,Patricia Pérez,Responsable de Flota,Digi Group,Logística,España,Córdoba,44,8411000,Referencia de cliente,2026-03-22,"Patricia, como responsable de flota, mostró un alto interés en optimizar los costes de movilidad debido a un crecimiento reciente en el volumen de desplazamientos de la empresa.",1,2026-03-28,6,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Patricia, ¿cómo estás? Soy Sofía Moreno de MoveUp, ¿te va bien si hablamos unos minutos?
+Contacto: Hola Sofía, sí, perfecto. Justo estaba revisando nuestro presupuesto de movilidad.
+Agente: Genial. Me comentaron que están experimentando un crecimiento en los desplazamientos corporativos, ¿es así?
+Contacto: Así es, hemos aumentado alrededor de un 20% este trimestre y necesitamos optimizar estos gastos urgentemente.
+Agente: Entiendo. Nuestro servicio puede ayudarles a reducir costes significativamente. ¿Cómo gestionan actualmente los viajes?
+Contacto: Usamos taxis locales y algunas veces alquilamos coches, pero los costos se han disparado.
+Agente: Claro, nuestra plataforma ofrece una solución más eficiente. También pueden obtener reportes detallados de cada viaje para un mejor control.
+Contacto: Eso suena muy bien. Estamos buscando precisamente más control y eficiencia.
+Agente: Perfecto. Puedo agendar una reunión con nuestro especialista, Tomás Iglesias, para que explique en detalle cómo podemos ayudarles.
+Contacto: Sí, me gustaría conocer más a fondo. ¿Cuándo podríamos tener esa reunión?
+Agente: Tomás tiene disponibilidad esta semana, ¿te parece bien el jueves a las 11:00?
+Contacto: Me parece perfecto, el jueves a las 11:00 entonces.
+Agente: Excelente, te enviaré una invitación de calendario para esa fecha.
+Contacto: Gracias, Sofía. Espero con interés la reunión.
+Agente: Perfecto, Patricia. Quedamos entonces para el jueves. Hasta pronto.
+Contacto: Hasta pronto.",Se agendó una reunión con el especialista tras confirmar el interés de Digi Group en optimizar sus costes de movilidad.,Agendar demo/reunión con especialista,Converted
+88d1542e-71e,cd059f5a,Roberto Iglesias,CFO,Smart Dynamics,Energía,España,Las Palmas,175,36194000,Formulario web,2025-11-05,Smart Dynamics mostró interés moderado en el servicio de movilidad corporativa para evaluar opciones y obtener más información.,1,2025-11-06,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Buenas tardes, Roberto. Soy Sofía Moreno de MoveUp, ¿cómo estás hoy?
+Contacto: Buenas tardes, Sofía. Todo bien, gracias. ¿Y tú?
+Agente: Muy bien, gracias. Me alegra hablar contigo. Recibimos tu solicitud de información sobre nuestros servicios de movilidad corporativa.
+Contacto: Sí, estamos explorando opciones para optimizar el transporte de nuestros empleados. Queremos entender cómo funciona vuestro servicio.
+Agente: Claro, MoveUp ofrece una solución flexible y eficiente. Tenemos experiencia con empresas de diferentes sectores y tamaños. ¿Cuántos viajes aproximadamente realizan al mes?
+Contacto: Aproximadamente unos 200 viajes mensuales.
+Agente: Perfecto. Nuestro servicio se adapta bien a ese volumen. ¿Tienen algún presupuesto estimado para este tipo de servicio?
+Contacto: Todavía estamos en fase de análisis, así que no tenemos un presupuesto definido. Queremos asegurarnos de que sea una inversión adecuada antes de proceder.
+Agente: Entiendo. Puedo enviarte documentación detallada sobre nuestros planes de precios y opciones. Además, podemos organizar una demo con Tomás Iglesias, nuestro especialista.
+Contacto: Me parece bien la documentación, así podemos analizarlo internamente. Prefiero esperar con la demo hasta que tengamos un panorama más claro.
+Agente: De acuerdo, te enviaré la información por correo. Quedamos entonces a la espera de vuestra confirmación sobre la siguiente etapa.
+Contacto: Perfecto, gracias, Sofía. Estamos en contacto.
+Agente: Gracias a ti, Roberto. Espero tu respuesta. Que tengas un buen día.","Roberto mostró interés en recibir documentación para analizar internamente y valorar opciones, sin prisa por agendar una demo.",Cerrar lead - nurturing,Nurturing
+ec89f044-a76,564924bd,Ana Sánchez,Director de RRHH,Omega Partners,Banca,España,Palma,159,42434000,Email marketing,2026-01-17,Omega Partners mostró un alto interés inicial debido a su reciente crecimiento y la necesidad urgente de optimizar los costes de movilidad corporativa.,1,2026-01-22,5,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Ana, soy Pablo Fernández de MoveUp. ¿Cómo estás?
+Contacto: Hola Pablo, muy bien, gracias. ¿Y tú?
+Agente: Bien, gracias. Te llamo porque entiendo que estáis interesados en optimizar vuestros costes de movilidad. ¿Es correcto?
+Contacto: Sí, justo. Con nuestro crecimiento reciente, los desplazamientos han aumentado y necesitamos una solución mejor.
+Agente: Entiendo. MoveUp puede ayudar a gestionar esos viajes de manera más eficiente. ¿Cuántos desplazamientos estáis manejando al mes?
+Contacto: Aproximadamente unos 300 viajes mensuales.
+Agente: Perfecto, eso encaja muy bien con lo que ofrecemos. Podemos agendar una demo para mostrarte cómo funcionaría para vosotros.
+Contacto: Me parece bien. ¿Puedes enviarme más información antes?
+Agente: Claro, te enviaré la documentación detallada por correo hoy mismo.
+Contacto: Perfecto, gracias.
+Agente: Gracias a ti, Ana. Hablamos pronto.",Ana mostró interés en una solución más eficiente debido al alto volumen de desplazamientos y aceptó recibir documentación.,Enviar documentación,Converted
+02d905a6-991,564924bd,Ana Sánchez,Director de RRHH,Omega Partners,Banca,España,Palma,159,42434000,Email marketing,2026-01-17,Omega Partners mostró un alto interés inicial debido a su reciente crecimiento y la necesidad urgente de optimizar los costes de movilidad corporativa.,2,2026-01-25,8,3,Ana mostró interés en una solución más eficiente debido al alto volumen de desplazamientos y aceptó recibir documentación.,Enviar documentación,"Agente: Hola Ana, ¿cómo estás? Te llamo para saber si tuviste oportunidad de revisar la documentación.
+Contacto: Hola Pablo, sí, la revisé y estoy muy interesada. Me gustaría que hablara con mi equipo de RRHH.
+Agente: Eso suena muy bien. Podemos agendar una reunión con nuestro especialista, Tomás Iglesias, para resolver cualquier duda que tengáis.
+Contacto: Me parece perfecto, necesitamos movernos rápido con esto.
+Agente: ¡Excelente! ¿Qué día te vendría bien para la reunión?
+Contacto: Este jueves a las 11:00 sería ideal.
+Agente: Genial, lo agendo para entonces. Tomás estará con vosotros para resolver cualquier pregunta y mostrarles más detalles.
+Contacto: Muchas gracias, Pablo. Espero con ansias la reunión.
+Agente: Gracias a ti, Ana. Nos vemos el jueves.",Ana confirmó su interés y agendó una reunión con el especialista para cerrar los detalles.,Esperar confirmación cliente,Converted
+2b99a53a-22b,c7f04a0e,Lucía Fernández,CEO,Corp Consulting,Distribución,Argentina,Buenos Aires,349,42762000,Partner comercial,2025-12-31,"Lucía mostró un interés inicial debido a una recomendación de nuestro partner comercial, pero se mostró cautelosa debido a la situación económica actual.",1,2026-01-01,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Lucía, ¿cómo estás? Soy Sofía Moreno de MoveUp. Quería hablar un poco sobre cómo podemos ayudar a Corp Consulting con sus necesidades de movilidad.
+Contacto: Hola, Sofía. Aprecio la llamada, pero actualmente estamos satisfechos con nuestro proveedor actual.
+Agente: Entiendo, pero me gustaría saber si hay algo que MoveUp pueda ofrecer que mejore su situación actual. ¿Quizás podríamos reducir sus costos de transporte?
+Contacto: La verdad es que el presupuesto es una limitante para nosotros, y cualquier cambio ahora sería complicado.
+Agente: Completamente comprensible. ¿Puedo preguntar si tienen algún plan de expansión o cambios en su infraestructura de movilidad que podríamos apoyar?
+Contacto: En estos momentos, estamos en medio de una reorganización interna, así que no estamos tomando decisiones a largo plazo.
+Agente: Claro, quiero asegurarme de que MoveUp pueda ser una opción para ustedes cuando estén listos. ¿Podríamos agendar una reunión con nuestro especialista para revisar opciones futuras?
+Contacto: Prefiero no comprometerme a nada por ahora, tal vez más adelante.
+Agente: Entiendo. Si cambian de opinión, estaremos encantados de ayudar. ¿Podría enviarle alguna documentación para que la tenga a mano?
+Contacto: Por ahora, no sería necesario. Gracias, Sofía.
+Agente: Gracias a ti por tu tiempo, Lucía. Si tienes alguna pregunta, no dudes en contactarnos.
+Contacto: De acuerdo, lo haré. Hasta luego, Sofía.
+Agente: Hasta luego.","Lucía expresó objeciones sobre el presupuesto y la reorganización interna, mostrando falta de interés en cambiar de proveedor.",Cerrar lead - no interesado,Lost
+71522fc2-939,cc29da80,Alberto Torres,Director de RRHH,Digi Consulting,Consultoría IT,España,Valladolid,3791,974048000,LinkedIn,2025-11-12,"El lead mostró interés inicial en optimizar los costos de movilidad para sus empleados, pero tenía preocupaciones sobre el presupuesto disponible.",1,2025-11-13,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Alberto. Soy Sofía Moreno de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola, Sofía. Bien, gracias. Un poco ocupado, como siempre.
+Agente: Entiendo. Quería hablar contigo sobre cómo MoveUp puede ayudarlos a optimizar los viajes corporativos. ¿Tienen algún sistema actual para eso?
+Contacto: Sí, actualmente trabajamos con otro proveedor, pero siempre estamos abiertos a escuchar.
+Agente: Genial. Nuestro servicio ofrece tarifas competitivas y podría ayudar a reducir sus costos en un 15-20%.
+Contacto: Suena interesante, pero estamos ajustados con el presupuesto este trimestre.
+Agente: Lo entiendo. Tenemos flexibilidad en nuestros planes. Sería útil para ustedes tener una demostración de cómo funcionamos.
+Contacto: Tal vez. Pero ahora mismo, estamos en medio de una reorganización interna.
+Agente: Puedo agendar una demo para cuando sea más conveniente o dejar más información.
+Contacto: Claro, envíanos más documentación y lo revisamos.
+Agente: Perfecto, te enviaré un correo con todos los detalles. Gracias por tu tiempo, Alberto.
+Contacto: De acuerdo, gracias a ti, Sofía.",Alberto mostró interés pero mencionó tener un proveedor actual y presupuesto insuficiente. Solicitó documentación para evaluar.,Enviar documentación,Lost
+74e91593-a91,cc29da80,Alberto Torres,Director de RRHH,Digi Consulting,Consultoría IT,España,Valladolid,3791,974048000,LinkedIn,2025-11-12,"El lead mostró interés inicial en optimizar los costos de movilidad para sus empleados, pero tenía preocupaciones sobre el presupuesto disponible.",2,2025-11-20,8,7,Alberto mostró interés pero mencionó tener un proveedor actual y presupuesto insuficiente. Solicitó documentación para evaluar.,Enviar documentación,"Agente: Hola de nuevo, Alberto. ¿Recibiste la documentación que te envié?
+Contacto: Hola, Sofía. Sí, la revisé brevemente.
+Agente: ¿Qué te parece? ¿Te gustaría que programe una reunión con Roberto, nuestro especialista?
+Contacto: Mira, la verdad es que no es la prioridad ahora mismo. La situación financiera y la reorganización nos tienen atados.
+Agente: Comprendo. Quizás podríamos ajustarnos a sus necesidades específicas o esperar un mejor momento para retomar.
+Contacto: Agradezco la oferta, pero por ahora no estamos interesados en hacer cambios.
+Agente: Está bien, gracias por tu sinceridad, Alberto. Si en el futuro cambia la situación, estaré aquí para ayudar.
+Contacto: Claro, lo tendré en cuenta.
+Agente: Muchas gracias por tu tiempo y consideración. Que tengas un buen día.
+Contacto: Igualmente, Sofía.",Alberto confirmó que la situación actual no permite avanzar y decidió no seguir adelante con MoveUp.,Cerrar lead - no interesado,Lost
+25fa398c-e90,26a8e916,Rafael Álvarez,Gerente de Administración,Iberia Logistics,Tecnología,España,Las Palmas,509,137130000,Formulario web,2025-10-21,"Rafael mostró interés en optimizar el transporte corporativo, considerando el volumen de viajes frecuentes por parte de sus empleados y la necesidad de un sistema más organizado.",1,2025-10-24,3,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Rafael, soy Sofía Moreno de MoveUp. Hablamos hace unos días sobre nuestras soluciones de movilidad corporativa. ¿Cómo estás?
+Contacto: Hola Sofía, todo bien, gracias. Justo estaba revisando lo que me enviaste.
+Agente: ¡Genial! ¿Tienes alguna pregunta sobre el servicio o quisieras profundizar en algún aspecto?
+Contacto: Me interesa saber cómo podríamos gestionar mejor los viajes frecuentes de nuestros empleados. Somos bastante activos y necesitamos algo eficiente.
+Agente: Perfecto, nuestro sistema se adapta a empresas de tu tamaño. ¿Cuál es el volumen aproximado de viajes que realizan mensualmente?
+Contacto: Unos 200 viajes al mes, aproximadamente.
+Agente: Sin problema, tenemos varios casos similares. ¿Cuál es tu presupuesto estimado para este tipo de servicios?
+Contacto: Aún no tengo un número exacto, pero necesitamos algo que no dispare los costes actuales.
+Agente: Entiendo. Podríamos ajustar un plan que maximice el ahorro. Puedo enviarte más detalles al respecto.
+Contacto: Eso estaría muy bien, gracias.
+Agente: De acuerdo, te enviaré la información hoy mismo para que la revises.
+Contacto: Perfecto, quedo a la espera.
+Agente: Gracias, Rafael. Quedo atenta para cualquier otra duda.
+Contacto: Claro, gracias a ti.",Se discutió el volumen de viajes y se acordó enviar más detalles por correo.,Enviar documentación,In Progress
+0b352b94-c39,26a8e916,Rafael Álvarez,Gerente de Administración,Iberia Logistics,Tecnología,España,Las Palmas,509,137130000,Formulario web,2025-10-21,"Rafael mostró interés en optimizar el transporte corporativo, considerando el volumen de viajes frecuentes por parte de sus empleados y la necesidad de un sistema más organizado.",2,2025-10-27,6,3,Se discutió el volumen de viajes y se acordó enviar más detalles por correo.,Enviar documentación,"Agente: Hola Rafael, soy Sofía de MoveUp. ¿Tuviste oportunidad de revisar la documentación que te envié?
+Contacto: Hola, sí, la revisé y tengo algunas preguntas.
+Agente: Claro, adelante.
+Contacto: Me gustaría entender mejor cómo se podrían optimizar los viajes en cuanto a tiempos y costos. ¿Tienen alguna demo o presentación que puedan mostrarme?
+Agente: Sí, por supuesto. Podemos coordinar una demo con nuestro especialista, Roberto Sánchez, quien te puede explicar en detalle todo el funcionamiento del servicio.
+Contacto: Me parece bien. ¿Cuándo podría ser eso?
+Agente: Podemos agendar una demo esta semana si te parece bien.
+Contacto: Perfecto, cualquier día excepto el jueves está bien para mí.
+Agente: Excelente, coordinaré con Roberto para el miércoles por la mañana.
+Contacto: Eso suena genial, gracias.
+Agente: De nada, Rafael. Te confirmo el horario exacto por correo.
+Contacto: Quedo pendiente, gracias, Sofía.",Se resolvieron dudas iniciales y se agendó una demo con el especialista Roberto Sánchez.,Agendar demo/reunión con especialista,In Progress
+aeeccfa8-56f,26a8e916,Rafael Álvarez,Gerente de Administración,Iberia Logistics,Tecnología,España,Las Palmas,509,137130000,Formulario web,2025-10-21,"Rafael mostró interés en optimizar el transporte corporativo, considerando el volumen de viajes frecuentes por parte de sus empleados y la necesidad de un sistema más organizado.",3,2025-10-29,8,2,Se resolvieron dudas iniciales y se agendó una demo con el especialista Roberto Sánchez.,Agendar demo/reunión con especialista,"Agente: Hola Rafael, ¿cómo estás? Aquí Sofía. ¿Cómo te fue con la demo?
+Contacto: Hola Sofía, la demo fue muy informativa. Roberto aclaró varias de nuestras dudas.
+Agente: Me alegro de que te haya servido. ¿Cómo ves el servicio para Iberia Logistics?
+Contacto: Nos interesa, pero necesitamos discutirlo con nuestro director financiero antes de dar el siguiente paso.
+Agente: Entiendo, es importante que todos los involucrados estén alineados. ¿Puedo hacer algo más para ayudarte en este proceso?
+Contacto: Podrías enviarnos un resumen ejecutivo que podamos presentar en nuestra próxima reunión.
+Agente: Claro, prepararé algo conciso y te lo enviaré a más tardar mañana.
+Contacto: Eso sería perfecto, gracias.
+Agente: De nada, Rafael. Quedo atenta a cualquier otra consulta que puedan tener.
+Contacto: Gracias, Sofía. Estamos en contacto.",La demo fue bien recibida y Rafael necesita presentar el servicio internamente. Se acordó enviar un resumen ejecutivo.,Esperar confirmación cliente,In Progress
+16187e0f-04c,5c9c8dbe,Rafael Martínez,Gerente de Administración,Pro Logistics,Química,México,Ciudad de México,34,6511000,Email marketing,2025-12-27,"Pro Logistics mostró un interés moderado en los servicios de movilidad corporativa, principalmente para optimizar los traslados de sus empleados.",1,2025-12-30,3,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Rafael. Soy Pablo Fernández de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola, Pablo. Estoy bien, gracias. ¿Qué tal tú?
+Agente: Muy bien, gracias. Te contacto porque recibiste nuestro correo sobre servicios de movilidad corporativa. ¿Pudiste revisarlo?
+Contacto: Sí, lo vi. Me parece interesante, pero aún estamos evaluando varias opciones.
+Agente: Entiendo. Nuestro servicio puede facilitar mucho la gestión de viajes corporativos y ofrecerte un seguimiento detallado de los gastos. ¿Tienen alguna urgencia en implementar algo así?
+Contacto: En realidad, estamos todavía en una fase de comparación. Queremos entender bien las opciones antes de tomar una decisión.
+Agente: Perfecto, puedo enviarte más información detallada sobre cómo funciona nuestro sistema y cómo podría ajustarse a vuestras necesidades.
+Contacto: Eso podría ser útil, especialmente si incluye detalles sobre costos y cómo afectaría a nuestro presupuesto actual.
+Agente: Claro, enviaré una propuesta detallada con algunos escenarios de uso. ¿Hay algún volumen de viajes que te gustaría considerar para este análisis?
+Contacto: Por ahora, estimamos unos 20-30 viajes al mes, pero eso podría cambiar dependiendo del crecimiento.
+Agente: Excelente, incluiré eso en la propuesta. ¿Te gustaría que agendemos una reunión con nuestra especialista, Elena Navarro, para resolver cualquier duda más técnica?
+Contacto: No por ahora, prefiero revisar la documentación primero y luego te contacto si es necesario.
+Agente: Perfecto, Rafael. Enviaré la documentación hoy mismo. Si tienes más preguntas, no dudes en comunicarte conmigo.
+Contacto: Gracias, Pablo. Estaré atento.
+Agente: De nada, Rafael. Un placer hablar contigo.
+",Rafael mostró interés en recibir más información detallada sobre los servicios para evaluarlos mejor. No tiene urgencia y desea revisar la documentación antes de seguir.,Cerrar lead - nurturing,Nurturing
+823c6bcf-410,99a442fc,Sofía González,Gerente de Administración,Pro Logistics,Salud,España,Vigo,9571,2273321000,Referencia de cliente,2026-02-26,"Pro Logistics mostró interés moderado en los servicios de movilidad corporativa, pero quieren explorar opciones antes de tomar una decisión.",1,2026-02-28,2,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Sofía. Soy Sofía Moreno de MoveUp. Quería hablar contigo sobre cómo podemos apoyar a Pro Logistics con nuestros servicios de movilidad corporativa.
+Contacto: Hola, Sofía. Gracias por llamar. Sí, hemos estado considerando opciones para mejorar nuestra logística de transporte interno.
+Agente: Excelente. Con la cantidad de empleados que tienen, nuestros servicios podrían ser muy eficientes para ustedes. ¿Tienen alguna preferencia en cuanto a las características del servicio?
+Contacto: Bueno, queremos asegurarnos de que sea algo que ofrezca flexibilidad y que sea económicamente viable.
+Agente: Entiendo. Nuestros servicios son escalables y podemos adaptar un plan que se ajuste a su presupuesto. ¿Quisieras que te enviara más información detallada?
+Contacto: Sí, por favor. Y también nos gustaría saber cómo se comparan sus tarifas con otros proveedores.
+Agente: Por supuesto, te enviaré una comparativa junto con la documentación.
+Contacto: Perfecto, estaré esperando eso.
+Agente: Genial, te lo enviaré en breve. Gracias, Sofía.
+Contacto: Gracias a ti.",Sofía González mostró interés y solicitó más información detallada y una comparativa de tarifas.,Enviar documentación,Nurturing
+8de29250-851,99a442fc,Sofía González,Gerente de Administración,Pro Logistics,Salud,España,Vigo,9571,2273321000,Referencia de cliente,2026-02-26,"Pro Logistics mostró interés moderado en los servicios de movilidad corporativa, pero quieren explorar opciones antes de tomar una decisión.",2,2026-03-07,9,7,Sofía González mostró interés y solicitó más información detallada y una comparativa de tarifas.,Enviar documentación,"Agente: Hola, Sofía. Espero que hayas recibido la documentación que te envié la semana pasada.
+Contacto: Hola, sí la recibimos. La revisamos brevemente y parece interesante.
+Agente: Me alegra saber eso. ¿Tienes alguna pregunta o algo que te gustaría que aclare?
+Contacto: Estamos interesados en saber más sobre cómo gestionan los volúmenes altos de viajes, dado el tamaño de nuestra empresa.
+Agente: Nuestro sistema está preparado para gestionar grandes volúmenes de forma eficiente y con total transparencia en los reportes. ¿Te gustaría agendar una reunión con uno de nuestros especialistas para un análisis más detallado?
+Contacto: Sí, creo que sería útil. ¿Puede ser la próxima semana?
+Agente: Claro, coordinaré para que Roberto Sánchez, nuestro especialista, se reúna contigo. ¿Alguna preferencia de día y hora?
+Contacto: Mejor a mediados de semana, por la mañana.
+Agente: Perfecto, te mando la confirmación por email.
+Contacto: Gracias, Sofía.
+Agente: A ti, Sofía. Hasta pronto.",Se acordó una reunión con el especialista para discutir detalles específicos sobre la gestión de volúmenes altos de viajes.,Agendar demo/reunión con especialista,Nurturing
+5e745c9b-3e8,99a442fc,Sofía González,Gerente de Administración,Pro Logistics,Salud,España,Vigo,9571,2273321000,Referencia de cliente,2026-02-26,"Pro Logistics mostró interés moderado en los servicios de movilidad corporativa, pero quieren explorar opciones antes de tomar una decisión.",3,2026-03-21,23,14,Se acordó una reunión con el especialista para discutir detalles específicos sobre la gestión de volúmenes altos de viajes.,Agendar demo/reunión con especialista,"Agente: Buenas, Sofía. ¿Cómo fue la reunión con Roberto?
+Contacto: Hola, Sofía. La reunión estuvo bien, Roberto explicó todo claramente. Estamos interesados, pero necesitamos tiempo para considerar nuestro presupuesto y compararlo con otras propuestas.
+Agente: Entiendo perfectamente, tomar una decisión informada es importante. ¿Hay algo más que podamos hacer para ayudarte en el proceso?
+Contacto: Por ahora, creo que tenemos toda la información necesaria. Es cuestión de esperar la aprobación presupuestaria.
+Agente: De acuerdo, estaré disponible para cualquier consulta que pueda surgir. ¿Te parece bien si volvemos a hablar en unas semanas para dar seguimiento?
+Contacto: Sí, sería ideal. Podríamos definir mejor nuestras necesidades para entonces.
+Agente: Perfecto, me pondré en contacto contigo en ese tiempo. Gracias de nuevo, Sofía.
+Contacto: Gracias a ti, cuídate.
+Agente: Igualmente.","La reunión con el especialista fue positiva, pero la decisión final está en espera de confirmación presupuestaria.",Cerrar lead - nurturing,Nurturing
+3aa1e4c9-1fd,71dc0359,Jorge Fernández,Director de RRHH,Grupo Systems,Logística,España,Córdoba,9536,2391077000,Llamada en frío,2025-11-10,Grupo Systems mostró un alto interés inicial debido a su necesidad urgente de reducir costes de movilidad y gestionar un volumen elevado de desplazamientos.,1,2025-11-16,6,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Jorge, soy Sofía Moreno de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Sofía, estoy bien, gracias. ¿En qué puedo ayudarte?
+Agente: Me gustaría hablar contigo sobre cómo MoveUp puede ayudar a Grupo Systems a gestionar sus desplazamientos de manera más eficiente.
+Contacto: Eso suena interesante, especialmente porque estamos experimentando un aumento en nuestros viajes corporativos.
+Agente: ¿Podrías darme una idea del volumen de viajes que está manejando actualmente?
+Contacto: Sí, nos estamos moviendo constantemente entre oficinas y clientes, lo cual está incrementando nuestros gastos considerablemente.
+Agente: Entiendo, MoveUp puede ofrecer tarifas corporativas más competitivas. ¿Tienes algún presupuesto en mente?
+Contacto: Nuestro objetivo es reducir los costes al menos un 20% este año.
+Agente: Eso es totalmente alcanzable con nuestros servicios. ¿Te parece si organizamos una reunión con nuestra especialista, Elena Navarro, para discutir más a fondo?
+Contacto: Claro, me gustaría explorar más opciones.
+Agente: Perfecto, entonces agendamos una demo o reunión con Elena.
+Contacto: Me parece bien, ¿cuándo podrían?
+Agente: Te enviaré un correo para confirmar la fecha.
+Contacto: Muy bien, estaré atento.",Se despertó un interés genuino en el servicio y se acordó agendar una reunión con la especialista.,Agendar demo/reunión con especialista,Converted
+efaad5db-8fb,71dc0359,Jorge Fernández,Director de RRHH,Grupo Systems,Logística,España,Córdoba,9536,2391077000,Llamada en frío,2025-11-10,Grupo Systems mostró un alto interés inicial debido a su necesidad urgente de reducir costes de movilidad y gestionar un volumen elevado de desplazamientos.,2,2025-11-19,9,3,Se despertó un interés genuino en el servicio y se acordó agendar una reunión con la especialista.,Agendar demo/reunión con especialista,"Agente: Hola Jorge, soy Sofía de nuevo. ¿Cómo estás?
+Contacto: Hola Sofía, todo bien. Listo para la reunión con Elena.
+Agente: Genial, ella te explicará cómo MoveUp puede adaptarse a vuestras necesidades.
+Contacto: Perfecto, estamos buscando algo que pueda implementarse rápidamente.
+Agente: MoveUp es muy flexible y nos adaptamos a tu ritmo. ¿Te gustaría discutir los términos ahora?
+Contacto: Sí, pero necesito asegurarme de que el coste sea competitivo.
+Agente: Estoy segura de que podemos ofrecerte un buen paquete. ¿Estás listo para firmar el acuerdo?
+Contacto: Sí, creo que estamos listos para movernos adelante.
+Agente: Excelente, entonces procederemos con la documentación para cerrar el trato.
+Contacto: Perfecto, espero el siguiente paso.
+Agente: Gracias, Jorge. Elena y yo estaremos en contacto.
+Contacto: Muy bien, gracias a vosotros.",La reunión con la especialista fue exitosa y el lead decidió seguir adelante con el servicio.,Esperar confirmación cliente,Converted
+ead275dd-8ea,791551d0,Laura Díaz,Responsable de Movilidad,Digi Systems,Servicios Financieros,España,Málaga,25,2078000,Formulario web,2026-02-12,Laura expresó un gran interés en optimizar los costes de movilidad de su empresa debido a su rápido crecimiento.,1,2026-02-13,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Laura, soy Ana Ruiz de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Ana, muy bien, gracias. Justamente estaba esperando tu llamada.
+Agente: Me alegra escucharlo. He visto que estás interesada en nuestro servicio de movilidad corporativa.
+Contacto: Sí, hemos crecido mucho este año y el volumen de desplazamientos de nuestros empleados ha aumentado considerablemente.
+Agente: Entiendo. ¿Podrías comentar un poco sobre cuál es tu objetivo principal con respecto a la movilidad?
+Contacto: Queremos reducir costes y mejorar la eficiencia en cómo nos movemos. Es urgente para nosotros encontrar una solución.
+Agente: Perfecto, eso es justo lo que ofrecemos. Con MoveUp, puedes optimizar rutas y tener un control total sobre tus gastos.
+Contacto: Eso suena ideal. ¿Podríamos ver una demostración de cómo funciona?
+Agente: Claro, puedo agendar una demo con nuestro especialista Roberto Sánchez. ¿Te parece bien esta semana?
+Contacto: Sí, cuanto antes mejor. Estamos bastante interesados en cerrar esto rápido.
+Agente: Excelente, entonces agendaré una reunión con Roberto para que puedan ver todas las funcionalidades. ¿Te parece bien el jueves a las 10 am?
+Contacto: Me parece perfecto, agendemos para esa hora.
+Agente: Genial, entonces nos vemos el jueves. Te enviaré un correo con todos los detalles. Cualquier cosa, no dudes en contactarme.
+Contacto: Muchas gracias, Ana. Espero la invitación.
+Agente: De nada, Laura. ¡Nos vemos pronto!",Laura mostró un alto interés en el servicio y se agendó una demo con el especialista Roberto para el jueves.,Agendar demo/reunión con especialista,Converted
+3d15f955-7a9,56beddd5,Isabel Díaz,Jefe de Proyectos,Prime Dynamics,Consultoría IT,España,Murcia,255,63380000,Formulario web,2026-02-16,"Isabel mostró interés inicialmente por optimizar la movilidad corporativa, pero mencionó restricciones presupuestarias.",1,2026-02-18,2,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Isabel, soy Laura Gómez de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Laura, estoy bien, gracias. ¿Y tú?
+Agente: Muy bien, gracias. Quería hablar contigo sobre nuestra propuesta de movilidad corporativa. ¿Tienes un momento?
+Contacto: Sí, claro. Pero te adelanto que ahora mismo estamos con un presupuesto ajustado y ya tenemos un proveedor.
+Agente: Entiendo. Sin embargo, nuestros servicios podrían ofrecerte un ahorro significativo en el volumen de viajes. ¿Te gustaría saber más detalles sobre cómo podríamos optimizar estos gastos?
+Contacto: La verdad es que estamos en medio de una reorganización interna, y no podemos comprometernos con ningún cambio significativo por ahora.
+Agente: Comprendo la situación. ¿Tal vez podríamos agendar una reunión con nuestra especialista, Cristina Vera, para ver cómo podemos adaptar nuestra oferta durante este periodo de transición?
+Contacto: Aprecio tu iniciativa, pero como mencioné, ahora mismo no estamos en posición de considerar nuevas soluciones.
+Agente: Está bien, agradezco tu honestidad. ¿Qué te parece si dejamos la puerta abierta para futuras conversaciones cuando sea un buen momento para ustedes?
+Contacto: Sí, eso estaría bien.
+Agente: Perfecto, gracias Isabel. No te quitaré más tiempo. Que tengas un buen día.
+Contacto: Igualmente, hasta luego.","Isabel expresó preocupaciones sobre el presupuesto y el compromiso con un proveedor existente, mostrando escaso interés en explorar nuevas opciones.",Cerrar lead - no interesado,Lost
+e0a50e02-80d,663d3ebe,Elena Navarro,CEO,Corp Logistics,Química,España,Zaragoza,426,119491000,Feria o evento,2025-12-27,Elena mostró interés inicial en explorar opciones de movilidad corporativa para mejorar la eficiencia del transporte de sus empleados.,1,2025-12-28,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Elena, soy Carlos Martínez de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Carlos, bien, gracias. ¿En qué puedo ayudarte?
+Agente: Me gustaría hablar sobre cómo MoveUp podría ayudar a Corp Logistics a optimizar el transporte corporativo. Ofrecemos servicios personalizados que podrían reducir costos y mejorar la eficiencia.
+Contacto: Suena interesante, pero ahora mismo estamos contentos con nuestro proveedor actual.
+Agente: Entiendo, aunque hemos visto que muchas empresas como la tuya han logrado reducir sus costes hasta un 15% con nuestros servicios. ¿Podrías decirme cuántos viajes realizan mensualmente?
+Contacto: Realizamos alrededor de 300 viajes, pero como mencioné, estamos cómodos con nuestro proveedor actual y el presupuesto es ajustado.
+Agente: Comprendo lo del presupuesto, pero quizá podríamos ofrecerte una propuesta competitiva. Además, nuestro servicio incluye soporte dedicado, que podría ser una ventaja. ¿Te interesaría una demo con nuestro especialista, Roberto Sánchez?
+Contacto: Aprecio la oferta, pero honestamente no estoy segura de que este sea el mejor momento. Estamos pasando por una reorganización interna y el enfoque está en otras áreas.
+Agente: Claro, entiendo tus prioridades. Si cambian de opinión, estaremos encantados de ayudar. ¿Te parece si te envío más información por correo para que lo revises en otro momento?
+Contacto: Está bien, mándame la información por correo, pero no prometo nada.
+Agente: Perfecto, lo haré. Gracias por tu tiempo, Elena.
+Contacto: De nada, Carlos. Que tengas un buen día.","Elena mostró interés inicial, pero expresó que ya tienen un proveedor y que el presupuesto es ajustado. Acordaron enviar más información por correo.",Cerrar lead - no interesado,Lost
+0a8a6163-cb7,617dbccc,Alejandro Torres,Responsable de Movilidad,Max Group,Seguros,España,Las Palmas,39,4884000,Google Ads,2025-12-11,"Alejandro mostró un interés inicial debido a una campaña de Google Ads, buscando opciones más económicas para movilidad corporativa.",1,2025-12-17,6,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Alejandro, soy Pablo Fernández de MoveUp. Quería hablar sobre cómo podríamos ayudar con la movilidad corporativa de Max Group.
+Contacto: Hola Pablo, he visto su campaña, pero la verdad es que tenemos un proveedor que nos ofrece precios bastante ajustados.
+Agente: Entiendo, pero ¿estaría interesado en conocer nuestras tarifas y comparar? Creemos que podemos ofrecer una solución competitiva.
+Contacto: Bueno, ahora mismo estamos bastante ajustados de presupuesto y no creo que sea el momento de cambiar.
+Agente: Comprendo. ¿Podría decirme cuántos viajes mensuales realizan aproximadamente?
+Contacto: Aproximadamente 300, pero como te digo, estamos contentos con nuestro proveedor actual.
+Agente: Claro, aunque podría ser útil ver una demostración de cómo funcionamos para una posible futura consideración.
+Contacto: No sé, lo veo complicado con la reorganización interna que tenemos ahora.
+Agente: Entiendo que es un mal momento. Si en algún momento cambia de opinión, estaré aquí para ayudar.
+Contacto: Está bien, gracias por la llamada.
+Agente: Gracias a ti, Alejandro. Que tengas un buen día.",Alejandro no mostró interés para cambiar de proveedor debido a limitaciones de presupuesto y una reorganización interna.,Cerrar lead - no interesado,Lost
+e0e68cb4-2bc,61c92676,Fernando Vega,Director de Logística,Tech Dynamics,Seguros,España,Palma,13,3817000,Feria o evento,2025-12-30,"Fernando mostró interés moderado en el servicio durante la feria, buscando opciones para el transporte corporativo.",1,2025-12-31,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Fernando, soy Ana Ruiz de MoveUp. Quería agradecerte por visitarnos en la feria y ver si tienes alguna pregunta inicial.
+Contacto: Hola Ana, gracias por llamar. Estamos explorando opciones para mejorar nuestro transporte corporativo. Todavía estamos en las primeras etapas.
+Agente: Entiendo. ¿Qué volumen de viajes manejan actualmente?
+Contacto: Aproximadamente unos 100 viajes al mes, pero eso varía según la época del año.
+Agente: Perfecto. Nuestro servicio se adapta bien a esas fluctuaciones. ¿Cuál sería tu prioridad principal a la hora de elegir un proveedor?
+Contacto: Principalmente la flexibilidad y la integración con nuestros sistemas existentes.
+Agente: Podemos ofrecer soluciones personalizadas. ¿Te gustaría recibir más información sobre nuestras opciones de integración?
+Contacto: Sí, eso sería útil.
+Agente: Genial, te enviaré toda la documentación esta misma semana.
+Contacto: Perfecto, gracias.
+Agente: Gracias a ti, Fernando. Hablamos pronto.",Fernando mostró interés en recibir más información sobre la integración con sistemas existentes.,Enviar documentación,Nurturing
+d49f8774-1d0,61c92676,Fernando Vega,Director de Logística,Tech Dynamics,Seguros,España,Palma,13,3817000,Feria o evento,2025-12-30,"Fernando mostró interés moderado en el servicio durante la feria, buscando opciones para el transporte corporativo.",2,2026-01-07,8,7,Fernando mostró interés en recibir más información sobre la integración con sistemas existentes.,Enviar documentación,"Agente: Hola Fernando, Ana de nuevo. ¿Pudiste revisar la información que te envié?
+Contacto: Hola Ana, sí, la revisé y parece interesante.
+Agente: Me alegra escuchar eso. ¿Tienes alguna pregunta o inquietud hasta ahora?
+Contacto: Quisiera saber más sobre el costo y cómo se compara con las alternativas que estamos considerando.
+Agente: Claro, nuestros precios son competitivos y ofrecemos varios paquetes ajustables según el volumen de uso. ¿Te gustaría agendar una reunión con Elena, nuestra especialista?
+Contacto: Podría ser, pero primero necesito consultar internamente y definir bien nuestro presupuesto.
+Agente: Entendido, ¿cuándo crees que podríamos retomar la conversación?
+Contacto: Tal vez la próxima semana, después de que tengamos una reunión de equipo.
+Agente: Perfecto, estaré en contacto entonces.
+Contacto: Muy bien, gracias Ana.",Fernando necesita consultar internamente sobre el presupuesto antes de agendar una reunión con un especialista.,Recontactar en X días,Nurturing
+8dd72733-165,61c92676,Fernando Vega,Director de Logística,Tech Dynamics,Seguros,España,Palma,13,3817000,Feria o evento,2025-12-30,"Fernando mostró interés moderado en el servicio durante la feria, buscando opciones para el transporte corporativo.",3,2026-01-14,15,7,Fernando necesita consultar internamente sobre el presupuesto antes de agendar una reunión con un especialista.,Recontactar en X días,"Agente: Hola Fernando, espero que estés bien. ¿Pudieron discutir el presupuesto internamente?
+Contacto: Hola Ana, sí, lo discutimos, pero aún estamos esperando la aprobación final.
+Agente: Entiendo. ¿Hay algo más en lo que pueda asistirte mientras tanto?
+Contacto: Por ahora estamos bien, solo necesitamos tiempo para la aprobación.
+Agente: Perfecto, entiendo la situación. Estaré aquí para lo que necesites. ¿Te gustaría que te contactara en unas semanas para hacer seguimiento?
+Contacto: Sí, eso sería ideal. Muchas gracias por tu paciencia.
+Agente: Gracias a ti, Fernando. Hablamos en unas semanas.
+Contacto: Hasta luego, Ana.",Fernando está esperando la aprobación interna y desea ser contactado en el futuro.,Cerrar lead - nurturing,Nurturing
+cff03962-e26,713fe788,Alberto Navarro,Gerente de Administración,Prime Group,Banca,España,Alicante,640,176967000,Referencia de cliente,2026-02-18,"La empresa mostró interés inicial debido a la recomendación de un cliente existente, pero expresaron preocupación por el presupuesto limitado.",1,2026-02-22,4,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Alberto, soy Carlos Martínez de MoveUp. ¿Cómo te encuentras hoy?
+Contacto: Hola Carlos, estoy bien, gracias. ¿En qué puedo ayudarte?
+Agente: Nos recomendaron a través de uno de nuestros clientes y queríamos ofrecerte nuestro servicio de movilidad corporativa. ¿Cómo gestionáis actualmente los desplazamientos de tus empleados?
+Contacto: Actualmente tenemos un contrato con un proveedor local. No estamos buscando cambiar en este momento.
+Agente: Entiendo. ¿Tienes alguna idea del volumen de viajes que gestionáis mensualmente?
+Contacto: Aproximadamente unos 300 viajes al mes, pero como te dije, no estamos considerando un cambio.
+Agente: Claro, aunque podríamos ofrecerte una mejora en precio y servicio. ¿Tienes alguna preocupación específica en cuanto a costes?
+Contacto: El costo es importante, pero ahora mismo el presupuesto está ajustado. Además, estamos en medio de una reorganización interna.
+Agente: Comprendo, quizás podríamos agendar una reunión para mostrarte cómo podríamos ajustar nuestros servicios a tus necesidades.
+Contacto: Prefiero dejarlo por ahora, pero tal vez en el futuro.
+Agente: Perfecto, te enviaré más información por correo.
+Contacto: Gracias, estaré pendiente.
+Agente: Gracias a ti, estaré en contacto.",Alberto mostró poco interés debido a un contrato existente y preocupaciones presupuestarias.,Enviar documentación,Lost
+6daa12f5-cac,713fe788,Alberto Navarro,Gerente de Administración,Prime Group,Banca,España,Alicante,640,176967000,Referencia de cliente,2026-02-18,"La empresa mostró interés inicial debido a la recomendación de un cliente existente, pero expresaron preocupación por el presupuesto limitado.",2,2026-03-01,11,7,Alberto mostró poco interés debido a un contrato existente y preocupaciones presupuestarias.,Enviar documentación,"Agente: Hola Alberto, soy Carlos de nuevo. Quería saber si tuviste oportunidad de revisar la información que te envié.
+Contacto: Hola Carlos, sí, la revisé, pero como mencioné, no estamos en posición de hacer cambios ahora mismo.
+Agente: Entiendo. ¿Hay algo específico que no te convenza de nuestros servicios?
+Contacto: No es eso, simplemente el presupuesto y la situación interna no nos permiten movernos en este momento.
+Agente: Aprecio tu honestidad. ¿Te gustaría que revisáramos esta conversación en unos meses?
+Contacto: Prefiero que no, si algo cambia, seré yo quien contacte.
+Agente: Gracias por tu tiempo, Alberto. Entiendo tu posición y respetamos tu decisión.
+Contacto: Gracias a ti, Carlos.
+Agente: Que pases un buen día.",Alberto confirmó que no están interesados debido a restricciones presupuestarias y organización interna.,Cerrar lead - no interesado,Lost
+8dc122ec-fc4,45864b92,Alberto García,Director Financiero,Euro Consulting,Tecnología,Colombia,Bogotá,143,18652000,Email marketing,2026-01-17,El contacto mostró interés inicial debido a una campaña de email marketing que destacaba la optimización de costos en movilidad corporativa.,1,2026-01-19,2,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Alberto. Soy Javier Torres de MoveUp. ¿Cómo estás?
+Contacto: Hola, Javier. Estoy bien, gracias.
+Agente: Me alegra escuchar eso. Te llamo respecto al interés que mostraste en nuestra solución de movilidad corporativa a través de nuestro email.
+Contacto: Sí, vi el email, pero estamos satisfechos con nuestro proveedor actual.
+Agente: Entiendo. ¿Han tenido alguna preocupación con los costos o la eficiencia de sus servicios actuales?
+Contacto: Bueno, siempre estamos buscando optimizar costos, pero no hemos tenido problemas significativos.
+Agente: Nuestro servicio podría ofrecer una reducción de costos del 15-20% en muchos casos. ¿Crees que eso podría interesarles?
+Contacto: Suena interesante, pero realmente no tenemos presupuesto para hacer cambios ahora.
+Agente: Comprendo. Además, ofrecemos una demo gratuita para mostrar cómo podríamos integrar nuestro servicio sin problemas. ¿Te interesaría agendar una?
+Contacto: No por el momento, como mencioné, estamos en una reorganización interna y no es un buen momento para evaluaciones.
+Agente: Entiendo, Alberto. Quizás en un futuro podríamos reconsiderarlo. ¿Te parece bien si te contacto más adelante?
+Contacto: Claro, podríamos hablar más adelante, pero no prometo nada.
+Agente: Perfecto. Gracias por tu tiempo, Alberto.",El contacto no mostró interés en cambiar de proveedor debido a un presupuesto ajustado y una reorganización interna.,Cerrar lead - no interesado,Lost
+515823cb-924,4a2e21fc,María Navarro,Director de Operaciones,Omega Consulting,Educación,Argentina,Buenos Aires,201,40164000,LinkedIn,2026-03-22,María mostró un interés inicial moderado en explorar alternativas para optimizar el transporte corporativo.,1,2026-03-27,5,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola María, soy Marta Díaz de MoveUp. ¿Cómo estás?
+Contacto: Hola Marta, bien gracias. ¿En qué puedo ayudarte?
+Agente: Quería hablarte sobre cómo MoveUp puede optimizar el transporte corporativo de Omega Consulting. Sabemos que tiene un gran volumen de viajes, y podríamos ofrecer una solución más eficiente.
+Contacto: Entiendo, pero actualmente trabajamos con otro proveedor y estamos satisfechos.
+Agente: Claro, entiendo. Sin embargo, con la situación económica actual, puede haber ahorros significativos. ¿Te gustaría ver un análisis comparativo?
+Contacto: Podría ser, pero nuestro presupuesto es ajustado este año.
+Agente: Lo comprendo. Podemos preparar un plan adaptado a tus necesidades y presupuesto. ¿Te parece bien si seguimos esta conversación más adelante?
+Contacto: De acuerdo, pero no prometo nada.
+Agente: Perfecto, entonces te recontacto en unos días.
+Contacto: Está bien.","María mostró escepticismo y mencionó tener ya un proveedor, pero aceptó seguir en contacto para una futura conversación.",Recontactar en X días,Lost
+bd3ef1fb-bd6,4a2e21fc,María Navarro,Director de Operaciones,Omega Consulting,Educación,Argentina,Buenos Aires,201,40164000,LinkedIn,2026-03-22,María mostró un interés inicial moderado en explorar alternativas para optimizar el transporte corporativo.,2,2026-04-01,10,5,"María mostró escepticismo y mencionó tener ya un proveedor, pero aceptó seguir en contacto para una futura conversación.",Recontactar en X días,"Agente: Hola María, soy Marta de nuevo. Espero no interrumpir.
+Contacto: Hola Marta, adelante.
+Agente: Quería saber si tuviste la oportunidad de revisar la documentación que te enviamos sobre las ventajas de MoveUp.
+Contacto: Sí, la vi por encima, pero, como mencioné, estamos contentos con nuestro proveedor actual.
+Agente: ¿Hay algún aspecto en particular que te gustaría mejorar en el servicio actual?
+Contacto: La verdad es que no hemos tenido grandes problemas, salvo quizás por el costo.
+Agente: Entiendo. Podríamos ofrecerte una prueba gratuita para que experimentes nuestro servicio sin compromiso. ¿Te gustaría agendar una demo con nuestra especialista, Cristina Vera?
+Contacto: Podría ser, pero estamos pasando por una reorganización interna, así que no puedo comprometerme ahora.
+Agente: Comprendo. Entonces, ¿te parece si esperamos a que te sientas más cómoda con el proceso interno para seguir adelante?
+Contacto: Sí, creo que sería mejor.
+Agente: Perfecto, entonces quedo a la espera de tu confirmación.
+Contacto: Gracias.",María sigue mostrando interés moderado pero se ve limitada por la reorganización interna. Acepta considerar una demo pero sin compromiso inmediato.,Esperar confirmación cliente,Lost
+f4920f44-81d,4a2e21fc,María Navarro,Director de Operaciones,Omega Consulting,Educación,Argentina,Buenos Aires,201,40164000,LinkedIn,2026-03-22,María mostró un interés inicial moderado en explorar alternativas para optimizar el transporte corporativo.,3,2026-04-11,20,10,María sigue mostrando interés moderado pero se ve limitada por la reorganización interna. Acepta considerar una demo pero sin compromiso inmediato.,Esperar confirmación cliente,"Agente: Hola María, soy Marta una vez más. ¿Cómo va todo?
+Contacto: Hola Marta, bueno, seguimos con temas internos. No he tenido mucho tiempo.
+Agente: Lo entiendo. Solo quería asegurarme de que no quedara ningún tema pendiente o pregunta sin responder.
+Contacto: Aprecio tu seguimiento, pero creo que no estamos listos para hacer cambios en este momento.
+Agente: Comprendo, María. Si en algún momento consideras revisar nuestras opciones, estaremos aquí para ayudarte.
+Contacto: Gracias, Marta. Valoro tu atención.
+Agente: Claro, cerraré el lead por ahora, pero me mantendré atenta a posibles cambios.
+Contacto: Muy bien, gracias nuevamente.","María confirmó que, debido a temas internos, no están listos para cambiar de proveedor. Aprecia el seguimiento pero no está interesada de momento.",Cerrar lead - no interesado,Lost
+6294cdf0-225,4cedbe96,Fernando Serrano,Director de RRHH,Iberia Networks,Química,España,Málaga,199,18876000,Partner comercial,2025-12-14,"La empresa mostró un interés inicial moderado debido a la sugerencia de un partner comercial, pero expresó preocupaciones sobre su actual presupuesto limitado.",1,2025-12-16,2,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Fernando, soy Carlos Martínez de MoveUp. ¿Cómo estás?
+Contacto: Hola, Carlos. Estoy bien, gracias. ¿Y tú?
+Agente: Muy bien, gracias. Quería hablar contigo sobre cómo MoveUp puede optimizar el transporte corporativo de Iberia Networks.
+Contacto: Estamos satisfechos con nuestro proveedor actual, aunque siempre estamos abiertos a escuchar.
+Agente: Entiendo. Hemos ayudado a muchas empresas a reducir costes en movilidad. ¿Cuántos viajes al mes realiza tu equipo aproximadamente?
+Contacto: Diría que unos 200 al mes.
+Agente: Perfecto, podríamos ofrecerte una solución personalizada. ¿Cuál es tu principal preocupación ahora mismo?
+Contacto: Ahora mismo, el presupuesto es lo más limitado. Hay una reorganización interna que nos tiene a todos ajustados.
+Agente: Comprendo. Podríamos ofrecerte unas tarifas competitivas. Quizás agendemos una reunión con nuestro especialista, Tomás Iglesias.
+Contacto: Podría ser, pero necesito revisar internamente antes.
+Agente: Claro, lo entiendo. Estoy aquí para cualquier consulta.
+Contacto: Gracias, Carlos.
+Agente: Gracias a ti, Fernando. Hablamos pronto.","Carlos presentó las ventajas de MoveUp, pero Fernando mostró preocupación por el presupuesto y la situación interna.",Agendar demo/reunión con especialista,Lost
+d75619c7-a2a,4cedbe96,Fernando Serrano,Director de RRHH,Iberia Networks,Química,España,Málaga,199,18876000,Partner comercial,2025-12-14,"La empresa mostró un interés inicial moderado debido a la sugerencia de un partner comercial, pero expresó preocupaciones sobre su actual presupuesto limitado.",2,2025-12-21,7,5,"Carlos presentó las ventajas de MoveUp, pero Fernando mostró preocupación por el presupuesto y la situación interna.",Agendar demo/reunión con especialista,"Agente: Hola Fernando, soy Carlos Martínez nuevamente. Quería saber si ya tuviste oportunidad de revisar la propuesta.
+Contacto: Hola, Carlos. Sí, la revisé, pero ahora mismo no podemos comprometernos.
+Agente: ¿Hubo algo en específico que no te haya convencido?
+Contacto: Es principalmente el presupuesto. Estamos ajustando muchas cosas internamente, y cambiar de proveedor ahora no es viable.
+Agente: Entiendo. ¿Crees que podríamos reevaluar esto en algunos meses cuando la situación mejore?
+Contacto: Podría ser, pero sinceramente no te puedo prometer nada.
+Agente: Está bien, lo comprendo. Si necesitas más información, no dudes en contactarme.
+Contacto: Claro, gracias por entender.
+Agente: Gracias a ti por tu tiempo, Fernando. Espero que todo mejore pronto.
+Contacto: Gracias, Carlos.",Fernando reafirmó que el presupuesto actual y la reorganización interna impiden continuar con el interés en el servicio.,Cerrar lead - no interesado,Lost
+c7cf1f9c-a3f,ded167ff,Sofía Díaz,Director General,Smart Consulting,Seguros,España,Barcelona,39,7642000,Email marketing,2025-10-14,Al principio mostraron interés en conocer nuestras tarifas y cómo funcionan nuestros servicios para empresas.,1,2025-10-20,6,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Sofía, soy Laura Gómez de MoveUp. ¿Tienes unos minutos para hablar sobre cómo podemos ayudar a Smart Consulting con sus necesidades de movilidad?
+Contacto: Hola Laura, sí, tengo unos pocos minutos. Recibí su correo, pero ya tenemos un proveedor de transporte corporativo que utilizamos regularmente.
+Agente: Entiendo. Nuestro servicio se especializa en ofrecer tarifas competitivas y flexibilidad. ¿Cuántos viajes realizan en promedio al mes?
+Contacto: Aproximadamente unos 50, pero ahora mismo estamos enfocados en reducir costos, la verdad. 
+Agente: Claro, entiendo que el presupuesto es una preocupación común. Ofrecemos planes personalizados que podrían ajustarse mejor a sus necesidades actuales. 
+Contacto: Lo aprecio, pero como te decía, estamos contentos con nuestro proveedor actual.
+Agente: ¿Habría alguna oportunidad en el futuro cercano para revisar nuestras tarifas en comparación con lo que pagan ahora?
+Contacto: Tal vez, pero ahora mismo, con la reorganización interna, no estamos considerando cambios. 
+Agente: Entiendo, quizás entonces no sea el mejor momento. Si en algún momento surge la oportunidad, ¿podríamos agendar una demo para mostrarte las ventajas de nuestra plataforma?
+Contacto: Lo pensaré, pero ahora mismo no estamos interesados en cambios, lo siento.
+Agente: Gracias por tu tiempo, Sofía. Estoy aquí si cambian de opinión. ¡Que tengas un buen día!
+Contacto: Igualmente, gracias por llamar.",La llamada evidenció falta de interés inmediato debido al proveedor actual y restricciones presupuestarias.,Cerrar lead - no interesado,Lost
+734d1fd4-988,f30051be,Alberto Romero,Director Financiero,Tech Systems,Química,Colombia,Bogotá,9542,1853164000,Partner comercial,2026-02-11,Interés inicial bajo debido a un contrato existente y a preocupaciones presupuestarias.,1,2026-02-12,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Alberto. Soy Sofía Moreno de MoveUp. ¿Cómo estás?
+Contacto: Hola, Sofía. Bien, gracias. ¿En qué puedo ayudarte?
+Agente: Me gustaría hablar sobre cómo MoveUp puede optimizar la movilidad corporativa de Tech Systems. ¿Tienen algún proveedor actualmente?
+Contacto: Sí, ya trabajamos con otro proveedor.
+Agente: Entiendo. Nuestro servicio podría ofrecer ahorros significativos. ¿Cómo manejan actualmente el volumen de viajes?
+Contacto: Tenemos un volumen constante, pero no estamos considerando cambiar de proveedor por ahora.
+Agente: Comprendo. ¿Puedo preguntarte si hay alguna preocupación específica sobre el presupuesto?
+Contacto: Sí, el presupuesto este año es un poco ajustado. Estamos priorizando otras áreas.
+Agente: Claro, podríamos explorar opciones para ajustarnos a sus necesidades. ¿Sería posible agendar una reunión con Roberto Sánchez, nuestro especialista?
+Contacto: Podríamos considerarlo, aunque ahora no es una prioridad.
+Agente: Perfecto, te enviaré información adicional para que lo pienses. Gracias por tu tiempo.
+Contacto: Gracias a ti.",El contacto mostró resistencia al cambio debido a un contrato existente y limitaciones presupuestarias.,Enviar documentación,Lost
+3be5a247-5c5,f30051be,Alberto Romero,Director Financiero,Tech Systems,Química,Colombia,Bogotá,9542,1853164000,Partner comercial,2026-02-11,Interés inicial bajo debido a un contrato existente y a preocupaciones presupuestarias.,2,2026-02-17,6,5,El contacto mostró resistencia al cambio debido a un contrato existente y limitaciones presupuestarias.,Enviar documentación,"Agente: Hola, Alberto. Soy Sofía de nuevo. ¿Recibiste la documentación?
+Contacto: Sí, la recibí. Sin embargo, no he podido revisarla completamente.
+Agente: No hay problema. Quería confirmar si hay algo más que podamos hacer para adaptar nuestra oferta a sus necesidades.
+Contacto: La documentación es clara, pero como mencioné, ahora mismo no estamos en posición de cambiar de proveedor.
+Agente: Entiendo. ¿Hay alguna otra objeción específica en la que podamos trabajar?
+Contacto: No realmente, es más una cuestión de timing. Estamos en medio de una reorganización interna.
+Agente: Comprendo. Si las circunstancias cambian, estaríamos encantados de trabajar con ustedes. Gracias por tu honestidad, Alberto.
+Contacto: Gracias a ti por entender.
+Agente: Entonces, cerraré el contacto como no interesado por ahora. Estamos a tu disposición si surge una nueva oportunidad.
+Contacto: Perfecto, muchas gracias.",El contacto sigue sin interés debido a la reorganización interna y falta de necesidad urgente de cambio.,Cerrar lead - no interesado,Lost
+c7db3797-fc5,efd6535e,Carlos Díaz,Director de Compras,Global Group,Logística,España,Valladolid,42,10531000,Email marketing,2025-10-25,"Carlos mostró un interés inicial debido a una promoción atractiva en el email, pero expresó preocupación por el presupuesto.",1,2025-10-27,2,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Carlos. Soy Ana Ruiz de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Ana, estoy bien, gracias. Hablemos sobre lo que tienes para ofrecer.
+Agente: Genial. Como sabes, ofrecemos servicios de movilidad corporativa que pueden optimizar tus costos de transporte. ¿Cómo gestionan actualmente el transporte de sus empleados?
+Contacto: Bueno, ya trabajamos con un proveedor local. No sé si necesitamos cambiar.
+Agente: Entiendo, pero nuestro servicio podría reducir tus costos hasta un 20%. Además, ofrecemos un informe detallado de uso mensual.
+Contacto: Suena bien, pero nuestro presupuesto está bastante ajustado este año.
+Agente: Comprendo. Me gustaría agendar una demo con nuestra especialista, Elena Navarro, para que puedas ver cómo funciona todo. ¿Te parece bien?
+Contacto: Bueno, podría ser útil, pero estoy bastante ocupado.
+Agente: Claro, lo entiendo. Podemos encontrar un momento que te acomode. ¿Tal vez la próxima semana?
+Contacto: Está bien, déjame revisarlo. Te confirmo luego.
+Agente: Perfecto, quedamos en eso. Gracias, Carlos.
+Contacto: Gracias a ti, Ana.",Carlos mostró interés pero expresó preocupaciones sobre el presupuesto. Se sugirió una demo.,Esperar confirmación cliente,Lost
+be22d2a3-bfc,efd6535e,Carlos Díaz,Director de Compras,Global Group,Logística,España,Valladolid,42,10531000,Email marketing,2025-10-25,"Carlos mostró un interés inicial debido a una promoción atractiva en el email, pero expresó preocupación por el presupuesto.",2,2025-10-30,5,3,Carlos mostró interés pero expresó preocupaciones sobre el presupuesto. Se sugirió una demo.,Esperar confirmación cliente,"Agente: Hola, Carlos. Soy Ana de nuevo. ¿Pudiste revisar el tema para la demo?
+Contacto: Hola, Ana. Sí, lo revisé, pero estamos pasando por una reorganización interna. No creo que sea el mejor momento.
+Agente: Entiendo. ¿Cuál es tu principal preocupación ahora mismo?
+Contacto: Es más bien el presupuesto y la situación interna. No podemos comprometernos con un nuevo proveedor ahora.
+Agente: Comprendo, pero quizás podríamos ajustar algo para acomodarnos a tus necesidades actuales.
+Contacto: Aprecio el esfuerzo, pero ahora mismo no podemos permitirnos ningún gasto adicional.
+Agente: Bueno, si cambian las circunstancias, estaremos aquí para ayudarte. ¿Te parece bien que te contacte en unos meses?
+Contacto: Sí, eso estaría bien. Gracias por entender.
+Agente: Gracias a ti, Carlos. Que tengas buen día.
+Contacto: Igualmente, Ana.",Carlos decidió no seguir adelante debido a restricciones presupuestarias y una reorganización interna.,Cerrar lead - no interesado,Lost
+6416c831-9e6,294c73d7,Elena Romero,Jefe de Proyectos,Alpha Systems,Construcción,España,Málaga,8514,1129363000,LinkedIn,2025-12-28,Elena mostró un alto interés debido al crecimiento de la empresa y la necesidad de optimizar los costes de movilidad.,1,2026-01-01,4,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Elena. Soy Laura Gómez de MoveUp. ¿Cómo estás?
+Contacto: Hola, Laura. Muy bien, gracias. Estaba esperando tu llamada.
+Agente: Genial. Entiendo que Alpha Systems está experimentando un crecimiento y busca soluciones para manejar mejor los desplazamientos corporativos.
+Contacto: Exactamente. Con el aumento de proyectos, nuestros costes de movilidad se han disparado.
+Agente: MoveUp puede ayudarte a reducir esos costes y ofrecer una gestión centralizada para todos los viajes. ¿Cuántos empleados suelen viajar semanalmente?
+Contacto: Al menos unos 200, especialmente entre sedes y sitios de construcción.
+Agente: Eso es considerable. Con nuestro servicio, podrías optimizar esos desplazamientos. ¿Tienes un presupuesto en mente para esta solución?
+Contacto: Estamos evaluando opciones, pero necesitamos algo que se ajuste a nuestro creciente volumen sin comprometer la calidad.
+Agente: Perfecto, puedo preparar un plan ajustado a tus necesidades específicas. ¿Te gustaría agendar una reunión con uno de nuestros especialistas para una demo?
+Contacto: Sí, me parece bien. Quisiera entender más a fondo cómo funciona todo.
+Agente: Excelente, voy a coordinar una reunión con nuestra especialista, Elena Navarro. ¿Te parece bien para el próximo miércoles?
+Contacto: Sí, miércoles está bien.
+Agente: Perfecto, te enviaré la invitación a tu correo. Gracias, Elena.
+Contacto: Gracias a ti, Laura.","Con Elena, se acordó una demo con la especialista para explorar más sobre MoveUp.",Agendar demo/reunión con especialista,Converted
+eedd7f55-42e,294c73d7,Elena Romero,Jefe de Proyectos,Alpha Systems,Construcción,España,Málaga,8514,1129363000,LinkedIn,2025-12-28,Elena mostró un alto interés debido al crecimiento de la empresa y la necesidad de optimizar los costes de movilidad.,2,2026-01-06,9,5,"Con Elena, se acordó una demo con la especialista para explorar más sobre MoveUp.",Agendar demo/reunión con especialista,"Agente: Hola, Elena. Espero que estés bien. Nos encontramos en la reunión con nuestra especialista, Elena Navarro.
+Contacto: Hola, gracias. Estoy ansiosa por ver cómo puede ayudar MoveUp a nuestra empresa.
+Especialista: Buenas tardes, Elena. Un placer conocerte. Vamos a hacer un recorrido por nuestras soluciones y cómo pueden adaptarse a Alpha Systems.
+Contacto: Perfecto. Nos interesa mucho la parte de control de costes y centralización de los viajes.
+Especialista: Claro, con MoveUp puedes tener reportes detallados y optimizar rutas para minimizar gastos.
+Contacto: Eso sería ideal. La gestión actual nos está llevando mucho tiempo y recursos.
+Especialista: Entiendo. Además, ofrecemos soporte 24/7 para cualquier problema o ajuste que necesites.
+Contacto: Excelente. ¿Cuánto tardaría la implementación una vez que decidamos proceder?
+Especialista: Por lo general, en menos de una semana estarían operando al 100%.
+Contacto: Eso suena muy bien. Creo que estamos listos para avanzar.
+Agente: Excelente, Elena. Procederemos con la documentación para su firma.
+Contacto: Perfecto, enviaré la confirmación hoy mismo.
+Agente: Gracias, Elena. Estamos encantados de trabajar con Alpha Systems.
+Contacto: Gracias a ustedes por la solución.",Alpha Systems decidió proceder con MoveUp y se acordó firmar la documentación para comenzar la implementación.,Esperar confirmación cliente,Converted
+b421ee56-4c7,22d45be3,Ana Rodríguez,Director General,Pro Consulting,Retail,España,Madrid,4438,911446000,Google Ads,2025-11-15,Pro Consulting mostró un interés inicial debido a su crecimiento y la necesidad urgente de reducir costes de movilidad.,1,2025-11-20,5,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Ana, soy Javier Torres de MoveUp. Muchas gracias por tomarte el tiempo para hablar conmigo hoy.
+Contacto: Hola Javier, encantada. Hemos estado buscando soluciones para mejorar nuestra gestión de movilidad, estamos creciendo bastante rápido.
+Agente: Eso es genial de escuchar. ¿Podrías contarme un poco más sobre el volumen de desplazamientos que manejan actualmente?
+Contacto: Claro, hemos tenido un aumento en los viajes corporativos. Actualmente, manejamos aproximadamente 200 desplazamientos diarios entre nuestros empleados en Madrid.
+Agente: Entiendo. ¿Cuál es el principal reto que enfrentas actualmente con estos desplazamientos?
+Contacto: El costo. La gestión actual de taxis y reembolsos está siendo muy ineficaz y no tenemos el control necesario sobre los gastos.
+Agente: MoveUp ofrece un sistema centralizado que no solo controla los costos, sino que también mejora la experiencia del usuario. ¿Qué te parecería ver una demo de cómo funciona nuestro servicio?
+Contacto: Eso suena interesante. Me gustaría saber más sobre las tarifas y cómo se adapta a nuestras necesidades.
+Agente: Perfecto, nuestra especialista Elena Navarro puede explicártelo con más detalle y mostrarte cómo funcionamos. ¿Cuándo te vendría bien una reunión?
+Contacto: ¿Podría ser esta misma semana? Estamos bastante interesados y tenemos cierta urgencia en encontrar una solución.
+Agente: Claro, puedo coordinar para que Elena esté disponible el viernes. ¿Te viene bien a las 10 de la mañana?
+Contacto: Sí, esa hora está bien.
+Agente: Excelente, te enviaré una invitación con los detalles del enlace. Gracias por tu tiempo, Ana.
+Contacto: Gracias a ti, Javier. Espero la invitación.",Ana Rodríguez mostró interés activo y urgencia en la solución. Se agendó una demo con Elena Navarro para el viernes.,Agendar demo/reunión con especialista,Converted
+27bc4dcd-be7,95a14b58,Isabel Romero,Director de Operaciones,Prime Dynamics,Seguros,España,Zaragoza,194,32892000,Referencia de cliente,2026-03-29,La empresa Prime Dynamics mostró un fuerte interés en optimizar sus costes de movilidad debido al alto volumen de desplazamientos que realizan mensualmente.,1,2026-04-02,4,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Isabel, soy Pablo Fernández de MoveUp. ¿Cómo estás?
+Contacto: Hola Pablo, muy bien, gracias. Estoy interesada en cómo pueden ayudarnos con nuestros desplazamientos.
+Agente: Perfecto. Sé que Prime Dynamics tiene un alto volumen de viajes. ¿Nos puedes contar un poco más sobre sus necesidades?
+Contacto: Claro, estamos creciendo y eso ha aumentado nuestros costes de movilidad. Necesitamos una solución eficiente.
+Agente: Entiendo. Nuestra plataforma podría reducir esos costes de manera significativa, además de proporcionar seguimiento en tiempo real. ¿Qué presupuesto manejan para este tipo de soluciones?
+Contacto: Actualmente, estamos revisando el presupuesto, pero nos interesa algo competitivo.
+Agente: Perfecto, enviaré más información detallada sobre nuestras tarifas y beneficios. ¿Te parece bien?
+Contacto: Sí, por favor. Así podemos revisarlo con más calma.
+Agente: De acuerdo, Isabel. Te enviaré la documentación hoy mismo.
+Contacto: Excelente, estaré esperando.
+Agente: Gracias por tu tiempo, Isabel. Hablamos pronto.
+Contacto: Gracias a ti, Pablo.",Isabel mostró un interés claro en optimizar costes de movilidad y solicitó más información.,Enviar documentación,Converted
+90c89c2c-37b,95a14b58,Isabel Romero,Director de Operaciones,Prime Dynamics,Seguros,España,Zaragoza,194,32892000,Referencia de cliente,2026-03-29,La empresa Prime Dynamics mostró un fuerte interés en optimizar sus costes de movilidad debido al alto volumen de desplazamientos que realizan mensualmente.,2,2026-04-05,7,3,Isabel mostró un interés claro en optimizar costes de movilidad y solicitó más información.,Enviar documentación,"Agente: Hola Isabel, soy Pablo de nuevo. ¿Tuviste oportunidad de revisar la documentación?
+Contacto: Sí, la revisamos y nos pareció bastante interesante.
+Agente: Eso es genial. ¿Tienen alguna pregunta o preocupación que pueda resolver?
+Contacto: Nos gustaría saber cómo sería el proceso de integración y si hay soporte para cualquier problema.
+Agente: Claro, nuestro equipo de soporte está disponible 24/7 y la integración es rápida. Además, Roberto Sánchez, nuestro especialista, puede guiaros en todo el proceso.
+Contacto: Eso suena perfecto. Creo que estamos listos para seguir adelante.
+Agente: Excelente, Isabel. Entonces, ¿confirmamos la implementación para la próxima semana?
+Contacto: Sí, por favor, cuanto antes mejor.
+Agente: Perfecto. Te enviaré un correo de confirmación y los siguientes pasos.
+Contacto: Muy bien, muchas gracias, Pablo.
+Agente: A ti, Isabel. Estamos emocionados de colaborar con Prime Dynamics.
+Contacto: Igualmente, hasta luego.
+Agente: Hasta luego, Isabel.",Isabel confirmó su interés y avanzaron con la implementación de MoveUp.,Esperar confirmación cliente,Converted
+3acbce6e-2f0,b48d6b77,Marta Vega,Director de RRHH,Prime Group,Educación,España,Granada,38,5678000,Llamada en frío,2026-02-25,El contacto mostró un interés inicial debido a la búsqueda de opciones más económicas para transporte corporativo.,1,2026-03-04,7,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Marta, soy Javier Torres de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Javier, bien, gracias. ¿En qué puedo ayudarte?
+Agente: Quería hablarte sobre cómo MoveUp podría ser una solución eficiente para los desplazamientos corporativos de Prime Group.
+Contacto: Entiendo, pero la verdad es que ya trabajamos con otro proveedor y estamos satisfechos.
+Agente: Por supuesto, eso es comprensible. ¿Hay algún aspecto que sientas que podría mejorar con tu proveedor actual, como el servicio al cliente o la flexibilidad de precios?
+Contacto: Principalmente el tema del presupuesto. La situación económica nos ha hecho ser más estrictos con los gastos.
+Agente: MoveUp ofrece tarifas competitivas y personalizables. Podemos adaptarnos a las necesidades de empresas de vuestro tamaño.
+Contacto: Agradezco la información, pero en estos momentos no estamos buscando cambiar de proveedor.
+Agente: Entiendo. Si en el futuro decides explorar otras opciones, ¿te gustaría que te enviara más información para que la tengas a mano?
+Contacto: Prefiero que, si acaso, me contactes más adelante. Ahora mismo no estamos interesados.
+Agente: Perfecto, Marta. Gracias por tu tiempo. Estaré disponible si necesitas algo más.
+Contacto: Gracias, Javier. Hasta luego.",El contacto mostró escepticismo y declinó explorar más opciones debido a un presupuesto limitado y satisfacción con el proveedor actual.,Cerrar lead - no interesado,Lost
+7b30ac0e-76f,4e084e5e,María Díaz,Director Financiero,Corp Partners,Farmacéutica,España,Málaga,374,73493000,Referencia de cliente,2025-11-16,"Corp Partners mostró un interés inicial debido a una referencia de cliente satisfecho, pero mencionaron restricciones presupuestarias.",1,2025-11-23,7,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola María, soy Carlos Martínez de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Carlos, bien, gracias. ¿Y tú?
+Agente: Muy bien, gracias. Quería hablarte sobre cómo MoveUp puede optimizar la movilidad de tu empresa. Me comentaron que ya tenéis un proveedor, pero creemos que podemos ofrecer una solución más competitiva.
+Contacto: Sí, efectivamente ya estamos trabajando con otro proveedor y, sinceramente, estamos satisfechos con su servicio.
+Agente: Entiendo, ¿podrías decirme cuántos viajes suelen gestionar al mes? Quizás podamos ajustar una propuesta que se alinee mejor con vuestro presupuesto.
+Contacto: Aproximadamente unos 300 viajes mensuales, pero ahora mismo estamos revisando todos nuestros contratos debido a una reorganización interna.
+Agente: Lo comprendo. Podría ser útil revisar esto con nuestro especialista. ¿Te parece si agendamos una reunión con Tomás Iglesias para ver el valor añadido que podríamos ofrecer?
+Contacto: Podría ser, pero ahora mismo no puedo comprometerme a una reunión hasta que tengamos más claro nuestro presupuesto.
+Agente: Claro, lo entiendo. Te enviaré alguna documentación para que la revises cuando tengas tiempo. ¿Te parece bien?
+Contacto: Sí, por favor envíamela.","La llamada se centró en evaluar el interés de Corp Partners, pero encontraron objeciones debido a su proveedor actual y reorganización interna.",Enviar documentación,Lost
+635ee2ce-3bf,4e084e5e,María Díaz,Director Financiero,Corp Partners,Farmacéutica,España,Málaga,374,73493000,Referencia de cliente,2025-11-16,"Corp Partners mostró un interés inicial debido a una referencia de cliente satisfecho, pero mencionaron restricciones presupuestarias.",2,2025-11-30,14,7,"La llamada se centró en evaluar el interés de Corp Partners, pero encontraron objeciones debido a su proveedor actual y reorganización interna.",Enviar documentación,"Agente: Hola María, soy Carlos de nuevo. Espero que hayas podido revisar la documentación que te envié la semana pasada.
+Contacto: Hola Carlos, sí, la he revisado. Sin embargo, en este momento no estamos interesados en cambiar de proveedor.
+Agente: Entiendo, ¿hay algún aspecto que consideras que podríamos mejorar para que MoveUp sea una opción viable para Corp Partners en el futuro?
+Contacto: Principalmente, el tema del presupuesto. Estamos en un año complicado y realmente necesitamos mantenernos dentro de los números actuales.
+Agente: Comprendo la situación. Si en el futuro el contexto cambia, no dudes en contactarme. Estaremos encantados de reevaluar la propuesta con condiciones más favorables.
+Contacto: Lo agradezco, Carlos. De momento preferimos no hacer cambios.
+Agente: Perfecto, María. Gracias por tu tiempo y consideración. Si necesitas algo más, aquí estoy.
+Contacto: Gracias, Carlos.",María confirmó que no están interesados debido a restricciones presupuestarias y satisfacción con su proveedor actual.,Cerrar lead - no interesado,Lost
+9edab693-5de,bf3df7cc,Elena Iglesias,CFO,Tech Services,Logística,España,Las Palmas,137,21288000,Referencia de cliente,2025-12-07,"Elena Iglesias mostró un interés moderado, queriendo explorar opciones para mejorar la movilidad corporativa, aunque no tienen urgencia inmediata.",1,2025-12-10,3,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Buenos días, Elena. Soy Pablo Fernández de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola, Pablo. Estoy bien, gracias. ¿Tú?
+Agente: Muy bien, gracias. Quería hablar contigo sobre nuestras soluciones de movilidad corporativa. ¿Tienen algún volumen de viajes al mes que quisieran cubrir con un servicio como el nuestro?
+Contacto: Actualmente, gestionamos unos 50 viajes mensuales, principalmente para ejecutivos y visitas a nuestros centros logísticos.
+Agente: Perfecto, eso es algo que podemos manejar sin problema. Nuestro servicio incluye opciones flexibles para ajustarse a diferentes presupuestos.
+Contacto: Eso suena interesante. Aunque en estos momentos estamos evaluando varias opciones y no tenemos un presupuesto aprobado.
+Agente: Lo entiendo. Para que tengas más información, te puedo enviar documentación detallada sobre nuestras tarifas y cómo podemos ayudar a optimizar sus gastos de transporte.
+Contacto: Sí, por favor. Me gustaría ver esas opciones antes de tomar cualquier decisión.
+Agente: Claro, te lo enviaré por correo hoy mismo. ¿Hay algo más en lo que te pueda ayudar ahora?
+Contacto: No, eso sería todo por ahora. Gracias, Pablo.
+Agente: De acuerdo, gracias a ti, Elena. Seguimos en contacto.",La llamada se centró en entender las necesidades de movilidad de Tech Services y enviar documentación para evaluación.,Enviar documentación,Nurturing
+273839d9-e64,bf3df7cc,Elena Iglesias,CFO,Tech Services,Logística,España,Las Palmas,137,21288000,Referencia de cliente,2025-12-07,"Elena Iglesias mostró un interés moderado, queriendo explorar opciones para mejorar la movilidad corporativa, aunque no tienen urgencia inmediata.",2,2025-12-15,8,5,La llamada se centró en entender las necesidades de movilidad de Tech Services y enviar documentación para evaluación.,Enviar documentación,"Agente: Hola, Elena. Soy Pablo nuevamente, de MoveUp. Espero que hayas recibido la documentación que te envié.
+Contacto: Hola, Pablo. Sí, la recibí, gracias. La hemos estado revisando.
+Agente: Excelente. ¿Tienen alguna pregunta o hay algo que necesites que aclaremos?
+Contacto: La información está bastante clara. Sin embargo, necesitamos un poco más de tiempo para decidir, ya que estamos esperando una aprobación presupuestaria.
+Agente: Entiendo perfectamente. Mientras tanto, podríamos programar una demostración con nuestro especialista, Roberto Sánchez, para mostrarte en mayor detalle cómo funciona nuestro servicio.
+Contacto: Me parece bien, pero preferiría esperar a tener más claridad sobre nuestro presupuesto antes de avanzar.
+Agente: Está bien, Elena. Nos mantenemos en contacto y a tu disposición. ¿Te parece bien si te vuelvo a contactar en un par de semanas?
+Contacto: Sí, eso estaría perfecto. Gracias por tu paciencia.
+Agente: Gracias a ti, Elena. Espero que podamos trabajar juntos pronto.","Elena confirmó que la documentación fue recibida, pero necesitan más tiempo para la aprobación presupuestaria antes de proceder.",Cerrar lead - nurturing,Nurturing
+7c4e6695-836,a0e18acb,Carlos Moreno,Jefe de Proyectos,Tech Innovations,Tecnología,España,Barcelona,688,58185000,Partner comercial,2026-03-14,Carlos mostró mucho interés debido al crecimiento de la empresa y la necesidad urgente de reducir los costes de movilidad.,1,2026-03-18,4,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Carlos, soy Ana Ruiz de MoveUp. Quería hablar contigo sobre cómo podríamos ayudar a Tech Innovations con vuestro volumen de desplazamientos.
+Contacto: Hola Ana, gracias por llamar. Justo ahora estamos buscando opciones para gestionar mejor nuestros viajes, el volumen ha crecido mucho.
+Agente: Entiendo. Me imagino que eso también ha incrementado los costes, ¿cierto?
+Contacto: Exactamente, queremos encontrar una solución que nos permita optimizar esto sin sacrificar calidad en el servicio.
+Agente: Seguro que podemos ayudar. ¿Podrías darme una idea del presupuesto que manejáis para movilidad?
+Contacto: Claro, estamos buscando algo que se ajuste, pero que también nos dé más control sobre los gastos.
+Agente: Perfecto. Me gustaría agendar una reunión con Roberto Sánchez, nuestro especialista, para que puedas ver cómo operamos y cómo podría ajustarse a vuestras necesidades. ¿Te parece bien?
+Contacto: Me parece excelente, ¿cuándo podría ser?
+Agente: ¿Qué tal la próxima semana? Así tendré toda la información lista para ti.
+Contacto: Genial, coordinemos.
+Agente: Perfecto, te confirmaré el día y hora exactos por correo.
+Contacto: Gracias, Ana.
+Agente: A ti, Carlos.",Carlos mostró interés en coordinar una reunión con el especialista para profundizar en la oferta de MoveUp.,Agendar demo/reunión con especialista,Converted
+f6950b9a-c70,a0e18acb,Carlos Moreno,Jefe de Proyectos,Tech Innovations,Tecnología,España,Barcelona,688,58185000,Partner comercial,2026-03-14,Carlos mostró mucho interés debido al crecimiento de la empresa y la necesidad urgente de reducir los costes de movilidad.,2,2026-03-23,9,5,Carlos mostró interés en coordinar una reunión con el especialista para profundizar en la oferta de MoveUp.,Agendar demo/reunión con especialista,"Agente: Hola Carlos, soy Ana de nuevo. Solo quería confirmar nuestra reunión de hoy con Roberto a las 3 p.m.
+Contacto: Hola, Ana. Sí, estamos listos para la reunión.
+Agente: Excelente. Carlos, ¿alguna otra preocupación o pregunta antes de iniciar?
+Contacto: No, solo queremos asegurarnos de que el servicio pueda adaptarse rápidamente a nuestras necesidades.
+Agente: Perfecto, eso es algo que Roberto puede explicar mejor. Él te mostrará cómo personalizamos nuestro servicio para cada cliente.
+Contacto: Muy bien, suena bien.
+Agente: Después de la reunión, si todo es satisfactorio, podemos proceder con la firma del acuerdo.
+Contacto: Claro, eso esperamos. Si todo está claro, estaríamos interesados en proceder.
+Agente: Fantástico, entonces nos vemos a las 3 p.m.
+Contacto: Perfecto, gracias Ana.
+Agente: Gracias a ti, Carlos.","Se confirmó la reunión con el especialista y se estableció que, si todo era satisfactorio, procederían con la firma del acuerdo.",Esperar confirmación cliente,Converted
+6e6ab0de-d6a,017a4e69,Marta Pérez,Director Comercial,Smart Group,Alimentación,España,Valencia,3955,1156058000,Partner comercial,2026-01-20,"Smart Group mostró gran interés debido a su crecimiento y al alto volumen de desplazamientos, buscando una solución urgente para reducir costes de movilidad.",1,2026-01-25,5,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Marta, soy Diego López de MoveUp. ¿Cómo estás?
+Contacto: Hola Diego, muy bien, gracias. Estoy interesada en saber más sobre vuestro servicio.
+Agente: Genial. Entiendo que estáis experimentando un crecimiento significativo en Smart Group. ¿Cómo están gestionando actualmente los desplazamientos de vuestro personal?
+Contacto: Actualmente, utilizamos un mix de taxis y vehículos propios, pero los costes están disparados. Buscamos optimizar esto urgentemente.
+Agente: Entiendo. Nuestro servicio podría ayudaros a gestionar mejor esos desplazamientos y reducir costes. ¿Cuántos viajes aproximadamente gestionáis al mes?
+Contacto: Aproximadamente unos 3,000 viajes al mes, pero esperamos que aumenten conforme crezcamos.
+Agente: ¡Guau! Es un volumen considerable. Creemos que podríamos ofreceros una solución a medida para vuestras necesidades. ¿Tienes alguna objeción o aspecto que te preocupe en particular?
+Contacto: No mucho, quizás solo quisiera asegurarme de que la transición sea suave y no interrumpa nuestras operaciones.
+Agente: Claro, de eso nos encargamos nosotros. Me gustaría agendar una reunión con nuestra especialista, Cristina Vera, para que te explique cómo podríamos implementarlo. ¿Te parece bien?
+Contacto: Perfecto, Diego. Me parece una excelente idea.
+Agente: Perfecto, me encargaré de agendar la reunión y enviarte la información. Muchas gracias por tu tiempo, Marta.
+Contacto: Gracias a ti, Diego. Espero la documentación entonces.","Marta mostró interés en la solución de MoveUp, acordando una reunión con la especialista para avanzar en la implementación.",Agendar demo/reunión con especialista,Converted
+01b9479e-5aa,17aa1611,María Díaz,Director Comercial,Pro Dynamics,Consultoría IT,España,Murcia,826,235134000,Llamada en frío,2025-11-07,"Inicialmente, María mostró un interés moderado en explorar opciones adicionales para la movilidad corporativa, pero manifestó preocupación por los costes.",1,2025-11-14,7,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, María. Soy Laura Gómez de MoveUp, ¿cómo estás hoy?
+Contacto: Hola, Laura. Bien, gracias. ¿En qué puedo ayudarte?
+Agente: Quería hablar sobre cómo MoveUp puede mejorar la movilidad corporativa de Pro Dynamics. ¿Ustedes utilizan algún servicio actualmente?
+Contacto: Sí, ya contamos con un proveedor, aunque siempre estamos abiertos a escuchar propuestas nuevas.
+Agente: Perfecto, ¿puedo preguntar cuántos viajes corporativos realizan mensualmente?
+Contacto: Alrededor de 300 viajes.
+Agente: Muy bien, creo que podríamos ofrecerte una solución más económica. ¿Tienes alguna preocupación principal?
+Contacto: Sí, el presupuesto es una gran preocupación para nosotros ahora mismo.
+Agente: Entiendo. Podríamos ajustar nuestro servicio a tus necesidades específicas para maximizar el ahorro.
+Contacto: Bueno, podríamos considerarlo, pero tendría que verlo con mi equipo.
+Agente: Por supuesto, puedo enviar información detallada por correo. ¿Te parece bien?
+Contacto: Sí, envíamelo y lo revisaré.
+Agente: Perfecto, lo haré de inmediato. Gracias, María.
+Contacto: A ti, Laura.",María mostró interés en recibir más información pero enfatizó preocupaciones sobre el presupuesto.,Enviar documentación,Lost
+a45a8f88-2af,17aa1611,María Díaz,Director Comercial,Pro Dynamics,Consultoría IT,España,Murcia,826,235134000,Llamada en frío,2025-11-07,"Inicialmente, María mostró un interés moderado en explorar opciones adicionales para la movilidad corporativa, pero manifestó preocupación por los costes.",2,2025-11-19,12,5,María mostró interés en recibir más información pero enfatizó preocupaciones sobre el presupuesto.,Enviar documentación,"Agente: Hola, María. Laura de nuevo, ¿tuviste oportunidad de revisar la información que envié?
+Contacto: Hola, Laura. Sí, pero ahora mismo estamos pasando por una reorganización interna y es un momento complicado para cambiar de proveedor.
+Agente: Lo entiendo, esos procesos pueden ser complejos. ¿Hay algún cambio que te interesaría ver en nuestra propuesta?
+Contacto: En realidad, el precio sigue siendo un problema, y no queremos complicarnos ahora.
+Agente: Claro, con la reorganización entiendo que el timing es difícil. ¿Te gustaría agendar una reunión con Roberto, nuestro especialista, para que pueda ofrecerte opciones más acotadas?
+Contacto: Podríamos, pero no estoy segura de que ahora sea el momento adecuado.
+Agente: Comprendo. ¿Te parece si esperamos un poco y recontacto en unas semanas?
+Contacto: Sí, mejor así.
+Agente: Perfecto, lo haré. Muchas gracias, María.
+Contacto: Gracias a ti.","María expresó que debido a una reorganización interna, no es el mejor momento para buscar cambios, aunque no descarta hablar en el futuro.",Recontactar en X días,Lost
+d01f67fc-e32,17aa1611,María Díaz,Director Comercial,Pro Dynamics,Consultoría IT,España,Murcia,826,235134000,Llamada en frío,2025-11-07,"Inicialmente, María mostró un interés moderado en explorar opciones adicionales para la movilidad corporativa, pero manifestó preocupación por los costes.",3,2025-12-04,27,15,"María expresó que debido a una reorganización interna, no es el mejor momento para buscar cambios, aunque no descarta hablar en el futuro.",Recontactar en X días,"Agente: Hola, María. Soy Laura de MoveUp. Quería saber si las cosas han mejorado en cuanto a la reorganización.
+Contacto: Hola, Laura. La verdad es que seguimos en el mismo punto y, además, estamos ajustando el presupuesto para el próximo año.
+Agente: Entiendo. ¿Crees que podríamos ser una opción en el futuro o deberíamos cerrar esta propuesta por ahora?
+Contacto: Creo que, por nuestras prioridades actuales, podríamos cerrar esta opción. No estamos en condiciones de hacer cambios este año.
+Agente: Comprendo perfectamente, María. Si en el futuro necesitas revisar esto de nuevo, estamos aquí para ayudarte.
+Contacto: Gracias, Laura. Te tendré en cuenta.
+Agente: Cuida mucho, María. Hasta luego.
+Contacto: Hasta luego.",María decidió no continuar con la propuesta debido a restricciones presupuestarias y la falta de urgencia para cambiar de proveedor.,Cerrar lead - no interesado,Lost
+77c9aad4-988,85a8e231,Carlos Jiménez,Director Comercial,Euro Logistics,Seguros,España,Alicante,32,5256000,Formulario web,2026-02-08,"Carlos mostró interés inicial en conocer las opciones de movilidad corporativa para evaluar posibles ahorros, pero mencionó limitaciones presupuestarias.",1,2026-02-11,3,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Carlos. Soy Marta Díaz de MoveUp. ¿Cómo estás?
+Contacto: Hola, Marta. Bien, gracias. ¿En qué puedo ayudarte?
+Agente: Quería hablar sobre cómo MoveUp podría optimizar la movilidad de tu empresa. ¿Cuántos viajes realizan mensualmente?
+Contacto: Aproximadamente unos 150 viajes.
+Agente: Con nuestros servicios, podrías ahorrar hasta un 20% en cada viaje. ¿Qué te parece?
+Contacto: Suena bien, pero actualmente trabajamos con otro proveedor y estamos satisfechos.
+Agente: Entiendo. Quizás podríamos hacer una comparativa de costos para evaluar si realmente te conviene cambiar.
+Contacto: Podría ser, pero ahora mismo el presupuesto es ajustado y no estamos considerando cambios.
+Agente: Lo comprendo. ¿Te gustaría recibir más información por correo?
+Contacto: Sí, puedes enviarme información y lo reviso.
+Agente: Perfecto, te envío la documentación hoy mismo.
+Contacto: Gracias, Marta.
+Agente: Gracias a ti, Carlos. Hablamos pronto.","Carlos mostró interés en recibir información, pero no está considerando cambios de proveedor por ahora.",Enviar documentación,Lost
+b3979797-bfd,85a8e231,Carlos Jiménez,Director Comercial,Euro Logistics,Seguros,España,Alicante,32,5256000,Formulario web,2026-02-08,"Carlos mostró interés inicial en conocer las opciones de movilidad corporativa para evaluar posibles ahorros, pero mencionó limitaciones presupuestarias.",2,2026-02-16,8,5,"Carlos mostró interés en recibir información, pero no está considerando cambios de proveedor por ahora.",Enviar documentación,"Agente: Hola, Carlos. Soy Marta nuevamente. ¿Pudiste revisar la información que te envié?
+Contacto: Hola, Marta. Sí, la revisé, pero tengo algunas dudas.
+Agente: Claro, dime cuáles son tus inquietudes.
+Contacto: No estoy seguro de que el cambio justifique el esfuerzo, además de que estamos en medio de una reorganización interna.
+Agente: Entiendo la preocupación. ¿Quizás una demostración podría aclarar cómo podríamos integrarnos sin problemas?
+Contacto: Podría ayudar, pero el presupuesto sigue siendo una barrera.
+Agente: Podemos personalizar una solución que se ajuste a tus necesidades y presupuesto. ¿Qué tal si agendamos una reunión con nuestra especialista Cristina Vera?
+Contacto: Ok, podemos agendarla para la próxima semana.
+Agente: Excelente, te envío una invitación para coordinar la mejor hora.
+Contacto: De acuerdo, gracias.
+Agente: Gracias a ti, Carlos. Hablamos pronto.","Carlos mostró interés en una demo, pero sigue preocupado por el presupuesto y la reorganización interna.",Agendar demo/reunión con especialista,Lost
+44dad625-e64,85a8e231,Carlos Jiménez,Director Comercial,Euro Logistics,Seguros,España,Alicante,32,5256000,Formulario web,2026-02-08,"Carlos mostró interés inicial en conocer las opciones de movilidad corporativa para evaluar posibles ahorros, pero mencionó limitaciones presupuestarias.",3,2026-02-23,15,7,"Carlos mostró interés en una demo, pero sigue preocupado por el presupuesto y la reorganización interna.",Agendar demo/reunión con especialista,"Agente: Hola, Carlos. Marta aquí. ¿Listo para la reunión con Cristina?
+Contacto: Hola, Marta. He estado pensando y, siendo sincero, no creo que sea el mejor momento para este cambio.
+Agente: Entiendo, Carlos. ¿Hay algo específico que te preocupe?
+Contacto: Sí, principalmente, el presupuesto y la estabilidad actual con nuestro proveedor.
+Agente: Comprendo. ¿Te gustaría que revisáramos esto más adelante, cuando la situación mejore?
+Contacto: Podría ser, pero por ahora no estamos interesados en avanzar.
+Agente: Gracias por tu sinceridad, Carlos. Siempre estamos aquí si cambias de opinión.
+Contacto: Gracias, Marta. Lo tendré en cuenta.
+Agente: Que tengas un buen día, Carlos.
+Contacto: Igualmente, Marta.",Carlos decide no continuar debido a las restricciones presupuestarias y su satisfacción actual con el proveedor.,Cerrar lead - no interesado,Lost
+ccc3d18f-e82,6cb65a63,Alberto Martínez,Responsable de Flota,Flex Consulting,Logística,España,Málaga,6686,728307000,LinkedIn,2026-02-08,Alberto mostró interés en optimizar la gestión de la flota y reducir costos mediante un servicio de movilidad corporativa eficiente.,1,2026-02-13,5,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Alberto, soy Sofía Moreno de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola Sofía, estoy bien, gracias. ¿Y tú?
+Agente: Muy bien, gracias. Quería saber si tuviste la oportunidad de revisar nuestra propuesta inicial de servicios de movilidad corporativa.
+Contacto: Sí, le eché un vistazo, pero tengo algunas dudas sobre cómo se integraría con nuestro volumen actual de viajes.
+Agente: Claro, entiendo. Nuestra plataforma es bastante flexible y podemos adaptarnos a las necesidades específicas de Flex Consulting. ¿Cuál es el volumen mensual de viajes que manejan actualmente?
+Contacto: Alrededor de 500 viajes mensuales. Estamos buscando optimizar costos y mejorar la eficiencia.
+Agente: Perfecto, ese nivel de volumen es manejable para nosotros. ¿Hay algún factor específico que consideras crítico en la decisión? 
+Contacto: Sí, el coste y la facilidad de uso son cruciales. También necesitaría saber más sobre el servicio al cliente en caso de incidentes.
+Agente: Comprendo. Nuestro servicio al cliente está disponible 24/7 y tenemos un equipo dedicado para atender cualquier incidencia de manera rápida. 
+Contacto: Eso suena bien. Me gustaría discutir esto con mi equipo más a fondo. ¿Podríamos organizar una demo o una reunión con un especialista?
+Agente: Por supuesto. Puedo coordinar una reunión con nuestra especialista, Elena Navarro, para que puedas ver el servicio en acción y resolver cualquier otra duda.
+Contacto: Excelente, eso me ayudaría mucho.
+Agente: Perfecto, entonces coordinaré todo para que Elena pueda mostrarles más detalles. ¿Te viene bien la próxima semana?
+Contacto: Sí, la próxima semana estaría bien.
+Agente: Genial, te enviaré una confirmación con la fecha y hora exactas.
+Contacto: Perfecto, gracias Sofía.
+Agente: A ti, Alberto, por tu tiempo. Hablamos pronto.",Alberto mostró interés en una reunión para ver detalles del servicio y resolver dudas específicas antes de tomar una decisión.,Agendar demo/reunión con especialista,In Progress
+196e0990-676,9feb00db,Cristina Navarro,Director de RRHH,Global Systems,Química,España,Málaga,22,2838000,Email marketing,2026-01-19,Cristina mostró un interés inicial moderado debido a la eficiencia que MoveUp podría aportar a sus viajes corporativos.,1,2026-01-25,6,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Cristina, soy Laura Gómez de MoveUp. ¿Cómo estás?
+Contacto: Hola, Laura. Todo bien, gracias. ¿Y tú?
+Agente: Muy bien, gracias por preguntar. Quería hablar sobre cómo podríamos optimizar los viajes corporativos en Global Systems. ¿Cómo gestionan actualmente este aspecto?
+Contacto: Actualmente usamos una empresa local que nos ha funcionado bien hasta ahora.
+Agente: Entiendo, ¿pero sabías que con nuestro servicio podrías reducir costes operativos especialmente en picos de actividad?
+Contacto: Sí, pero sinceramente, nuestro presupuesto está bastante ajustado este año.
+Agente: Puede que podamos encontrar una solución acorde a su presupuesto. ¿Te gustaría que revisáramos algunas propuestas?
+Contacto: Podría estar interesada, pero ahora mismo estamos en medio de una reorganización interna.
+Agente: Claro, eso es comprensible. ¿Te parece si te envío más información para que puedas revisarla con calma?
+Contacto: Sí, por favor, eso estaría bien.
+Agente: Perfecto, te la envío enseguida.","Cristina mencionó una reorganización interna y preocupaciones presupuestarias, pero acordó recibir más información.",Enviar documentación,Lost
+86d0af1a-67c,9feb00db,Cristina Navarro,Director de RRHH,Global Systems,Química,España,Málaga,22,2838000,Email marketing,2026-01-19,Cristina mostró un interés inicial moderado debido a la eficiencia que MoveUp podría aportar a sus viajes corporativos.,2,2026-02-01,13,7,"Cristina mencionó una reorganización interna y preocupaciones presupuestarias, pero acordó recibir más información.",Enviar documentación,"Agente: Hola Cristina, soy Laura de nuevo. Espero que hayas tenido tiempo de revisar la información que te envié.
+Contacto: Hola Laura, sí, la revisé. Es interesante, pero como mencioné, estamos atados de manos con el presupuesto.
+Agente: Entiendo, ¿te gustaría que organizara una reunión con nuestra especialista Elena para ver si podemos ajustar algo más a tus necesidades?
+Contacto: No estoy segura, honestamente, nuestra situación no ha cambiado mucho desde la última vez que hablamos.
+Agente: Aprecio tu sinceridad. Quizás Elena pueda ofrecerte una perspectiva diferente o alguna solución creativa.
+Contacto: Bueno, podría escuchar una propuesta si no compromete mucho tiempo.
+Agente: Ideal, coordinaré para que sea breve. ¿Te parece bien la próxima semana?
+Contacto: Sí, creo que podríamos hacer un espacio.","Cristina sigue preocupada por el presupuesto, pero aceptó una reunión breve con la especialista.",Agendar demo/reunión con especialista,Lost
+97667a1a-cb5,9feb00db,Cristina Navarro,Director de RRHH,Global Systems,Química,España,Málaga,22,2838000,Email marketing,2026-01-19,Cristina mostró un interés inicial moderado debido a la eficiencia que MoveUp podría aportar a sus viajes corporativos.,3,2026-02-06,18,5,"Cristina sigue preocupada por el presupuesto, pero aceptó una reunión breve con la especialista.",Agendar demo/reunión con especialista,"Agente: Hola Cristina, soy Laura. Quería saber tu opinión después de la reunión con Elena.
+Contacto: Hola Laura. La verdad es que aún tengo mis dudas. La propuesta de coste sigue siendo un problema para nosotros.
+Agente: Entiendo, ¿hay algo específico que te preocupe más aparte del presupuesto?
+Contacto: Bueno, también estamos considerando si es el mejor momento para cambiar de proveedor con la situación actual.
+Agente: Comprendo, cambiar de proveedor es una decisión importante. Tal vez podríamos ofrecer un periodo de prueba para que veas el valor por ti misma.
+Contacto: Agradezco la oferta, pero pensándolo bien, creo que mejor lo dejamos para otro momento.
+Agente: Claro, Cristina. Si en el futuro cambian las cosas, no dudes en contactarnos.
+Contacto: Por supuesto, muchas gracias por tu tiempo y la información.
+Agente: Gracias a ti, Cristina. Hasta luego.",Cristina decidió no seguir adelante con la propuesta debido a preocupaciones presupuestarias y de coyuntura.,Cerrar lead - no interesado,Lost
+a2fb8fcb-bac,76e361ba,Alberto Navarro,Responsable de Movilidad,Smart Consulting,Automoción,España,Las Palmas,475,123272000,Partner comercial,2026-03-27,Smart Consulting mostró un interés inicial en explorar opciones de movilidad corporativa debido a recomendaciones de un partner comercial.,1,2026-03-30,3,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Alberto. Soy Diego López de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola, Diego. Bien, gracias. ¿En qué puedo ayudarte?
+Agente: He visto que mostraste interés en nuestros servicios de movilidad corporativa. Quisiera saber más sobre sus necesidades y cómo podemos ayudarles.
+Contacto: Sí, bueno... estamos considerando opciones, pero ya tenemos un proveedor.
+Agente: Entiendo. ¿Podrías compartir más sobre tu experiencia actual y el volumen de viajes que realizan?
+Contacto: Actualmente, hacemos alrededor de 150 viajes al mes, pero con la situación económica, no estamos buscando cambios.
+Agente: Comprendo la preocupación por el presupuesto. ¿Podemos ofrecerte una propuesta que se ajuste mejor a sus necesidades?
+Contacto: Nuestro presupuesto está bastante ajustado y, con la reorganización interna, no estamos tomando nuevas decisiones.
+Agente: Si lo deseas, puedo agendar una reunión con nuestra especialista, Elena Navarro, para que puedas conocer mejor nuestras ventajas.
+Contacto: Déjame pensarlo, pero ahora mismo no es una prioridad para nosotros.
+Agente: Entiendo, Alberto. Quisiera mantener el contacto en caso de que decidan reconsiderar en el futuro.
+Contacto: Claro, no hay problema.
+Agente: Perfecto. Aprecio tu tiempo, Alberto.
+Contacto: Gracias a ti, Diego. Hasta luego.","El contacto expresó que ya tienen un proveedor y están en medio de una reorganización interna, lo que limita su interés en nuevas soluciones.",Cerrar lead - no interesado,Lost
+72138208-533,e7c83a77,Marta López,CFO,Pro Solutions,Farmacéutica,España,Valencia,971,110886000,Google Ads,2025-12-24,Pro Solutions mostró interés en el servicio de movilidad corporativa para mejorar la eficiencia de sus desplazamientos internos.,1,2025-12-29,5,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Marta, soy Marta Díaz de MoveUp. ¿Cómo estás?
+Contacto: Hola Marta, bien, gracias. Estuvimos revisando vuestra propuesta inicial.
+Agente: ¡Perfecto! Me gustaría saber si el volumen de viajes que manejan es el mismo que discutimos previamente.
+Contacto: Sí, mantenemos un promedio de 200 viajes mensuales.
+Agente: Entiendo. ¿Han visto alguna limitación en el presupuesto para implementar este servicio?
+Contacto: No precisamente, pero queremos asegurarnos de que el precio sea competitivo.
+Agente: Por supuesto. Podemos revisar las cifras más a fondo. ¿Hay alguna objeción o pregunta que podamos resolver ahora?
+Contacto: Nos gustaría saber más sobre cómo se integraría con nuestros sistemas actuales.
+Agente: Claro, eso es algo que nuestro especialista Roberto Sánchez puede explicar con más detalle.
+Contacto: Estupendo, creo que una reunión sería útil.
+Agente: Excelente, agendemos una demo con Roberto para que pueda responder todas tus dudas.",Marta mostró interés en una demo para entender mejor la integración con sus sistemas.,Agendar demo/reunión con especialista,In Progress
+8c780e86-346,e7c83a77,Marta López,CFO,Pro Solutions,Farmacéutica,España,Valencia,971,110886000,Google Ads,2025-12-24,Pro Solutions mostró interés en el servicio de movilidad corporativa para mejorar la eficiencia de sus desplazamientos internos.,2,2026-01-05,12,7,Marta mostró interés en una demo para entender mejor la integración con sus sistemas.,Agendar demo/reunión con especialista,"Agente: Hola Marta, aquí Marta Díaz de nuevo. ¿Confirmamos la demo con Roberto?
+Contacto: Hola, sí, la demo fue muy útil. Roberto aclaró muchas de nuestras dudas sobre la integración.
+Agente: Me alegra escuchar eso. ¿Cómo ves el ajuste del servicio a sus necesidades?
+Contacto: Se ve bastante bien. Ahora necesitamos evaluar el impacto financiero más detalladamente.
+Agente: Entiendo, puedo enviar un desglose más detallado de los costos. ¿Te parece?
+Contacto: Sí, eso sería genial. También necesitamos algunas referencias de clientes similares.
+Agente: Perfecto, prepararé esa documentación y te la enviaré pronto.
+Contacto: De acuerdo, estaré esperando.
+Agente: Muy bien, estamos en contacto entonces.","La demo fue exitosa, pero Marta solicitó un desglose de costos y referencias.",Enviar documentación,In Progress
+213c9875-f9f,e7c83a77,Marta López,CFO,Pro Solutions,Farmacéutica,España,Valencia,971,110886000,Google Ads,2025-12-24,Pro Solutions mostró interés en el servicio de movilidad corporativa para mejorar la eficiencia de sus desplazamientos internos.,3,2026-01-10,17,5,"La demo fue exitosa, pero Marta solicitó un desglose de costos y referencias.",Enviar documentación,"Agente: Hola Marta, Marta Díaz nuevamente. ¿Recibiste la documentación que envié?
+Contacto: Hola Marta, sí, la recibí y la revisamos con mi equipo.
+Agente: ¿Les pareció bien? ¿Alguna otra información que necesiten?
+Contacto: Necesitaríamos una reunión más con nuestro director general para tomar una decisión final.
+Agente: Claro, puedo organizar otra reunión con Roberto y cualquier otra persona de nuestro equipo que sea necesaria.
+Contacto: Eso sería ideal. Nos gustaría cerrar esto pronto, si es posible.
+Agente: Entiendo. Coordinaré todo para que podamos avanzar rápido. ¿Cuándo te viene bien?
+Contacto: La próxima semana sería perfecto.
+Agente: Perfecto, te confirmo la fecha y hora lo antes posible.",Marta confirmó que necesitan una reunión con su director general antes de tomar una decisión final.,Esperar confirmación cliente,In Progress
+2133b0fc-aa2,e4e7ee7d,María Serrano,Responsable de Flota,Max Logistics,Telecomunicaciones,España,Córdoba,634,147278000,Email marketing,2025-10-22,María mostró un gran interés en optimizar el coste de movilidad de sus empleados debido al reciente crecimiento de la empresa.,1,2025-10-23,1,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola María, soy Pablo Fernández de MoveUp. ¿Cómo estás?
+Contacto: Hola Pablo, muy bien, gracias. Estuve revisando el correo que me enviaste y estoy interesada en conocer más sobre su servicio.
+Agente: Excelente. He visto que Max Logistics está creciendo rápidamente. ¿Cómo está afectando esto a sus necesidades de movilidad?
+Contacto: Sí, efectivamente, estamos viendo un aumento en los desplazamientos de nuestros empleados, y los costes se nos están disparando.
+Agente: Entiendo. Nuestro servicio puede ayudarles a reducir esos costes significativamente. ¿Qué volumen de viajes gestionan actualmente?
+Contacto: Aproximadamente unas 300 salidas al mes.
+Agente: Perfecto, tenemos experiencia gestionando ese tipo de volúmenes. ¿Qué presupuesto tienen pensado destinar a esta necesidad?
+Contacto: Aún no tenemos un presupuesto cerrado, estamos revisando opciones.
+Agente: Perfecto, puedo enviarte un documento con más información para que lo evalúes. ¿Te parece bien?
+Contacto: Sí, por favor, mándamelo.
+Agente: De acuerdo, te lo envío hoy mismo. ¿Podemos hablar de nuevo la próxima semana para resolver cualquier duda?
+Contacto: Claro, me parece bien.",María mostró interés en el servicio de MoveUp y acordaron enviarle información detallada.,Enviar documentación,Converted
+46e78104-faa,e4e7ee7d,María Serrano,Responsable de Flota,Max Logistics,Telecomunicaciones,España,Córdoba,634,147278000,Email marketing,2025-10-22,María mostró un gran interés en optimizar el coste de movilidad de sus empleados debido al reciente crecimiento de la empresa.,2,2025-10-30,8,7,María mostró interés en el servicio de MoveUp y acordaron enviarle información detallada.,Enviar documentación,"Agente: Hola María, soy Pablo de nuevo. ¿Pudiste revisar la documentación que te envié?
+Contacto: Hola Pablo, sí, la revisé y me parece muy interesante.
+Agente: Genial. ¿Tienes alguna pregunta o inquietud sobre nuestras soluciones?
+Contacto: Tengo algunas preguntas sobre cómo manejan el tema de la urgencia en los desplazamientos.
+Agente: Ofrecemos un servicio prioritario que puede adaptarse a sus demandas más urgentes. ¿Podríamos agendar una reunión con nuestra especialista, Cristina Vera, para que te lo explique en detalle?
+Contacto: Sí, eso sería excelente.
+Agente: Perfecto, ¿cuándo te vendría bien que organicemos esta reunión?
+Contacto: El jueves por la mañana estaría bien.
+Agente: De acuerdo, lo coordinaré con Cristina y te enviaré la invitación. 
+Contacto: Genial, espero con interés la reunión.
+Agente: Gracias, María. Hablamos el jueves.",María mostró interés en avanzar y agendar una reunión con la especialista para discutir detalles específicos.,Agendar demo/reunión con especialista,Converted
+00e038c8-059,d458395c,Rafael López,Director Comercial,Corp Dynamics,Educación,España,Barcelona,1954,171429000,Llamada en frío,2026-03-20,Hubo un interés inicial en reducir costos y mejorar la eficiencia de los viajes corporativos.,1,2026-03-27,7,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola, Rafael. Soy Javier Torres de MoveUp. ¿Cómo estás hoy?
+Contacto: Hola, Javier. Estoy bien, gracias. Me interesa saber cómo puede MoveUp optimizar nuestros gastos en transporte.
+Agente: Claro, podemos ofrecer tarifas planas y una solución centralizada para gestionar todos los viajes de sus empleados. ¿Cuántos viajes suelen realizar al mes?
+Contacto: Aproximadamente 300 viajes mensuales.
+Agente: Perfecto, con ese volumen podemos ofrecer un paquete personalizado. ¿Cuál es su presupuesto actual para movilidad?
+Contacto: Estamos buscando mantenernos dentro de los 100,000 € anuales.
+Agente: Entiendo, con nuestros paquetes, podríamos ofrecerle un ahorro significativo. ¿Le gustaría que programe una reunión con nuestro especialista, Roberto Sánchez, para discutirlo en detalle?
+Contacto: Sí, me parecería bien. También necesitaría ver un demo del sistema.
+Agente: Claro, podemos agendar ambas cosas. ¿Cuál sería un buen momento para usted?
+Contacto: La próxima semana estaría perfecto.
+Agente: Excelente, estaré en contacto para coordinar los detalles.
+Contacto: Perfecto, gracias Javier.
+Agente: Gracias a ti, Rafael. Hablamos pronto.",El contacto mostró interés en los servicios y se acordó agendar una reunión y demo.,Agendar demo/reunión con especialista,In Progress
+2a5383cc-c26,d458395c,Rafael López,Director Comercial,Corp Dynamics,Educación,España,Barcelona,1954,171429000,Llamada en frío,2026-03-20,Hubo un interés inicial en reducir costos y mejorar la eficiencia de los viajes corporativos.,2,2026-04-03,14,7,El contacto mostró interés en los servicios y se acordó agendar una reunión y demo.,Agendar demo/reunión con especialista,"Agente: Hola, Rafael. Soy Javier otra vez. ¿Pudiste revisar las fechas para la reunión con Roberto?
+Contacto: Hola, Javier. Sí, creo que podríamos hacerlo el jueves a las 11 AM.
+Agente: Perfecto, lo coordinaré con Roberto. También nos gustaría saber si hay algún otro punto que te gustaría que cubramos en la reunión.
+Contacto: Me gustaría ver ejemplos de casos de éxito y entender mejor cómo se integra con nuestros sistemas actuales.
+Agente: No hay problema, llevaremos ejemplos específicos y la información sobre la integración. ¿Tienes alguna otra duda o necesitas algo más de mi parte?
+Contacto: No, eso sería todo por ahora. Espero la reunión para decidir.
+Agente: Perfecto, te envío el enlace para la reunión en breve. Gracias por tu tiempo, Rafael.
+Contacto: Gracias a ti, Javier. Nos vemos el jueves.
+Agente: Hasta entonces.",Se confirmaron la fecha y hora para la demo y reunión con el especialista. Se acordó proporcionar más detalles durante la reunión.,Esperar confirmación cliente,In Progress
+19edf705-2fa,b90e1bd3,Laura Serrano,Head of Procurement,Digi Systems,Consultoría IT,España,Las Palmas,27,7160000,Email marketing,2026-01-18,Laura mostró un interés inicial en explorar servicios de movilidad para reducir costos y mejorar la logística de transporte de sus empleados.,1,2026-01-23,5,0,PRIMERA_LLAMADA,PRIMERA_LLAMADA,"Agente: Hola Laura, ¿cómo estás? Soy Diego López de MoveUp. Me gustaría hablar sobre tu interés en nuestros servicios corporativos de movilidad.
+Contacto: Hola Diego, estoy bien, gracias. Estaba revisando su propuesta, pero ahora mismo no es nuestro foco principal.
+Agente: Entiendo. Sin embargo, me gustaría hablar sobre cómo podemos optimizar sus costos actuales de transporte. ¿Cuántos viajes realizan al mes aproximadamente?
+Contacto: Nos movemos en unas 100-150 salidas mensuales, pero ya tenemos un acuerdo con otra empresa.
+Agente: Eso es comprensible. ¿Podríamos agendar una breve llamada con nuestro especialista, Tomás Iglesias, para discutir cómo podríamos ofrecerte mejores tarifas?
+Contacto: Tal vez, pero ahora estamos en fase de revisión interna.
+Agente: Claro, entonces puedo enviar más información por correo. ¿Te parece bien?
+Contacto: Sí, enviame la documentación, por favor.","Laura mostró resistencia inicial debido a tener ya un proveedor, pero accedió a recibir más información por correo.",Enviar documentación,Lost
+952f6c66-5fc,b90e1bd3,Laura Serrano,Head of Procurement,Digi Systems,Consultoría IT,España,Las Palmas,27,7160000,Email marketing,2026-01-18,Laura mostró un interés inicial en explorar servicios de movilidad para reducir costos y mejorar la logística de transporte de sus empleados.,2,2026-01-28,10,5,"Laura mostró resistencia inicial debido a tener ya un proveedor, pero accedió a recibir más información por correo.",Enviar documentación,"Agente: Hola Laura, soy Diego de nuevo. ¿Tuviste la oportunidad de revisar la documentación que te envié?
+Contacto: Hola Diego, sí, lo revisé. Los precios son competitivos, pero estamos ajustando presupuestos y no podemos hacer grandes cambios ahora.
+Agente: Entiendo la situación, pero realmente creemos que podríamos ayudar a ahorrar. ¿Qué tal si organizamos una reunión para discutirlo más a fondo con Tomás?
+Contacto: Aprecio la oferta, pero ahora no estamos en posición de cambiar de proveedor.
+Agente: Comprendido. ¿Te gustaría que recontácte en un par de semanas para ver si ha cambiado algo?
+Contacto: Sí, por favor. Recontáctame entonces.",Laura confirmó que revisó la documentación pero reiteró su objeción por temas presupuestarios y de cambiar de proveedor.,Recontactar en X días,Lost
+ecdd45ae-735,b90e1bd3,Laura Serrano,Head of Procurement,Digi Systems,Consultoría IT,España,Las Palmas,27,7160000,Email marketing,2026-01-18,Laura mostró un interés inicial en explorar servicios de movilidad para reducir costos y mejorar la logística de transporte de sus empleados.,3,2026-02-11,24,14,Laura confirmó que revisó la documentación pero reiteró su objeción por temas presupuestarios y de cambiar de proveedor.,Recontactar en X días,"Agente: Hola Laura, soy Diego, espero que estés bien. Te estoy llamando según lo acordado para ver si hay alguna novedad respecto a nuestra propuesta.
+Contacto: Hola Diego, gracias por llamar. Hemos revisado todo y, lamentablemente, no podemos asumir un cambio en este momento debido a reorganizaciones internas.
+Agente: Entiendo. Si hay algo que pueda hacer para facilitar el proceso o en el futuro...
+Contacto: Aprecio tu comprensión, pero en este momento nuestra posición es firme.
+Agente: De acuerdo, cerraré el contacto por ahora. No dudes en contactarme si cambia la situación.
+Contacto: Gracias, Diego. Tendremos en cuenta a MoveUp para el futuro.",Laura decidió no continuar debido a reorganizaciones internas y falta de flexibilidad en el presupuesto.,Cerrar lead - no interesado,Lost

@@ -1,12 +1,4 @@
-# Generated data
-data/raw/*.csv
-data/processed/*.npz
 
-# Model artifacts
-models/*.joblib
-
-# Plots
-plots/*.png
 
 # Python
 __pycache__/
@@ -29,9 +21,7 @@ env/
 .env
 *.env
 
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb_checkpoints
+
 
 # IDEs
 .idea/
