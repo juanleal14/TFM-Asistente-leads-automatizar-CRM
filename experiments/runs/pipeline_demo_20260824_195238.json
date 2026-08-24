@@ -1,0 +1,32 @@
+{
+  "lead_id": "demo-001",
+  "trajectory": [
+    {
+      "step": 1,
+      "call_number": 1,
+      "day": 0,
+      "predicted_next_step": "Enviar documentación",
+      "executed_action": "Enviar documentación",
+      "confidence": 0.3598
+    },
+    {
+      "step": 2,
+      "call_number": 2,
+      "day": 5,
+      "predicted_next_step": "Esperar confirmación cliente",
+      "executed_action": "Esperar confirmación cliente",
+      "confidence": 0.3911
+    },
+    {
+      "step": 3,
+      "call_number": 3,
+      "day": 15,
+      "predicted_next_step": "Cerrar lead - nurturing",
+      "executed_action": "Cerrar lead - no interesado",
+      "confidence": 0.8141
+    }
+  ],
+  "final_status": "lost",
+  "total_steps": 3,
+  "total_days": 15
+}

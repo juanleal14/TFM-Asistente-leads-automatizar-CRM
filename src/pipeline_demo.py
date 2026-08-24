@@ -20,10 +20,13 @@ Uso:
 """
 from __future__ import annotations
 
+import io
+import json
 import os
 import random
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 
 import joblib
@@ -36,6 +39,7 @@ from src.simulate import (
     generate_synthetic_transcript,
     _generate_synthetic_lead,
 )
+from src.utils import save_json
 
 
 # ── Lead de ejemplo para la demo ──────────────────────────────────────────────
@@ -55,6 +59,31 @@ DEMO_LEAD = {
         "Empresa de logística con alta frecuencia de desplazamientos B2B. "
         "Interés en centralizar la gestión de movilidad corporativa y reducir costes de flota."
     ),
+}
+
+# Perfil alternativo: con este lead el modelo visita 4 de las 6 acciones válidas
+# en lugar de quedarse en el ciclo Agendar demo -> Esperar confirmación -> Aplazar
+# que produce DEMO_LEAD. Mejor para mostrar la variedad del clasificador.
+DEMO_LEAD_BANCA = {
+    "lead_id": "demo-banca-01",
+    "contact_name": "Sofía Fernández",
+    "contact_role": "Gerente de Administración",
+    "company_name": "Digital Partners",
+    "company_sector": "Banca",
+    "company_country": "México",
+    "company_city": "Ciudad de México",
+    "company_num_employees": 614,
+    "company_annual_revenue_eur": 66_643_023.0,
+    "lead_source": "Formulario web",
+    "initial_interest_notes": (
+        "Empresa del sector Banca con interés en centralizar la gestión de "
+        "movilidad corporativa para su plantilla ejecutiva."
+    ),
+}
+
+DEMO_LEAD_PROFILES = {
+    "logistica": DEMO_LEAD,
+    "banca": DEMO_LEAD_BANCA,
 }
 
 
@@ -95,6 +124,8 @@ def run_demo(
     pause: float = 0.0,
     model_path: Path | None = None,
     use_llm_summary: bool = True,
+    use_llm_transcripts: bool = False,
+    scripted_actions: list[str] | None = None,
 ) -> dict:
     """Ejecuta el pipeline demo paso a paso con salida visual en consola.
 
@@ -177,20 +208,30 @@ def run_demo(
             print(f"  Contexto anterior: {state.prev_next_step}")
         print(_sep())
 
-        # Generar transcript
-        state.current_transcript = generate_synthetic_transcript(state, agent_name)
+        # Determinar desired_action para guiar al LLM (si hay scripted_actions usamos esa acción)
+        desired_for_transcript = None
+        if scripted_actions and step < len(scripted_actions):
+            desired_for_transcript = scripted_actions[step]
+        else:
+            desired_for_transcript = state.prev_next_step if state.prev_next_step not in ("", "PRIMERA_LLAMADA") else None
+
+        # Generar transcript (puede usar LLM para expandir) y guiarlo hacia desired action
+        state.current_transcript = generate_synthetic_transcript(
+            state, agent_name, use_llm=use_llm_transcripts, desired_action=desired_for_transcript, rng=rng
+        )
 
         # Mostrar transcript
         print()
         print("  [ TRANSCRIPCIÓN ]")
-        # Dividir en turnos para mejor legibilidad
-        for line in state.current_transcript.split(". "):
-            line = line.strip()
-            if line:
-                if line.startswith("Agente"):
-                    print(f"    {line}.")
-                elif line.startswith("Contacto"):
-                    print(f"    {line}.")
+        print()
+        # Dividir por turnos reales (Agente: y Contacto:) sin romper mid-sentence
+        transcript = state.current_transcript
+        # Reemplazar "Agente:" y "Contacto:" con saltos de línea visibles
+        transcript = transcript.replace("Agente:", "\n  Agente: ").replace("Contacto:", "\n  Contacto: ")
+        # Imprimir limpio
+        for line in transcript.strip().split("\n"):
+            if line.strip():
+                print(f"  {line.strip()}")
         print()
 
         if pause:
@@ -222,6 +263,31 @@ def run_demo(
         confidence = pred["confidence"]
         probs = pred["probabilities"]
 
+        # ────── NORMALIZACIÓN: mapear clases obsoletas a clases válidas ──────
+        # El modelo puede predecir clases que ya no existen en la taxonomía actual.
+        # Mapear a las acciones válidas:
+        CLASS_MAPPING = {
+            "Cerrar lead - nurturing": "Aplazar lead",
+            "Recontactar en X días": "Aplazar lead",
+        }
+        if predicted_action in CLASS_MAPPING:
+            predicted_action = CLASS_MAPPING[predicted_action]
+            # También normalizar en la distribución de probabilidades
+            if "Cerrar lead - nurturing" in probs and "Aplazar lead" in probs:
+                probs["Aplazar lead"] += probs.pop("Cerrar lead - nurturing")
+            elif "Cerrar lead - nurturing" in probs:
+                probs["Aplazar lead"] = probs.pop("Cerrar lead - nurturing")
+            if "Recontactar en X días" in probs and "Aplazar lead" in probs:
+                probs["Aplazar lead"] += probs.pop("Recontactar en X días")
+            elif "Recontactar en X días" in probs:
+                probs["Aplazar lead"] = probs.pop("Recontactar en X días")
+
+        # If scripted actions provided, override the executed action (but still show model prediction)
+        if scripted_actions and step < len(scripted_actions):
+            executed_action = scripted_actions[step]
+        else:
+            executed_action = predicted_action
+
         # Mostrar predicción
         print("  [ PREDICCIÓN DEL MODELO ]")
         print()
@@ -239,19 +305,20 @@ def run_demo(
         if pause:
             time.sleep(pause)
 
-        # Registrar en trayectoria
+        # Registrar en trayectoria (guardamos predicción y acción ejecutada)
         trajectory.append({
             "step": step + 1,
             "call_number": state.call_number,
             "day": state.days_since_entry,
             "predicted_next_step": predicted_action,
+            "executed_action": executed_action,
             "confidence": confidence,
         })
 
-        # Resolver transición
-        outcome_cfg = ao.get(predicted_action, {
+        # Resolver transición (usar la acción ejecutada para determinar outcome)
+        outcome_cfg = ao.get(executed_action, {
             "terminal": False, "prob_terminal": 0.0, "days_increment": (7, 14),
-            "outcome_summary": predicted_action,
+            "outcome_summary": executed_action,
         })
         is_terminal = outcome_cfg.get("terminal", False)
         terminal_status = outcome_cfg.get("terminal_status", "lost")
@@ -263,7 +330,7 @@ def run_demo(
         # Mostrar acción ejecutada
         print("  [ ACCIÓN EJECUTADA ]")
         print()
-        print(f"  {outcome_cfg.get('outcome_summary', predicted_action)}")
+        print(f"  {outcome_cfg.get('outcome_summary', executed_action)}")
 
         if is_terminal:
             print()
@@ -286,14 +353,14 @@ def run_demo(
             print("  [ RESUMEN LLM (prev_outcome para próxima llamada) ]")
             try:
                 next_prev_outcome = summarizer(
-                    state.current_transcript, predicted_action
+                    state.current_transcript, executed_action
                 )
                 print(f"  > {next_prev_outcome}")
             except Exception as e:
                 print(f"  [WARN] LLM falló ({e}); usando plantilla.")
-                next_prev_outcome = outcome_cfg.get("outcome_summary", predicted_action)
+                next_prev_outcome = outcome_cfg.get("outcome_summary", executed_action)
         else:
-            next_prev_outcome = outcome_cfg.get("outcome_summary", predicted_action)
+            next_prev_outcome = outcome_cfg.get("outcome_summary", executed_action)
 
         # ── Actualizar estado para el siguiente paso ──────────────────────────
         days_lo, days_hi = outcome_cfg.get("days_increment", (7, 14))
@@ -301,7 +368,7 @@ def run_demo(
         state.days_since_entry += days_gap
         state.days_since_last_call = days_gap
         state.call_number += 1
-        state.prev_next_step = predicted_action
+        state.prev_next_step = executed_action
         state.prev_outcome = next_prev_outcome
 
         print()
@@ -318,13 +385,14 @@ def run_demo(
     print()
     print("  RESUMEN DE LA TRAYECTORIA")
     print(_sep())
-    print(f"  {'Llamada':<10} {'Día':<8} {'Acción predicha':<45} {'Confianza':>10}")
+    print(f"  {'Llamada':<10} {'Día':<8} {'Acción predicha':<35} {'Acción ejecutada':<35} {'Confianza':>10}")
     print(_sep())
     for t in trajectory:
         print(
             f"  {t['call_number']:<10} "
             f"{t['day']:<8} "
-            f"{t['predicted_next_step']:<45} "
+            f"{t['predicted_next_step']:<35} "
+            f"{t.get('executed_action',''):<35} "
             f"{t['confidence']*100:>9.1f}%"
         )
     print(_sep())
@@ -342,24 +410,83 @@ def run_demo(
     }
 
 
+# ── Output saving ──────────────────────────────────────────────────────────────
+
+def _save_demo_output(console_output: str, result: dict, demo_name: str = "pipeline_demo") -> Path:
+    """Guardar output de la demo en experiments/runs/
+    
+    Returns la ruta del archivo de texto guardado.
+    """
+    output_dir = Path("experiments/runs")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    # Guardar console output
+    txt_path = output_dir / f"{demo_name}_{timestamp}.txt"
+    with open(txt_path, "w", encoding="utf-8") as f:
+        f.write(console_output)
+    
+    # Guardar resultado en JSON
+    json_path = output_dir / f"{demo_name}_{timestamp}.json"
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
+    
+    return txt_path
+
+
 # ── Entry point ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     use_random = "--random" in sys.argv
     use_llm = "--no-llm" not in sys.argv
+    use_llm_transcripts = "--llm-transcripts" in sys.argv
+    save_output = "--save" in sys.argv or "--scripted-demo" in sys.argv  # Auto-save for scripted demos
     seed = 42
     pause = 0.0
 
+    profile = "logistica"
     for i, arg in enumerate(sys.argv[1:], 1):
         if arg == "--seed" and i < len(sys.argv):
             seed = int(sys.argv[i + 1])
         if arg == "--pause" and i < len(sys.argv):
             pause = float(sys.argv[i + 1])
+        if arg == "--profile" and i < len(sys.argv):
+            profile = sys.argv[i + 1]
 
     if use_random:
         rng = random.Random(seed)
         lead = _generate_synthetic_lead(rng)
     else:
-        lead = DEMO_LEAD
+        lead = DEMO_LEAD_PROFILES.get(profile, DEMO_LEAD)
 
-    run_demo(lead_data=lead, seed=seed, pause=pause, use_llm_summary=use_llm)
+    # Default scripted trajectory if requested
+    scripted_actions = None
+    if "--scripted-demo" in sys.argv:
+        # Narrative: 1) contact asks for more info, 2) needs boss approval (recontact), 3) budget doesn't fit -> close
+        scripted_actions = [
+            "Enviar documentación",
+            "Esperar confirmación cliente",
+            "Cerrar lead - no interesado",
+        ]
+
+    # Execute demo (always save if scripted)
+    result = run_demo(
+        lead_data=lead,
+        seed=seed,
+        pause=pause,
+        use_llm_summary=use_llm,
+        use_llm_transcripts=use_llm_transcripts,
+        scripted_actions=scripted_actions,
+    )
+    
+    # Auto-save if scripted demo or --save flag
+    if (scripted_actions is not None) or save_output:
+        output_path = Path("experiments/runs")
+        output_path.mkdir(parents=True, exist_ok=True)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        json_path = output_path / f"pipeline_demo_{timestamp}.json"
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(result, f, indent=2, ensure_ascii=False)
+        print(f"\n✓ Results saved to: {json_path}")
+

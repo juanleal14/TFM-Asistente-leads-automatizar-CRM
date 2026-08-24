@@ -26,6 +26,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+import os
+from openai import OpenAI
 
 import joblib
 import numpy as np
@@ -231,24 +233,115 @@ class LeadState:
 
 # ── Template engine ────────────────────────────────────────────────────────────
 
-def generate_synthetic_transcript(state: LeadState, agent_name: str) -> str:
-    """Select and fill a transcript template based on the current state.
+def generate_synthetic_transcript(
+    state: LeadState,
+    agent_name: str,
+    use_llm: bool = False,
+    desired_action: str | None = None,
+    rng: random.Random | None = None,
+) -> str:
+    return _generate_transcript_with_optional_llm(state, agent_name, use_llm=use_llm, desired_action=desired_action, rng=rng)
 
-    Uses state.prev_next_step to pick the appropriate template bucket.
-    Fills {contact_name}, {company_name}, {company_sector}, {agent_name}.
+
+def _get_openai_client() -> OpenAI:
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        raise RuntimeError("OPENAI_API_KEY no está configurada.")
+    return OpenAI(api_key=api_key)
+
+
+def _generate_transcript_with_optional_llm(
+    state: LeadState,
+    agent_name: str,
+    use_llm: bool = False,
+    desired_action: str | None = None,
+    model: str = "gpt-4o-mini",
+    temperature: float = 0.7,
+    max_tokens: int = 300,
+    rng: random.Random | None = None,
+) -> str:
+    """Select a template and optionally expand/replace it with an LLM-generated transcript.
+
+    If `use_llm` is False the behavior is identical to previous implementation.
     """
     key = state.prev_next_step
     if key not in TRANSCRIPT_TEMPLATES:
-        # Fallback to primera llamada templates
         key = "PRIMERA_LLAMADA"
 
-    template = random.choice(TRANSCRIPT_TEMPLATES[key])
-    return template.format(
+    chooser = rng if rng is not None else random
+    template = chooser.choice(TRANSCRIPT_TEMPLATES[key])
+    filled = template.format(
         contact_name=state.contact_name,
         company_name=state.company_name,
         company_sector=state.company_sector,
         agent_name=agent_name,
     )
+
+    if not use_llm:
+        return filled
+
+    # Use OpenAI to expand the short template into a longer, realistic dialog
+    try:
+        client = _get_openai_client()
+    except RuntimeError:
+        print("  [WARN] OPENAI_API_KEY no encontrada — fallback a plantillas.")
+        return filled
+
+    system_prompt = (
+        "Eres un asistente que genera transcripciones realistas de llamadas comerciales en español. "
+        "Mantén el formato 'Agente: ... Contacto: ...' en varios turnos. "
+        "Genera entre 6 y 12 turnos en total, alternando Agente/Contacto, con lenguaje natural y señales de interés o rechazo. "
+        "No añadas prefijos extra."
+    )
+
+    # Extra instructions tailored to the desired commercial action to enforce coherence
+    extra_instructions = ""
+    if desired_action is not None:
+        if "Esperar confirmación" in desired_action or "Recontactar" in desired_action or "Aplazar" in desired_action:
+            extra_instructions = (
+                "La llamada debe concluir con el cliente indicando que necesita consultar a su superior o esperar aprobación presupuestaria. "
+                "Incluye una mención explícita de que la decisión depende de un revisor/manager o del presupuesto, y pide una fecha para el próximo contacto."
+            )
+        elif "Cerrar lead - no interesado" in desired_action:
+            extra_instructions = (
+                "La llamada debe concluir con el cliente declinando la propuesta por motivos presupuestarios o de encaje. "
+                "Incluye una frase clara de rechazo: 'no podemos seguir' o similar."
+            )
+        elif "Agendar demo" in desired_action:
+            extra_instructions = (
+                "La llamada debe resultar en que el cliente solicita o acepta una demo y fija una fecha aproximada."
+            )
+        elif "Enviar documentación" in desired_action:
+            extra_instructions = (
+                "La llamada debe terminar con el cliente aceptando recibir documentación y pidiendo detalles concretos."
+            )
+
+    user_prompt = (
+        "Expande la siguiente transcripción breve en un diálogo más largo y realista (6-12 turnos).\n\n"
+        f"Transcripción base:\n{filled}\n\n"
+        "Objetivo comercial para esta llamada: " + (desired_action or "Ninguno especificado") + "\n"
+        "Instrucciones adicionales: " + extra_instructions + "\n\n"
+        "Genera la versión extendida en español con el formato 'Agente: ...\nContacto: ...' y alternando turnos."
+    )
+
+    try:
+        resp = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            temperature=temperature,
+            max_tokens=max_tokens,
+        )
+        text = resp.choices[0].message.content.strip()
+        # Ensure the model output contains the expected prefixes; if not, fallback
+        if "Agente:" in text or "Contacto:" in text:
+            return text.replace("\r\n", "\n")
+        return filled
+    except Exception as e:
+        print(f"  [WARN] LLM para transcripts falló ({e}); usando plantilla.")
+        return filled
 
 
 # ── Core simulation ────────────────────────────────────────────────────────────
@@ -261,6 +354,7 @@ def simulate_lead(
     arts: dict | None = None,
     emb_model=None,
     seed: int = 42,
+    use_llm_transcripts: bool = False,
 ) -> dict:
     """Simulate a single lead's journey through the sales pipeline.
 
@@ -303,7 +397,7 @@ def simulate_lead(
 
     for step in range(max_steps):
         # Generate transcript
-        state.current_transcript = generate_synthetic_transcript(state, agent_name)
+        state.current_transcript = generate_synthetic_transcript(state, agent_name, use_llm=use_llm_transcripts, rng=rng)
 
         # Predict
         pred = _predict_from_artifacts(
@@ -407,19 +501,21 @@ def _generate_synthetic_lead(rng: random.Random) -> dict:
     company_name = f"{rng.choice(['Global', 'Tech', 'Iberia', 'Euro', 'Digital'])} " \
                    f"{rng.choice(['Solutions', 'Group', 'Corp', 'Services', 'Partners'])}"
 
+    company_sector = rng.choice(sectors)
+
     return {
         "lead_id": str(uuid.uuid4())[:8],
         "contact_name": contact_name,
         "contact_role": rng.choice(contact_roles),
         "company_name": company_name,
-        "company_sector": rng.choice(sectors),
+        "company_sector": company_sector,
         "company_country": city_entry["country"],
         "company_city": city_entry["city"],
         "company_num_employees": employees,
         "company_annual_revenue_eur": round(revenue, 0),
         "lead_source": rng.choice(lead_sources),
         "initial_interest_notes": (
-            f"Empresa del sector {rng.choice(sectors)} con interés en movilidad corporativa."
+            f"Empresa del sector {company_sector} con interés en movilidad corporativa."
         ),
     }
 
