@@ -24,16 +24,9 @@ import pathlib
 import pytest
 
 from tests.conftest import MODEL_PATH
+from src.config import CONFIG
 
-VALID_NEXT_STEPS = [
-    "Recontactar en X días",
-    "Enviar documentación",
-    "Agendar demo/reunión con especialista",
-    "Escalar a manager del lead",
-    "Cerrar lead - no interesado",
-    "Cerrar lead - nurturing",
-    "Esperar confirmación cliente",
-]
+VALID_NEXT_STEPS = CONFIG["next_step_categories"]
 
 EXAMPLE_INPUT = dict(
     lead_id="test-0001",
@@ -79,7 +72,7 @@ class TestPredictNextStep:
         assert set(result.keys()) == {"predicted_next_step", "confidence", "probabilities"}
 
     def test_predicted_label_is_valid(self):
-        """Predicted label must be one of the seven known action classes."""
+        """Predicted label must be one of the six known action classes."""
         from src.predict import predict_next_step
 
         result = predict_next_step(**EXAMPLE_INPUT)
@@ -104,7 +97,7 @@ class TestPredictNextStep:
         assert abs(total - 1.0) < 1e-3, f"Probabilities sum to {total}, not 1.0"
 
     def test_probabilities_keys_match_categories(self):
-        """All seven action classes must appear in probabilities dict."""
+        """All six action classes must appear in probabilities dict."""
         from src.predict import predict_next_step
         from src.config import CONFIG
 

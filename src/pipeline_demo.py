@@ -263,25 +263,6 @@ def run_demo(
         confidence = pred["confidence"]
         probs = pred["probabilities"]
 
-        # ────── NORMALIZACIÓN: mapear clases obsoletas a clases válidas ──────
-        # El modelo puede predecir clases que ya no existen en la taxonomía actual.
-        # Mapear a las acciones válidas:
-        CLASS_MAPPING = {
-            "Cerrar lead - nurturing": "Aplazar lead",
-            "Recontactar en X días": "Aplazar lead",
-        }
-        if predicted_action in CLASS_MAPPING:
-            predicted_action = CLASS_MAPPING[predicted_action]
-            # También normalizar en la distribución de probabilidades
-            if "Cerrar lead - nurturing" in probs and "Aplazar lead" in probs:
-                probs["Aplazar lead"] += probs.pop("Cerrar lead - nurturing")
-            elif "Cerrar lead - nurturing" in probs:
-                probs["Aplazar lead"] = probs.pop("Cerrar lead - nurturing")
-            if "Recontactar en X días" in probs and "Aplazar lead" in probs:
-                probs["Aplazar lead"] += probs.pop("Recontactar en X días")
-            elif "Recontactar en X días" in probs:
-                probs["Aplazar lead"] = probs.pop("Recontactar en X días")
-
         # If scripted actions provided, override the executed action (but still show model prediction)
         if scripted_actions and step < len(scripted_actions):
             executed_action = scripted_actions[step]

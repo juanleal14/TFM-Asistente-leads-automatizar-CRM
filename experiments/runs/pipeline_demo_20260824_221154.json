@@ -1,0 +1,48 @@
+{
+  "lead_id": "demo-banca-01",
+  "trajectory": [
+    {
+      "step": 1,
+      "call_number": 1,
+      "day": 0,
+      "predicted_next_step": "Enviar documentación",
+      "executed_action": "Enviar documentación",
+      "confidence": 0.5478
+    },
+    {
+      "step": 2,
+      "call_number": 2,
+      "day": 11,
+      "predicted_next_step": "Agendar demo/reunión con especialista",
+      "executed_action": "Agendar demo/reunión con especialista",
+      "confidence": 0.6773
+    },
+    {
+      "step": 3,
+      "call_number": 3,
+      "day": 18,
+      "predicted_next_step": "Esperar confirmación cliente",
+      "executed_action": "Esperar confirmación cliente",
+      "confidence": 0.4489
+    },
+    {
+      "step": 4,
+      "call_number": 4,
+      "day": 25,
+      "predicted_next_step": "Aplazar lead",
+      "executed_action": "Aplazar lead",
+      "confidence": 0.7859
+    },
+    {
+      "step": 5,
+      "call_number": 5,
+      "day": 36,
+      "predicted_next_step": "Agendar demo/reunión con especialista",
+      "executed_action": "Agendar demo/reunión con especialista",
+      "confidence": 0.6836
+    }
+  ],
+  "final_status": "converted",
+  "total_steps": 5,
+  "total_days": 36
+}

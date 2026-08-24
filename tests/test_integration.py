@@ -22,18 +22,11 @@ import numpy as np
 import pytest
 
 from tests.conftest import MODEL_PATH, SAMPLE_CSV
+from src.config import CONFIG
 
 pytestmark = pytest.mark.integration
 
-VALID_NEXT_STEPS = [
-    "Recontactar en X días",
-    "Enviar documentación",
-    "Agendar demo/reunión con especialista",
-    "Escalar a manager del lead",
-    "Cerrar lead - no interesado",
-    "Cerrar lead - nurturing",
-    "Esperar confirmación cliente",
-]
+VALID_NEXT_STEPS = CONFIG["next_step_categories"]
 
 
 # ── Fixtures ───────────────────────────────────────────────────────────────────

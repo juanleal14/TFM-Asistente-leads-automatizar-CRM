@@ -25,6 +25,20 @@ NUM_FEATURES: list[str] = CONFIG["numeric_features"]
 NULL_FILL: str = CONFIG["null_fill_value"]
 EMBEDDING_MODEL: str = CONFIG["embedding_model"]
 EMBEDDING_DIM: int = CONFIG["embedding_dim"]
+VALID_ACTIONS: list[str] = CONFIG["next_step_categories"]
+
+# ── Class taxonomy migration ────────────────────────────────────────────────
+# The raw CSV was generated under an older 7-class taxonomy. "Cerrar lead -
+# nurturing" and "Recontactar en X días" were later merged into "Aplazar lead"
+# (see config.yaml next_step_categories, which only lists the 6 current
+# actions). This mapping is applied centrally in load_and_clean() so every
+# script that trains/tunes/validates on next_step sees the same 6 classes as
+# the deployed model — not just retrain_model.py.
+_CLASS_MAPPING: dict[str, str] = {
+    "Cerrar lead - nurturing": "Aplazar lead",
+    "Recontactar en X días": "Aplazar lead",
+    **{a: a for a in VALID_ACTIONS},
+}
 
 
 # ── Step 1 — Load & clean ─────────────────────────────────────────────────────
@@ -34,6 +48,10 @@ def load_and_clean(csv_path: str | Path | None = None) -> pd.DataFrame:
 
     Fills NaN in *prev_outcome* and *prev_next_step* with NULL_FILL so that
     first-call rows are properly represented in categorical encoding.
+
+    If a *next_step* column is present, deprecated class labels are mapped
+    to the current 6-action taxonomy (see _CLASS_MAPPING) and rows with an
+    unmappable label are dropped.
     """
     if csv_path is None:
         csv_path = resolve_path("raw_data")
@@ -45,6 +63,16 @@ def load_and_clean(csv_path: str | Path | None = None) -> pd.DataFrame:
     # Ensure numeric columns are numeric (coerce bad values to NaN → fill 0)
     for col in NUM_FEATURES:
         df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+
+    # prev_next_step inherits next_step's old labels from the previous call
+    # (both come from the same taxonomy); normalize it too so the categorical
+    # encoder never sees deprecated categories that predict.py could never
+    # produce in production.
+    df["prev_next_step"] = df["prev_next_step"].replace(_CLASS_MAPPING)
+
+    if "next_step" in df.columns:
+        df["next_step"] = df["next_step"].map(_CLASS_MAPPING)
+        df = df[df["next_step"].isin(VALID_ACTIONS)].reset_index(drop=True)
 
     return df
 
