@@ -13,3 +13,4 @@ run_id,experiment_name,timestamp,model_name,accuracy,f1_macro,f1_weighted,precis
 20260901_205921_model_comparison,model_comparison,2026-09-01T20:59:21.711640,comparison,0.6698,,0.6478,,,,,,,,,397.845
 20260901_210609_hyperparameter_tuning,hyperparameter_tuning,2026-09-01T21:06:09.753987,tuning,0.6744186046511628,,0.6553683934982331,,,,,,,,,6649.884
 20260902_183636_model_comparison,model_comparison,2026-09-02T18:36:36.200695,comparison,0.6698,,0.6478,,,,,,,,,581.291
+20260902_185806_model_comparison,model_comparison,2026-09-02T18:58:06.038282,comparison,0.6698,,0.6478,,,,,,,,,1097.458

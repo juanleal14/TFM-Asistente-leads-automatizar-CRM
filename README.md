@@ -32,19 +32,26 @@ El proyecto ha evolucionado de un prototipo XGBoost funcional a un **pipeline ML
 
 Features: **848** (5 numéricas + ~75 OHE + 768 embeddings — una columna menos que en iteraciones previas porque `prev_next_step` ya no incluye categorías fantasma de las clases fusionadas).
 
-Modelos con **hiperparámetros base** (`config.yaml`), sin tuning, LightGBM incluido:
+Modelos con **hiperparámetros base** (`config.yaml`), sin tuning — 8 modelos abarcando 6 familias distintas, no solo variantes de árboles:
 
-| Modelo | F1-weighted | Accuracy | F1-macro | Top-3 Acc | CV F1-w ± std | Brier |
-|---|---|---|---|---|---|---|
-| Random Forest | **0.6478** | 0.6698 | 0.5550 | 0.930 | 0.6283 ± 0.026 | 0.0894 |
-| **XGBoost** (referencia) | 0.6378 | 0.6512 | 0.5916 | **0.963** | **0.6396 ± 0.021** | 0.0860 |
-| LightGBM | 0.6374 | 0.6465 | **0.6218** | 0.958 | 0.6337 ± 0.019 | 0.0954 |
-| Logistic Regression | 0.6339 | 0.6419 | 0.5815 | 0.958 | 0.6027 ± 0.013 | **0.0832** |
-| Dummy (baseline trivial) | 0.1146 | 0.2698 | 0.0708 | 0.433 | 0.1165 | 0.2434 |
+| Modelo | Familia | F1-weighted | Accuracy | F1-macro | Top-3 Acc | CV F1-w ± std | Brier |
+|---|---|---|---|---|---|---|---|
+| Random Forest | Árboles (bagging) | **0.6478** | 0.6698 | 0.5550 | 0.930 | 0.6283 ± 0.026 | 0.0894 |
+| **XGBoost** (referencia) | Árboles (boosting) | 0.6378 | 0.6512 | 0.5916 | 0.963 | **0.6396 ± 0.021** | 0.0860 |
+| LightGBM | Árboles (boosting, leaf-wise) | 0.6374 | 0.6465 | **0.6218** | 0.958 | 0.6337 ± 0.019 | 0.0954 |
+| Logistic Regression | Lineal | 0.6339 | 0.6419 | 0.5815 | 0.958 | 0.6027 ± 0.013 | **0.0832** |
+| MLP | Neuronal (128,64) | 0.6197 | 0.6372 | 0.5273 | **0.967** | 0.6005 ± 0.012 | 0.0841 |
+| k-NN (k=15) | Basado en instancias | 0.5480 | 0.5721 | 0.4676 | 0.926 | 0.5823 ± **0.004** | 0.0950 |
+| Naive Bayes | Probabilístico/generativo | 0.5294 | 0.5349 | 0.4604 | 0.898 | 0.5328 ± 0.022 | 0.1521 |
+| Dummy (baseline trivial) | — | 0.1146 | 0.2698 | 0.0708 | 0.433 | 0.1165 ± 0.002 | 0.2434 |
 
-**Hallazgo destacable: LightGBM sin tunear tiene el mejor F1-macro de los 5 modelos** (0.6218 — un +5.1% relativo sobre XGBoost, +12% sobre RF), pese a no ganar en F1-weighted. Como F1-macro pondera todas las clases por igual (no por frecuencia), esto sugiere que LightGBM reparte mejor su capacidad predictiva entre clases minoritarias como "Escalar a manager del lead", justo el tipo de robustez frente al desbalanceo que más importa en este problema. LightGBM **nunca se ha tuneado** (`tune_model.py` solo tiene grid de búsqueda para XGBoost y RandomForest en `config.yaml` — añadir uno para LightGBM es una extensión natural y barata, ver "Qué falta" más abajo).
+**Tres hallazgos destacables de ampliar a 6 familias de modelos:**
 
-**XGBoost se mantiene como modelo de referencia** frente a RF pese a perder por ~1.5 puntos en F1-w: XGBoost tiene mejor F1-macro (+6.6% relativo sobre RF), mejor Top-3 accuracy, y CV más estable (±0.021 vs ±0.026). Pero el cuadro completo (ver tuning más abajo) matiza bastante esta narrativa.
+1. **LightGBM sin tunear tiene el mejor F1-macro de los 8 modelos** (0.6218 — +5.1% relativo sobre XGBoost, +12% sobre RF), pese a no ganar en F1-weighted. Como F1-macro pondera todas las clases por igual, LightGBM reparte mejor su capacidad predictiva hacia clases minoritarias como "Escalar a manager del lead". **Nunca se ha tuneado** (ver "Qué falta").
+2. **MLP tiene el mejor Top-3 accuracy de todos los modelos evaluados, base o tuneados** (0.967) — pese a un F1-weighted mediocre (0.6197, por debajo incluso de Logistic Regression). Es decir: la red neuronal casi nunca deja la acción correcta fuera de sus 3 mejores sugerencias, aunque su predicción #1 (argmax) acierte menos que los árboles. Encaja con un uso de "sugerir 3 opciones a un agente humano" más que "decidir en automático".
+3. **k-NN y Naive Bayes rinden claramente peor** que los árboles y el lineal (F1-w 0.548 y 0.529 respectivamente, F1-macro aún peor). Explicación más probable: ambos son sensibles a la escala/distribución de las features, y la matriz combina embeddings continuos (768 dims, escala razonable) con ~75 columnas one-hot binarias sin escalar — las distancias de k-NN y las probabilidades condicionales gaussianas de Naive Bayes se distorsionan con esa mezcla de escalas, mientras que los árboles son invariantes a ella. Curiosamente **k-NN es con diferencia el modelo más estable entre folds** (CV std = 0.0036, ~6× menor que XGBoost) — rinde peor pero de forma muy consistente. Es un resultado esperable y documentable, no un fallo de implementación: motiva por qué los métodos de árboles/boosting son la elección natural para esta matriz de features mixta, en vez de asumirlo sin evidencia.
+
+**XGBoost se mantiene como modelo de referencia** frente a RF pese a perder por ~1.5 puntos en F1-w: XGBoost tiene mejor F1-macro (+6.6% relativo sobre RF), mejor Top-3 accuracy entre los árboles, y CV más estable entre los boosting/bagging (±0.021 vs ±0.026). Pero el cuadro completo (ver tuning más abajo) matiza bastante esta narrativa.
 
 ### Tuning de hiperparámetros (RandomizedSearchCV, n_iter=20, cv=5)
 
@@ -59,22 +66,22 @@ Modelos con **hiperparámetros base** (`config.yaml`), sin tuning, LightGBM incl
 
 En Random Forest el efecto es el contrario y más benigno: tuning mejora F1-w (+1.2%), F1-macro (+1.4%) y Top-3 (+2.5%) a la vez, aunque empeora ligeramente el Brier score (peor calibración: 0.0894 → 0.0908).
 
-**Ranking combinado de los 7 modelos evaluados** (base + tuneados), por criterio:
+**Ranking combinado de los 10 modelos evaluados** (8 base + 2 tuneados), por criterio:
 
 | Criterio | Mejor modelo | Valor |
 |---|---|---|
 | F1-weighted | RandomForest tuned | 0.6554 |
 | F1-macro | **LightGBM (sin tunear)** | 0.6218 |
-| Top-3 accuracy | XGBoost base | 0.9628 |
+| Top-3 accuracy | **MLP (sin tunear)** | 0.9674 |
 | Calibración (Brier, menor=mejor) | XGBoost tuned | 0.0801 |
 
-**No hay un modelo que gane en todos los criterios** — es el resultado honesto a discutir en la memoria en vez de forzar una única conclusión. Recomendación según prioridad de negocio:
+**Cuatro modelos distintos ganan en cuatro criterios distintos** — es el resultado honesto a discutir en la memoria en vez de forzar una única conclusión. Recomendación según prioridad de negocio:
 - Si prima **accuracy global ponderada** (la mayoría de leads se comportan "normal"): RandomForest tuned.
 - Si prima **no ignorar clases minoritarias** (ej. escalado a manager, casos de alto valor): LightGBM, idealmente tuneado.
-- Si prima **que el modelo no descarte nunca la acción correcta** (usarlo para sugerir top-3 opciones a un agente humano, no decidir solo): XGBoost base.
+- Si prima **que el modelo no descarte nunca la acción correcta** (usarlo para sugerir top-3 opciones a un agente humano, no decidir solo): MLP.
 - Si prima **confianza calibrada** (usar la probabilidad reportada para decisiones automáticas, no solo el ranking): XGBoost tuned.
 
-Este trabajo mantiene **XGBoost como modelo de producción** (`models/moveup_nextstep_model.joblib`, hiperparámetros base) por ser el que mejor equilibra las cuatro dimensiones sin ganar en ninguna de forma extrema ni perder en ninguna de forma grave — pero es una decisión de diseño explícita a defender, no la única lectura válida de los datos.
+Este trabajo mantiene **XGBoost como modelo de producción** (`models/moveup_nextstep_model.joblib`, hiperparámetros base) por ser el que mejor equilibra las cuatro dimensiones sin ganar en ninguna de forma extrema ni perder en ninguna de forma grave — pero es una decisión de diseño explícita a defender, no la única lectura válida de los datos. Con seis familias de modelos evaluadas y ninguna dominando en todo, ese es en sí mismo un argumento defendible: la elección final depende de qué error importa más evitar (falso negativo en una clase minoritaria vs. mala calibración vs. descartar la opción correcta), no de una única métrica ganadora.
 
 ### Hallazgos de validación del dataset (`validate_dataset.py`, dataset ampliado)
 
@@ -148,7 +155,9 @@ Al reentrenar el modelo con las 6 acciones válidas se encontraron y arreglaron 
 
 - [x] ~~Augmentación dirigida de "Escalar a manager del lead"~~ — completado: 2 → 32 ejemplos
 - [x] ~~Recalcular F1-macro/Top-3/Brier de los modelos tuneados~~ — completado, `tune_model.py` ahora persiste estimador + métricas completas
-- [x] ~~Incluir LightGBM en la comparación~~ — completado: mejor F1-macro de los 5 modelos base (0.6218)
+- [x] ~~Incluir LightGBM en la comparación~~ — completado: mejor F1-macro de los 8 modelos base (0.6218)
+- [x] ~~Comparar modelos de familias distintas, no solo variantes de árboles~~ — completado: +Naive Bayes, k-NN, MLP (6 familias en total). MLP gana en Top-3 accuracy (0.967); k-NN/NB rinden claramente peor, probable sensibilidad a la mezcla de escalas embeddings/OHE (ver análisis arriba)
+- [ ] Escalar las columnas one-hot antes de pasarlas a k-NN/MLP/Naive Bayes (o usar un pipeline de preprocesado por modelo) para descartar que su rendimiento inferior sea un artefacto de escala y no una limitación real de la familia
 - [ ] **Añadir grid de búsqueda para LightGBM en `config.yaml → tuning.param_grids`** — es el único de los 3 candidatos serios sin tunear, y ya parte del mejor F1-macro base; podría ser el mejor modelo global tuneado.
 - [ ] **Re-tunear XGBoost con `scoring="f1_macro"`** en vez de `f1_weighted` — el tuning actual empeoró su F1-macro (-5.8%) al optimizar la métrica ponderada; cambiar el scoring es una línea en `config.yaml` y un resultado citable directo para la memoria (trade-off F1-w vs F1-macro al tunear bajo desbalanceo).
 - [ ] Decidir y justificar explícitamente el modelo de producción final — ver tabla de "ranking combinado por criterio" arriba; no hay un ganador único en las 4 métricas.
@@ -292,7 +301,7 @@ TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m src.train_model
 TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m src.model_comparison
 ```
 
-**Verifica:** 5 modelos (Dummy, LogReg, RF, XGBoost, LightGBM) sobre el mismo split. **Esperado: Random Forest gana en F1-w (~0.648); XGBoost cerca (~0.638) con mejor Top-3; LightGBM con el mejor F1-macro (~0.622); Dummy ~0.115.** Resultados en `experiments/model_comparison.csv`.
+**Verifica:** 8 modelos de 6 familias (Dummy, LogReg, Naive Bayes, k-NN, RF, XGBoost, LightGBM, MLP) sobre el mismo split — la lista la controla `config.yaml → comparison.models`. **Esperado: Random Forest gana en F1-w (~0.648); LightGBM con el mejor F1-macro (~0.622); MLP con el mejor Top-3 (~0.967); k-NN/Naive Bayes claramente peor que árboles/lineal (features mixtas sin escalar); Dummy ~0.115.** Resultados en `experiments/model_comparison.csv`.
 
 ### 6️⃣ Predicción standalone (smoke test)
 
