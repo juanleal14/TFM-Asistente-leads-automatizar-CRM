@@ -184,9 +184,12 @@ comparison:
   models:
     - "dummy_most_frequent"
     - "logistic_regression"
+    - "naive_bayes"
+    - "knn"
     - "random_forest"
     - "xgboost"
     - "lightgbm"
+    - "mlp"
 
 # ── Hyperparameter tuning ─────────────────────────────────────
 tuning:

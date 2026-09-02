@@ -26,6 +26,9 @@ from sklearn.dummy import DummyClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import StratifiedKFold, StratifiedShuffleSplit, cross_val_score
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBClassifier
 
@@ -51,6 +54,15 @@ _SPLIT_CFG = CONFIG["train_test_split"]
 def get_models(config: dict | None = None) -> dict[str, Any]:
     """Return a dict of {name: unfitted classifier} to compare.
 
+    Spans distinct model families on purpose, not just tree-ensemble variants:
+    baseline (dummy), linear (logistic regression), probabilistic/generative
+    (naive Bayes), instance-based (k-NN), tree ensembles (RF, XGBoost,
+    LightGBM), and neural (MLP).
+
+    Which of these actually run is controlled by ``config.yaml``'s
+    ``comparison.models`` list — the single source of truth, not this
+    function's dict order.
+
     Parameters
     ----------
     config : optional override of CONFIG (for testing / custom runs)
@@ -65,7 +77,7 @@ def get_models(config: dict | None = None) -> dict[str, Any]:
     xgb_params.pop("eval_metric", None)
     random_state = xgb_params.pop("random_state", 42)
 
-    models: dict[str, Any] = {
+    all_models: dict[str, Any] = {
         "dummy_most_frequent": DummyClassifier(
             strategy="most_frequent", random_state=rs
         ),
@@ -75,6 +87,8 @@ def get_models(config: dict | None = None) -> dict[str, Any]:
             max_iter=1000,
             random_state=rs,
         ),
+        "naive_bayes": GaussianNB(),
+        "knn": KNeighborsClassifier(n_neighbors=15, weights="distance"),
         "random_forest": RandomForestClassifier(
             n_estimators=100,
             max_depth=None,
@@ -87,13 +101,33 @@ def get_models(config: dict | None = None) -> dict[str, Any]:
             random_state=random_state,
             verbosity=0,
         ),
+        "mlp": MLPClassifier(
+            hidden_layer_sizes=(128, 64),
+            activation="relu",
+            alpha=1e-3,
+            early_stopping=True,
+            max_iter=300,
+            random_state=rs,
+        ),
     }
 
     if LGBM_AVAILABLE:
         # n_jobs=1 avoids OpenMP segfault when combined with PyTorch on macOS
-        models["lightgbm"] = LGBMClassifier(random_state=rs, verbose=-1, n_jobs=1)
+        all_models["lightgbm"] = LGBMClassifier(random_state=rs, verbose=-1, n_jobs=1)
 
-    return models
+    requested = cfg.get("comparison", {}).get("models")
+    if not requested:
+        return all_models
+
+    known_names = set(all_models) | {"lightgbm"}  # valid even if not installed
+    unknown = [name for name in requested if name not in known_names]
+    if unknown:
+        raise KeyError(
+            f"Unknown model(s) in config.yaml comparison.models: {unknown}. "
+            f"Available: {sorted(known_names)}"
+        )
+    # Silently drop lightgbm from the requested list if it isn't installed.
+    return {name: all_models[name] for name in requested if name in all_models}
 
 
 # ── Main comparison function ───────────────────────────────────────────────────

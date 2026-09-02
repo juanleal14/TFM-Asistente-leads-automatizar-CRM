@@ -188,7 +188,10 @@ def tune_all(
     print(
         f"    XGBoost (tuned) test  →  "
         f"acc={xgb_metrics['accuracy']:.4f}  "
-        f"f1_w={xgb_metrics['f1_weighted']:.4f}"
+        f"f1_w={xgb_metrics['f1_weighted']:.4f}  "
+        f"f1_m={xgb_metrics['f1_macro']:.4f}  "
+        f"top3={xgb_metrics['top3_accuracy']:.4f}  "
+        f"brier={xgb_metrics['brier_score_avg']:.4f}"
     )
 
     # ── Random Forest ─────────────────────────────────────────────────────────
@@ -202,12 +205,19 @@ def tune_all(
     print(
         f"    RandomForest (tuned) test  →  "
         f"acc={rf_metrics['accuracy']:.4f}  "
-        f"f1_w={rf_metrics['f1_weighted']:.4f}"
+        f"f1_w={rf_metrics['f1_weighted']:.4f}  "
+        f"f1_m={rf_metrics['f1_macro']:.4f}  "
+        f"top3={rf_metrics['top3_accuracy']:.4f}  "
+        f"brier={rf_metrics['brier_score_avg']:.4f}"
     )
 
     # ── Persist artefacts ─────────────────────────────────────────────────────
-    _save_tuning_artefacts("xgboost", xgb_params_best, xgb_cv_df)
-    _save_tuning_artefacts("random_forest", rf_params_best, rf_cv_df)
+    # Full metrics dict (f1_macro, top3, brier, per-class breakdown, confusion
+    # matrix — not just accuracy/f1_weighted) and the fitted tuned estimator
+    # itself, so a full comparison against the production model never needs
+    # a throwaway refit script.
+    _save_tuning_artefacts("xgboost", xgb_params_best, xgb_cv_df, xgb_metrics, xgb_best)
+    _save_tuning_artefacts("random_forest", rf_params_best, rf_cv_df, rf_metrics, rf_best)
 
     if tracker is not None:
         tracker.save_hyperparams("xgboost", xgb_params_best)
@@ -230,8 +240,16 @@ def _save_tuning_artefacts(
     model_name: str,
     best_params: dict,
     cv_results_df: pd.DataFrame,
+    test_metrics: dict | None = None,
+    fitted_estimator: Any | None = None,
 ) -> None:
-    """Save best_params JSON and cv_results CSV to experiments/hyperparams/."""
+    """Save best_params JSON, cv_results CSV, full test metrics, and the
+    fitted tuned estimator to experiments/hyperparams/.
+
+    Persisting the estimator avoids needing a throwaway refit script later
+    just to recompute metrics not printed at tuning time (f1_macro, top3,
+    brier, per-class breakdown, confusion matrix).
+    """
     from src.config import _PROJECT_ROOT  # type: ignore[attr-defined]
     experiments_dir = CONFIG.get("experiments_dir", "experiments")
     hp_dir = _PROJECT_ROOT / experiments_dir / "hyperparams"
@@ -241,6 +259,18 @@ def _save_tuning_artefacts(
     csv_path = hp_dir / f"{model_name}_cv_results.csv"
     cv_results_df.to_csv(csv_path, index=False)
     print(f"    CV results saved → {csv_path}")
+
+    if test_metrics is not None:
+        from src.utils import save_json
+        metrics_path = hp_dir / f"{model_name}_tuned_test_metrics.json"
+        save_json(test_metrics, metrics_path)
+        print(f"    Test metrics saved → {metrics_path}")
+
+    if fitted_estimator is not None:
+        import joblib
+        model_path = hp_dir / f"{model_name}_tuned_model.joblib"
+        joblib.dump(fitted_estimator, model_path)
+        print(f"    Fitted tuned model saved → {model_path}")
 
 
 # ── Main pipeline ─────────────────────────────────────────────────────────────

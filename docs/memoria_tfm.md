@@ -92,15 +92,14 @@ El presente trabajo aborda este problema en el contexto de **MoveUp**, una empre
 
 ### 3.3 Variable Objetivo
 
-El sistema predice una de las siguientes 7 acciones:
+El dataset se generó originalmente con 7 categorías de `next_step`. Dos de ellas resultaron semánticamente solapadas ("Recontactar en X días" y "Cerrar lead - nurturing" — ambas significan "el lead necesita más tiempo, sin acción activa") y se fusionaron en una sola. El sistema predice, por tanto, una de las siguientes **6 acciones**:
 
-1. "Recontactar en X días"
+1. "Aplazar lead" (fusión de "Recontactar en X días" + "Cerrar lead - nurturing")
 2. "Enviar documentación"
 3. "Agendar demo/reunión con especialista"
 4. "Escalar a manager del lead"
 5. "Cerrar lead - no interesado"
-6. "Cerrar lead - nurturing"
-7. "Esperar confirmación cliente"
+6. "Esperar confirmación cliente"
 
 ---
 

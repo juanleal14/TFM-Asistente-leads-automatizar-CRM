@@ -7,15 +7,15 @@ flowchart TD
     subgraph GEN["🔧 Generación de datos"]
         GPT["GPT-4o\n(OpenAI API)"]
         GDS["generate_dataset.py"]
-        CSV["data/raw/\nmoveup_crm_dataset.csv\n996 filas · 498 leads"]
+        CSV["data/raw/\nmoveup_crm_dataset.csv\n1.071 filas · 528 leads"]
         GPT --> GDS --> CSV
     end
 
     subgraph FE["⚙️ Feature Engineering"]
         LAC["load_and_clean()\nfillna → PRIMERA_LLAMADA"]
         EMB["generate_embeddings()\nparaphrase-multilingual-MiniLM-L12-v2"]
-        EMB_CACHE["data/processed/\nembeddings_cache.npz\n996 × 768"]
-        BFM["build_feature_matrix()\n849 features totales"]
+        EMB_CACHE["data/processed/\nembeddings_cache.npz\n1.071 × 768"]
+        BFM["build_feature_matrix()\n848 features totales"]
 
         NUM["Numéricas × 5\nStandardScaler"]
         OHE["Categóricas × 6\nOneHotEncoder\nhandle_unknown=ignore"]
@@ -34,7 +34,7 @@ flowchart TD
         TM["train_model.py"]
         SPLIT["StratifiedShuffleSplit\n80% train · 20% test\nseed=42"]
         XGB["XGBoost\nmulti:softprob\n300 est · depth=6"]
-        CV["5-fold CV\nF1-weighted = 0.6249"]
+        CV["5-fold CV\nF1-weighted = 0.6396"]
         JOBLIB["models/\nmoveup_nextstep_model.joblib\nmodelo + scaler + OHE + LE"]
 
         TM --> SPLIT
@@ -56,7 +56,7 @@ flowchart TD
 
     subgraph VAL["🔍 Validación del dataset"]
         VD["validate_dataset.py"]
-        C1["Distribución de clases\nchi² · ratio 135.5×"]
+        C1["Distribución de clases\nchi² · ratio 9.09×"]
         C2["Correlaciones\nPearson · Kruskal-Wallis"]
         C3["Duplicados\nexactos + near-dup MD5"]
         C4["Coherencia temporal\ncall_number · prev_next_step"]
@@ -118,7 +118,7 @@ sequenceDiagram
     FE->>ST: encode(transcript) → 384 dims
     FE->>ST: encode(notes + prev_outcome) → 384 dims
     ST-->>FE: embeddings 768 dims
-    FE-->>P: X (1 × 849)
+    FE-->>P: X (1 × 848)
     P->>XGB: predict_proba(X)
     XGB-->>P: [0.51, 0.27, 0.09, ...]
     P-->>U: {predicted_next_step, confidence, probabilities}
@@ -134,9 +134,9 @@ stateDiagram-v2
     Prediccion --> Accion : _predict_from_artifacts()
     Accion --> Activo : estado no terminal\n(call_number++, days++)
 
-    Accion --> Convertido : Cerrar / prob_terminal
+    Accion --> Convertido : prob_terminal (Agendar demo / Escalar / Esperar confirmación)
     Accion --> Perdido : Cerrar - no interesado
-    Accion --> Nurturing : Cerrar - nurturing
+    Accion --> Nurturing : Aplazar lead + prob_terminal
     Activo --> MaxSteps : step >= max_steps
 
     Convertido --> [*]
@@ -145,7 +145,7 @@ stateDiagram-v2
     MaxSteps --> [*]
 ```
 
-## Matriz de features (849 columnas)
+## Matriz de features (848 columnas)
 
 ```mermaid
 block-beta
@@ -159,13 +159,13 @@ block-beta
     n5["days_since_last_call"]
   end
 
-  block:cat["Categóricas OHE\n× ~76"]:1
+  block:cat["Categóricas OHE\n× ~75"]:1
     c1["company_sector × 20"]
     c2["company_country × 5"]
     c3["company_city × 20"]
     c4["lead_source × 9"]
     c5["contact_role × 15"]
-    c6["prev_next_step × 8"]
+    c6["prev_next_step × 7\n(6 acciones + PRIMERA_LLAMADA)"]
   end
 
   block:emb["Embeddings\n× 768"]:1
