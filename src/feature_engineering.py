@@ -14,7 +14,6 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from sentence_transformers import SentenceTransformer
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 
 from src.config import CONFIG, resolve_path
@@ -103,6 +102,12 @@ def generate_embeddings(
         print(f"  Loading cached embeddings from {cache_file}")
         data = np.load(cache_file)
         return data["embeddings"]
+
+    # Lazy import: sentence-transformers pulls in PyTorch, whose OpenMP
+    # thread pool conflicts with XGBoost's when both live in the same
+    # process (see predict.py for the same pattern) — avoid paying that
+    # cost for scripts that only train/tune and never hit a cache miss.
+    from sentence_transformers import SentenceTransformer
 
     print(f"  Computing embeddings with model '{model_name}' …")
     model = SentenceTransformer(model_name)

@@ -110,7 +110,11 @@ def tune_model(
         cv=cv,
         scoring=scoring,
         random_state=random_state,
-        n_jobs=-1,
+        # n_jobs=1: avoids nesting joblib's process-based search parallelism
+        # around estimators (RF, XGBoost) that already parallelize
+        # internally via OpenMP/threads — that combination reliably hangs
+        # on Windows.
+        n_jobs=1,
         verbose=0,
         refit=True,          # refit best estimator on full X_train
         return_train_score=False,

@@ -140,8 +140,12 @@ def compare_models(
         # ── Cross-validation on training set ──────────────────────────────────
         cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=random_state)
         try:
+            # n_jobs=1: avoids nesting joblib's process-based CV parallelism
+            # around estimators (RF, XGBoost) that already parallelize
+            # internally via OpenMP/threads — that combination reliably
+            # hangs on Windows.
             cv_scores = cross_val_score(
-                clf, X_train, y_train, cv=cv, scoring=score_fn, n_jobs=-1
+                clf, X_train, y_train, cv=cv, scoring=score_fn, n_jobs=1
             )
             cv_mean = float(cv_scores.mean())
             cv_std = float(cv_scores.std())

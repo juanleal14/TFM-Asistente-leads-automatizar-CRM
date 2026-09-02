@@ -27,7 +27,26 @@ fi
 
 export TOKENIZERS_PARALLELISM=false
 export OMP_NUM_THREADS=1
-PY=.venv/bin/python
+# Fuerza UTF-8 en stdout: en Windows, si la salida se redirige a un archivo
+# (en vez de a una consola interactiva), Python usa cp1252 por defecto y
+# revienta con caracteres como → o █ usados en los prints de este proyecto.
+export PYTHONUTF8=1
+
+# Localizar el intérprete del venv (activado, dentro del repo, o un nivel arriba;
+# Windows usa Scripts/python.exe, Unix usa bin/python).
+if [ -n "$VIRTUAL_ENV" ]; then
+    PY=python
+elif [ -f .venv/Scripts/python.exe ]; then
+    PY=.venv/Scripts/python.exe
+elif [ -f .venv/bin/python ]; then
+    PY=.venv/bin/python
+elif [ -f ../.venv/Scripts/python.exe ]; then
+    PY=../.venv/Scripts/python.exe
+elif [ -f ../.venv/bin/python ]; then
+    PY=../.venv/bin/python
+else
+    PY=python
+fi
 
 # ── Helper visual ─────────────────────────────────────────────────────────
 section() {

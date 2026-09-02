@@ -81,8 +81,12 @@ def train(
             shuffle=True,
             random_state=CV_CFG["random_state"],
         )
+        # n_jobs=1: nesting joblib's process-based parallelism around an
+        # already OpenMP-threaded XGBoost/RandomForest reliably hangs on
+        # Windows (thread/process oversubscription). The inner estimator
+        # still parallelizes internally, so this isn't a serial fallback.
         cv_scores = cross_val_score(model, X_train, y_train,
-                                    cv=cv, scoring="f1_weighted", n_jobs=-1)
+                                    cv=cv, scoring="f1_weighted", n_jobs=1)
         print(f"\nCross-validation F1 (weighted) — {CV_CFG['n_splits']} folds:")
         print(f"  {cv_scores.round(4).tolist()}")
         print(f"  Mean: {cv_scores.mean():.4f}  ±  {cv_scores.std():.4f}")
