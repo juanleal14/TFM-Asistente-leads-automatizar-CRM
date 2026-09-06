@@ -114,7 +114,7 @@ def plot_results(
     feature_names: list[str],
     output_dir: Path | None = None,
 ) -> None:
-    """Generate and save all three evaluation plots."""
+    """Generate and save all four evaluation plots."""
     if output_dir is None:
         output_dir = resolve_path("plots")
     output_dir = Path(output_dir)
@@ -131,6 +131,9 @@ def plot_results(
 
     print("  Plotting distribution comparison …")
     _plot_distribution_comparison(y_test, y_pred, class_names, output_dir)
+
+    print("  Plotting calibration reliability diagrams …")
+    plot_calibration(model, X_test, y_test, label_encoder, output_dir)
 
 
 # ── Extended evaluation functions ────────────────────────────────────────────

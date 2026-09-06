@@ -132,6 +132,18 @@ python -m src.pipeline_demo --profile banca --seed 47 --no-llm --save
 # añade --llm-transcripts para diálogos generados por GPT en vez de plantillas
 ```
 
+### Simulación batch (50 leads sintéticos aleatorios, `src/simulate.py`)
+
+Con el modelo de producción actual (dataset ampliado, taxonomía de 6 clases), transcripts por plantilla:
+
+| Estado final | % |
+|---|---|
+| Nurturing | 62% |
+| Lost | 26% |
+| Converted | 12% |
+
+Pasos medios hasta estado terminal: 3.2 · Confianza media: 0.586 · `python -m src.simulate` para reproducir (usa plantillas, no GPT — genera embeddings más homogéneos que las transcripciones reales, ver limitación documentada en el docstring del módulo).
+
 ---
 
 ## Correcciones de esta sesión
@@ -172,15 +184,18 @@ Al reentrenar el modelo con las 6 acciones válidas se encontraron y arreglaron 
 
 | Script | Descripción |
 |---|---|
+| `src/config.py` | Carga `config.yaml`, expone el dict `CONFIG` — fuente única de verdad |
+| `src/utils.py` | Helpers de I/O (`save_json`, `load_json`, `append_csv_row`) |
 | `src/generate_dataset.py` | Genera leads y transcripts con GPT-4o |
 | `src/augment_minority.py` | **Augmentación dirigida** de clases minoritarias |
-| `src/feature_engineering.py` | Embeddings + features tabulares |
+| `src/feature_engineering.py` | Carga + normalización de clases (7→6) + embeddings + features tabulares |
 | `src/train_model.py` | Entrena XGBoost, 5-fold CV, guarda artefactos |
+| `src/retrain_model.py` | Reentrena sobre el dataset ampliado con el mismo pipeline que `train_model.py` |
 | `src/predict.py` | Predicción standalone de siguiente acción |
 | `src/summarize.py` | **Resumidor LLM** que genera `prev_outcome` en producción |
-| `src/evaluate.py` | Plots + métricas completas (`evaluate_model`) |
-| `src/model_comparison.py` | Compara Dummy / LogReg / RF / XGBoost / LightGBM |
-| `src/tune_model.py` | RandomizedSearchCV para XGBoost y RF |
+| `src/evaluate.py` | Plots (confusión, importancia, calibración) + métricas completas (`evaluate_model`) |
+| `src/model_comparison.py` | Compara 8 modelos de 6 familias — Dummy, LogReg, Naive Bayes, k-NN, RF, XGBoost, LightGBM, MLP |
+| `src/tune_model.py` | RandomizedSearchCV para XGBoost y RF; persiste estimador + métricas completas |
 | `src/validate_dataset.py` | 5 análisis de calidad del dataset sintético |
 | `src/simulate.py` | Simulación secuencial de trayectorias de leads |
 | `src/pipeline_demo.py` | **Demo visual end-to-end** con resumidor LLM en el loop |
@@ -191,34 +206,40 @@ Al reentrenar el modelo con las 6 acciones válidas se encontraron y arreglaron 
 ## Project structure
 
 ```
-moveup-next-action-predictor/
+TFM-Asistente-leads-automatizar-CRM/
 ├── config.yaml                  <- Single source of truth for all parameters
 ├── requirements.txt
 ├── pytest.ini
 ├── .gitignore
+├── run_all.sh                   <- Full pipeline, 9 steps (tests → demo)
+├── defensa.sh                   <- Minimal ~5 min defense sequence
 ├── src/
 │   ├── config.py                <- Loads config.yaml, exposes CONFIG dict
-│   ├── utils.py                 <- JSON helpers + append_csv_row
+│   ├── utils.py                 <- save_json / load_json / append_csv_row
 │   ├── generate_dataset.py      <- GPT-4o dataset generator
-│   ├── feature_engineering.py   <- Embeddings + tabular features
-│   ├── train_model.py           <- XGBoost training pipeline
+│   ├── augment_minority.py      <- Targeted augmentation for minority classes
+│   ├── feature_engineering.py   <- load_and_clean (incl. 7→6 class normalization) + embeddings + feature matrix
+│   ├── train_model.py           <- XGBoost training pipeline (canonical train() + save_model())
+│   ├── retrain_model.py         <- Retrain on the augmented dataset, same pipeline as train_model.py
 │   ├── predict.py               <- Standalone prediction function
+│   ├── summarize.py             <- LLM call summarizer (prev_outcome for production)
 │   ├── evaluate.py              <- Evaluation plots + evaluate_model()
-│   ├── model_comparison.py      <- Multi-model benchmark
-│   ├── tune_model.py            <- Hyperparameter search
-│   ├── validate_dataset.py      <- Dataset quality analysis
+│   ├── model_comparison.py      <- 8-model, 6-family benchmark
+│   ├── tune_model.py            <- Hyperparameter search (persists tuned estimator + metrics)
+│   ├── validate_dataset.py      <- Dataset quality analysis (5 checks)
 │   ├── simulate.py              <- Sequential lead simulation
-│   └── experiment_tracker.py   <- Experiment logging
+│   ├── pipeline_demo.py         <- End-to-end visual demo
+│   └── experiment_tracker.py    <- Experiment logging
 ├── data/
-│   ├── raw/                     <- Generated CSVs (git-ignored)
-│   └── processed/               <- Cached embeddings (.npz, git-ignored)
-├── models/                      <- Saved .joblib artefacts (git-ignored)
-├── plots/                       <- PNG evaluation plots (git-ignored)
+│   ├── raw/                     <- Generated CSVs
+│   └── processed/               <- Cached embeddings (.npz)
+├── models/                      <- Saved .joblib artefacts (git-ignored, regenerable)
+├── plots/                       <- PNG evaluation plots
 ├── experiments/                 <- Tracked runs, hyperparams, comparisons
 │   ├── runs/                    <- One JSON per experiment run
-│   ├── hyperparams/             <- Best params + CV results per model
+│   ├── hyperparams/             <- Best params + CV results + tuned test metrics (tuned models themselves git-ignored)
 │   ├── validation/              <- Dataset quality report + plots
-│   ├── simulations/             <- Simulation results
+│   ├── simulations/             <- Batch simulation results
 │   └── summary.csv              <- Cumulative experiment index
 ├── tests/
 │   ├── conftest.py
@@ -226,8 +247,9 @@ moveup-next-action-predictor/
 │   ├── test_feature_engineering.py
 │   ├── test_predict.py
 │   └── test_integration.py
-├── notebooks/
+├── notebooks/                   <- Empty — exploratory notebook is pending future work
 └── docs/
+    ├── architecture.md          <- Pipeline diagrams (mermaid)
     └── memoria_tfm.md           <- TFM memoir skeleton
 ```
 
@@ -255,6 +277,14 @@ O exportala directamente:
 
 ```bash
 export OPENAI_API_KEY="sk-..."
+```
+
+### 3. Primer arranque
+
+`models/`, `data/processed/embeddings_cache.npz` y `plots/` están vacíos tras clonar (son artefactos regenerables, git-ignored). El dataset (`data/raw/moveup_crm_dataset.csv`) y los resultados de experimentos ligeros (CSVs, JSONs, PNGs de validación) sí vienen en el repo como evidencia. Para generar el modelo desde cero:
+
+```bash
+python -m src.train_model    # embeddings (cacheados) + entrena + guarda models/*.joblib + plots/*.png
 ```
 
 ---
@@ -321,26 +351,26 @@ TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m src.simulate
 TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m src.simulate --compare
 ```
 
-**Verifica:** simulación secuencial completa. Resultados en `experiments/simulations/`.
+**Verifica:** simulación secuencial completa. **Esperado (batch): ~12% converted, ~26% lost, ~62% nurturing, 3.2 pasos medios** (ver "Simulación batch" arriba). Resultados en `experiments/simulations/`.
 
 ### 8️⃣ Pipeline demo visual con LLM (pieza estrella para la defensa)
 
 ```bash
-TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m src.pipeline_demo --seed 11
+TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m src.pipeline_demo --profile banca --seed 47
 ```
 
-**Verifica:** loop completo end-to-end con resumidor LLM (`gpt-4o-mini`) cerrando el bucle de producción. En cada llamada: lead → transcript → predicción XGBoost → barras ASCII de probabilidades → acción ejecutada → resumen LLM que alimenta el `prev_outcome` de la siguiente llamada.
+**Verifica:** loop completo end-to-end con resumidor LLM (`gpt-4o-mini`) cerrando el bucle de producción. En cada llamada: lead → transcript → predicción XGBoost → barras ASCII de probabilidades → acción ejecutada → resumen LLM que alimenta el `prev_outcome` de la siguiente llamada. `--profile banca --seed 47` es la combinación validada (ver "Demo end-to-end verificada" arriba): 5 llamadas, la predicción del modelo es siempre la acción ejecutada (sin guion), termina en conversión. El perfil `logistica` (por defecto) queda atrapado en un ciclo de solo 3 de las 6 acciones — es una limitación real del modelo documentada, no un bug.
 
 **Variantes útiles:**
 
 ```bash
-# Sin LLM (más rápido, sin coste OpenAI)
-python -m src.pipeline_demo --no-llm
+# Sin LLM (más rápido, sin coste OpenAI, determinista)
+python -m src.pipeline_demo --profile banca --seed 47 --no-llm
 
-# Con pausa de 2s entre pasos para presentación en vivo
-python -m src.pipeline_demo --pause 2 --seed 11
+# Con pausa de 1.5s entre pasos para presentación en vivo
+python -m src.pipeline_demo --profile banca --seed 47 --pause 1.5
 
-# Lead aleatorio (no el hardcodeado)
+# Lead aleatorio (no uno de los perfiles fijos)
 python -m src.pipeline_demo --random --seed 7
 ```
 
@@ -365,18 +395,10 @@ TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m src.experiment_tracker
 ## Secuencia mínima para una defensa de 10 minutos
 
 ```bash
-# 1. Setup
-set -a && source .env.local && set +a
-
-# 2. Rigor de tests (1 min)
-TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m pytest tests/ -v
-
-# 3. Comparación de modelos — XGBoost vs baselines (3 min)
-TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m src.model_comparison
-
-# 4. Demo visual end-to-end con LLM (5 min)
-TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 python -m src.pipeline_demo --pause 1.5 --seed 11
+bash defensa.sh
 ```
+
+Ejecuta, en orden: tests (rigor del código), comparación de modelos (6 familias vs. baseline), y la demo visual end-to-end con LLM y la semilla validada (`--profile banca --seed 47`). Carga `.env.local` automáticamente si existe.
 
 ---
 
@@ -481,7 +503,7 @@ Evaluation: stratified 80/20 split + 5-fold cross-validation (F1 weighted).
 
 | Key | Default | Description |
 |---|---|---|
-| `num_leads` | `500` | Leads to generate |
+| `num_leads` | `500` | Leads to generate on a fresh run of `generate_dataset.py` (current committed dataset has 528: 498 from the original generation + 30 from `augment_minority.py`) |
 | `openai_model` | `gpt-4o` | OpenAI model for generation |
 | `embedding_model` | `paraphrase-multilingual-MiniLM-L12-v2` | Sentence transformer |
 | `paths.raw_data` | `data/raw/moveup_crm_dataset.csv` | Input CSV |
@@ -490,20 +512,6 @@ Evaluation: stratified 80/20 split + 5-fold cross-validation (F1 weighted).
 | `comparison.*` | see file | Model comparison settings |
 | `tuning.*` | see file | RandomizedSearchCV settings |
 | `model_params.*` | see file | XGBoost hyperparameters |
-
----
-
-## Running tests
-
-```bash
-# Unit tests only (no model required for most)
-TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 pytest tests/ -m "not integration" -v
-
-# All tests including integration (requires trained model)
-TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=1 pytest tests/ -v
-```
-
-The env vars prevent a macOS segfault caused by XGBoost (OpenMP) + PyTorch (sentence-transformers) running in the same process.
 
 ---
 

@@ -27,17 +27,14 @@ from __future__ import annotations
 
 import argparse
 import os
-import sys
 import time
-import uuid
 
 import pandas as pd
 from openai import OpenAI
 
-from src.config import CONFIG, resolve_path
+from src.config import resolve_path
 from src.generate_dataset import (
     NEXT_STEP_CATEGORIES,
-    OPENAI_MODEL,
     RATE_LIMIT_N,
     assign_lead_journey,
     generate_lead_metadata,

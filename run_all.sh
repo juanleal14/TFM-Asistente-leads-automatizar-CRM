@@ -97,7 +97,7 @@ $PY -m src.experiment_tracker
 
 # ── 9. Pipeline demo con LLM ──────────────────────────────────────────────
 section "9/9 — Pipeline demo end-to-end (pieza estrella)"
-$PY -m src.pipeline_demo --seed 7 $DEMO_LLM_FLAG
+$PY -m src.pipeline_demo --profile banca --seed 47 $DEMO_LLM_FLAG
 
 # ── Resumen ───────────────────────────────────────────────────────────────
 echo

@@ -1,0 +1,4 @@
+strategy_name,n_leads,conversion_rate,loss_rate,nurturing_rate,max_steps_rate,avg_steps_to_terminal,avg_total_days,avg_confidence
+default,50,0.12,0.26,0.62,0.0,3.2,27.7,0.5858
+aggressive,50,0.12,0.26,0.6,0.02,3.02,17.2,0.5922
+conservative,50,0.06,0.26,0.66,0.02,3.22,34.5,0.5907

@@ -4,10 +4,11 @@ tests/conftest.py
 Shared pytest fixtures for the TFM test suite.
 
 Fixture hierarchy:
-  minimal_df      - 10-row DataFrame built inline (no file I/O)
-  sample_csv_path - path to tests/fixtures/sample_data.csv (50 real rows)
-  model_path      - path to models/moveup_nextstep_model.joblib
-  model_available - bool: whether the trained model exists
+  minimal_df       - 10-row DataFrame built inline (no file I/O)
+  dummy_embeddings - zero-valued embeddings matching minimal_df
+
+MODEL_PATH and SAMPLE_CSV below are plain module-level constants (not
+fixtures) imported directly by test_predict.py / test_integration.py.
 
 NOTE: TOKENIZERS_PARALLELISM and OMP_NUM_THREADS are set at import time to
 prevent a macOS segfault caused by the XGBoost (OpenMP) + sentence-transformers
@@ -36,16 +37,6 @@ SAMPLE_CSV = PROJECT_ROOT / "tests" / "fixtures" / "sample_data.csv"
 @pytest.fixture(scope="session")
 def model_path() -> pathlib.Path:
     return MODEL_PATH
-
-
-@pytest.fixture(scope="session")
-def model_available() -> bool:
-    return MODEL_PATH.exists()
-
-
-@pytest.fixture(scope="session")
-def sample_csv_path() -> pathlib.Path:
-    return SAMPLE_CSV
 
 
 # ── Minimal inline DataFrame (no file I/O, no model required) -----------------

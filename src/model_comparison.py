@@ -32,7 +32,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBClassifier
 
-from src.config import CONFIG, resolve_path
+from src.config import CONFIG
 from src.evaluate import evaluate_model
 
 # ── Optional LightGBM ─────────────────────────────────────────────────────────
@@ -288,7 +288,7 @@ def main() -> None:
     # 3. Compare models with experiment tracking
     print("\n[3/4] Comparing models …")
     tracker = ExperimentTracker()
-    run_id = tracker.start_run(
+    tracker.start_run(
         "model_comparison",
         config={"test_size": _SPLIT_CFG["test_size"], "cv_splits": _CMP_CFG.get("cv_splits", 5)},
     )

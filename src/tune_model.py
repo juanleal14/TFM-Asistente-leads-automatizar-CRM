@@ -19,7 +19,6 @@ Usage:
 from __future__ import annotations
 
 import time
-from pathlib import Path
 from typing import Any
 
 import numpy as np
@@ -29,7 +28,7 @@ from sklearn.model_selection import RandomizedSearchCV, StratifiedShuffleSplit
 from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBClassifier
 
-from src.config import CONFIG, resolve_path
+from src.config import CONFIG
 from src.evaluate import evaluate_model
 
 # ── Config shortcuts ───────────────────────────────────────────────────────────
@@ -166,8 +165,6 @@ def tune_all(
     -------
     dict mapping model_name → best_params
     """
-    from src.experiment_tracker import ExperimentTracker
-
     # ── XGBoost ───────────────────────────────────────────────────────────────
     xgb_params = dict(_MODEL_PARAMS)
     xgb_params.pop("use_label_encoder", None)
@@ -307,7 +304,7 @@ def main() -> None:
     # 3. Tune with tracker
     print("\n[3/3] Tuning models …")
     tracker = ExperimentTracker()
-    run_id = tracker.start_run(
+    tracker.start_run(
         "hyperparameter_tuning",
         config={
             "n_iter": _TUNE_CFG.get("n_iter", 20),

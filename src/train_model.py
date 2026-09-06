@@ -46,7 +46,6 @@ def train(
     # Train / test split — stratified when possible, plain otherwise
     min_class_count = np.bincount(y).min()
     if min_class_count >= 2:
-        from sklearn.model_selection import StratifiedShuffleSplit
         sss = StratifiedShuffleSplit(
             n_splits=1,
             test_size=SPLIT_CFG["test_size"],

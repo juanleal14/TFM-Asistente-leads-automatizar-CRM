@@ -63,8 +63,6 @@ class TestFeatureMatrixPipeline:
 
     def test_null_fill_applied_to_sample(self, sample_df):
         """No NaN in prev_outcome or prev_next_step after load_and_clean."""
-        from src.config import CONFIG
-        null_fill = CONFIG["null_fill_value"]
         assert not sample_df["prev_outcome"].isna().any()
         assert not sample_df["prev_next_step"].isna().any()
 

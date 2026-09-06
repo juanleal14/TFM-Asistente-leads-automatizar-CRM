@@ -27,7 +27,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from src.config import CONFIG, resolve_path
+from src.config import CONFIG
 from src.feature_engineering import load_and_clean
 from src.utils import save_json
 
@@ -311,8 +311,6 @@ def detect_artificial_patterns(
     skip_embeddings: bool = False,
 ) -> dict:
     """Detect signs of over-uniformity: sector bias and embedding clustering."""
-    from scipy.stats import kruskal
-
     stats: dict[str, Any] = {}
     warnings: list[str] = []
 

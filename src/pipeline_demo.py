@@ -13,15 +13,15 @@ Muestra paso a paso:
 Ideal para defensa TFM o presentaciones.
 
 Uso:
-    python -m src.pipeline_demo                 # lead de ejemplo hardcodeado
-    python -m src.pipeline_demo --random        # lead generado aleatoriamente
-    python -m src.pipeline_demo --seed 7        # semilla concreta para reproducibilidad
-    python -m src.pipeline_demo --no-llm        # usar plantillas en vez de GPT-4o-mini
+    python -m src.pipeline_demo                          # lead de ejemplo hardcodeado
+    python -m src.pipeline_demo --profile banca --seed 47 # perfil alternativo + semilla concreta
+    python -m src.pipeline_demo --random                  # lead generado aleatoriamente
+    python -m src.pipeline_demo --no-llm                  # usar plantillas en vez de GPT-4o-mini
+    python -m src.pipeline_demo --llm-transcripts          # transcripts generados por GPT-4o-mini
+    python -m src.pipeline_demo --pause 1.5 --save         # ritmo de presentación + guardar resultado
 """
 from __future__ import annotations
 
-import io
-import json
 import os
 import random
 import sys
@@ -192,7 +192,7 @@ def run_demo(
     print(f"  Fuente lead : {state.lead_source}")
     print(f"  Agente      : {agent_name}")
     print()
-    print(f"  Notas iniciales:")
+    print("  Notas iniciales:")
     print(f"  \"{state.initial_interest_notes}\"")
     print()
 
@@ -272,7 +272,7 @@ def run_demo(
         # Mostrar predicción
         print("  [ PREDICCIÓN DEL MODELO ]")
         print()
-        print(f"  Siguiente acción recomendada:")
+        print("  Siguiente acción recomendada:")
         print(f"  >>> {predicted_action}  (confianza: {confidence*100:.1f}%)")
         print()
         print("  Distribución completa de probabilidades:")
@@ -393,29 +393,6 @@ def run_demo(
 
 # ── Output saving ──────────────────────────────────────────────────────────────
 
-def _save_demo_output(console_output: str, result: dict, demo_name: str = "pipeline_demo") -> Path:
-    """Guardar output de la demo en experiments/runs/
-    
-    Returns la ruta del archivo de texto guardado.
-    """
-    output_dir = Path("experiments/runs")
-    output_dir.mkdir(parents=True, exist_ok=True)
-    
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    
-    # Guardar console output
-    txt_path = output_dir / f"{demo_name}_{timestamp}.txt"
-    with open(txt_path, "w", encoding="utf-8") as f:
-        f.write(console_output)
-    
-    # Guardar resultado en JSON
-    json_path = output_dir / f"{demo_name}_{timestamp}.json"
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=2, ensure_ascii=False)
-    
-    return txt_path
-
-
 # ── Entry point ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -463,11 +440,8 @@ if __name__ == "__main__":
     
     # Auto-save if scripted demo or --save flag
     if (scripted_actions is not None) or save_output:
-        output_path = Path("experiments/runs")
-        output_path.mkdir(parents=True, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        json_path = output_path / f"pipeline_demo_{timestamp}.json"
-        with open(json_path, "w", encoding="utf-8") as f:
-            json.dump(result, f, indent=2, ensure_ascii=False)
+        json_path = Path("experiments/runs") / f"pipeline_demo_{timestamp}.json"
+        save_json(result, json_path)
         print(f"\n✓ Results saved to: {json_path}")
 

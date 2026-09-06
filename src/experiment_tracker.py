@@ -31,6 +31,7 @@ import numpy as np
 import pandas as pd
 
 from src.config import CONFIG
+from src.utils import load_json
 
 
 # ── JSON encoder that handles numpy scalars ───────────────────────────────────
@@ -243,8 +244,7 @@ def rebuild_summary(experiments_dir: Path | None = None) -> pd.DataFrame:
 
     rows: list[dict] = []
     for json_path in sorted(runs_dir.glob("*.json")):
-        with open(json_path, "r", encoding="utf-8") as f:
-            run = json.load(f)
+        run = load_json(json_path)
         metrics = run.get("metrics", {})
         model_info = run.get("model_info", {})
 

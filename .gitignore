@@ -27,9 +27,21 @@ env/
 
 
 
-# IDEs
+# IDEs / local tool configs
 .idea/
 .vscode/
+.claude/
 *.swp
 *.swo
 .DS_Store
+
+# pytest cache
+.pytest_cache/
+
+# generate_dataset.py incremental checkpoints (superseded by the final CSV)
+data/raw/partial_*.csv
+
+# Trained model artefacts — regenerable binaries, not meant for reviewing in a
+# diff. Regenerate with `python -m src.retrain_model` / `python -m src.tune_model`.
+# Lightweight result files (CSVs, JSONs, plots) stay tracked as visible evidence.
+*.joblib

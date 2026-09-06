@@ -13,7 +13,6 @@ Run with:
 from __future__ import annotations
 
 import importlib
-import io
 from pathlib import Path
 
 import numpy as np

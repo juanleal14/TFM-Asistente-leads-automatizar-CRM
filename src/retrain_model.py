@@ -17,19 +17,20 @@ Uso:
     python -m src.retrain_model [--output-dir models/]
 """
 
+from __future__ import annotations
+
 import sys
 from pathlib import Path
 import pandas as pd
 import numpy as np
 from sklearn.metrics import classification_report
 
-from src.config import CONFIG, resolve_path
 from src.feature_engineering import load_and_clean, generate_embeddings, build_feature_matrix, VALID_ACTIONS
 from src.train_model import train, save_model
 from src.utils import save_json
 
 
-def retrain_model(data_path: str = None, output_dir: str = None):
+def retrain_model(data_path: str | None = None, output_dir: str | None = None) -> None:
     """
     Entrena un nuevo modelo con las 6 acciones válidas.
     """
@@ -47,7 +48,7 @@ def retrain_model(data_path: str = None, output_dir: str = None):
     print("1. Cargando dataset...")
     df = load_and_clean(data_path)
     print(f"   Filas: {len(df)}")
-    print(f"\n  Distribución de clases:")
+    print("\n  Distribución de clases:")
     print(df["next_step"].value_counts())
     print()
 
