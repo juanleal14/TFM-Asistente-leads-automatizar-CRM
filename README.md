@@ -1,8 +1,4 @@
-# MoveUp Next-Action Predictor
-
-A machine-learning system that predicts the **next best sales action** for B2B leads in a corporate mobility CRM pipeline.
-
-Built as a Master's thesis (TFM) project. The fictional company **MoveUp** offers corporate mobility services (Uber for Business style) across Spain and Latin America.
+# Asistente de IA para predecir la calidad de leads y automatizar los seguimientos en un entorno tipo CRMMoveUp Next-Action Predictor
 
 ---
 
