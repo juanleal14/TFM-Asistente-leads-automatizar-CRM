@@ -2,9 +2,7 @@
 
 ---
 
-## Estado actual del proyecto — 2 septiembre 2026
-
-El proyecto ha evolucionado de un prototipo XGBoost funcional a un **pipeline ML completo y académicamente defendible**. A continuación el estado real tras la sesión de correcciones de septiembre 2026 (ver [Correcciones de esta sesión](#correcciones-de-esta-sesión) para el detalle de bugs encontrados y arreglados).
+## Estado actual del proyecto
 
 ### Dataset
 
