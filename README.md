@@ -2,7 +2,7 @@
 
 ---
 
-## Estado actual del proyecto
+## Estado del proyecto
 
 ### Dataset
 
@@ -140,37 +140,13 @@ Pasos medios hasta estado terminal: 3.2 · Confianza media: 0.586 · `python -m 
 
 ---
 
-## Correcciones de esta sesión
-
-Al reentrenar el modelo con las 6 acciones válidas se encontraron y arreglaron los siguientes problemas, todos en el código, no solo en la ejecución puntual:
-
-1. **Artefacto del modelo incompatible con producción** — `retrain_model.py` guardaba el `.joblib` con claves `rf_model`/`xgb_model`; `predict.py` (usado en producción y en la demo) esperaba una clave `model`. Causaba `KeyError` al predecir. Arreglado reutilizando el mismo pipeline de guardado que `train_model.py`.
-2. **Normalización de clases no centralizada** — la fusión 7→6 clases solo se aplicaba en `retrain_model.py`; `train_model.py`, `model_comparison.py`, `tune_model.py` y `validate_dataset.py` cargaban el CSV crudo sin normalizar y habrían entrenado/evaluado sobre la taxonomía antigua. Centralizado en `feature_engineering.load_and_clean()`.
-3. **Reproducibilidad de la demo rota** — `generate_synthetic_transcript()` elegía la plantilla de diálogo con `random` global en vez del `rng` sembrado por `--seed`; la misma semilla podía dar resultados distintos entre ejecuciones. Arreglado pasando el `rng` explícito.
-4. **Leads sintéticos con sector inconsistente** — `_generate_synthetic_lead()` sorteaba dos sectores aleatorios distintos (uno para la empresa, otro para las notas iniciales), generando descripciones incoherentes.
-5. **Tests con taxonomía obsoleta hardcodeada** — `VALID_NEXT_STEPS` en `test_predict.py`/`test_integration.py` no incluía "Aplazar lead"; cualquier predicción de esa clase habría hecho fallar los tests. Ahora usan `CONFIG["next_step_categories"]`.
-6. **`run_all.sh` roto en Windows** — asumía `.venv/bin/python` (ruta Unix) dentro del propio repo; el venv real está en `Scripts/python.exe` y, en este entorno de desarrollo, un nivel por encima del repo. Ahora detecta el intérprete automáticamente.
-7. **`UnicodeEncodeError` al redirigir la salida a archivo en Windows** — los `print()` con `→`/`█`/acentos revientan bajo `cp1252` cuando stdout no es una consola interactiva (p. ej. `run_all.sh > log.txt`). Arreglado forzando `PYTHONUTF8=1`.
-8. **Import de `sentence-transformers` a nivel de módulo en `feature_engineering.py`** — cargaba PyTorch aunque hubiera caché de embeddings y nunca se fuera a usar, sin necesidad. Movido a import perezoso dentro de `generate_embeddings()` (mismo patrón que ya usaba `predict.py`).
-
-> **Nota de entorno:** en el sandbox de esta sesión, `cross_val_score`/`RandomizedSearchCV`/incluso un `.fit()` suelto de XGBoost sobre el dataset completo llegaron a colgarse tras uso intensivo prolongado — no reproducible en una terminal normal (todo el reentreno, comparación, tuning y evaluación de esta sección se ejecutó y verificó en la terminal del usuario, no en el sandbox).
-
----
-
 ## Qué falta / trabajo futuro
 
 - [x] ~~Augmentación dirigida de "Escalar a manager del lead"~~ — completado: 2 → 32 ejemplos
 - [x] ~~Recalcular F1-macro/Top-3/Brier de los modelos tuneados~~ — completado, `tune_model.py` ahora persiste estimador + métricas completas
 - [x] ~~Incluir LightGBM en la comparación~~ — completado: mejor F1-macro de los 8 modelos base (0.6218)
 - [x] ~~Comparar modelos de familias distintas, no solo variantes de árboles~~ — completado: +Naive Bayes, k-NN, MLP (6 familias en total). MLP gana en Top-3 accuracy (0.967); k-NN/NB rinden claramente peor, probable sensibilidad a la mezcla de escalas embeddings/OHE (ver análisis arriba)
-- [ ] Escalar las columnas one-hot antes de pasarlas a k-NN/MLP/Naive Bayes (o usar un pipeline de preprocesado por modelo) para descartar que su rendimiento inferior sea un artefacto de escala y no una limitación real de la familia
-- [ ] **Añadir grid de búsqueda para LightGBM en `config.yaml → tuning.param_grids`** — es el único de los 3 candidatos serios sin tunear, y ya parte del mejor F1-macro base; podría ser el mejor modelo global tuneado.
-- [ ] **Re-tunear XGBoost con `scoring="f1_macro"`** en vez de `f1_weighted` — el tuning actual empeoró su F1-macro (-5.8%) al optimizar la métrica ponderada; cambiar el scoring es una línea en `config.yaml` y un resultado citable directo para la memoria (trade-off F1-w vs F1-macro al tunear bajo desbalanceo).
-- [ ] Decidir y justificar explícitamente el modelo de producción final — ver tabla de "ranking combinado por criterio" arriba; no hay un ganador único en las 4 métricas.
-- [ ] Estrategia de balanceo de clases adicional (SMOTE, class_weight) — "Aplazar lead" y "Escalar a manager" siguen con recall bajo (0.33 y 0.17 respectivamente en el modelo de producción)
-- [ ] Calibración de probabilidades (Platt Scaling o Isotonic Regression) — XGBoost tuned ya tiene el mejor Brier (0.0801) pero no se ha aplicado calibración explícita
-- [ ] Notebook de análisis exploratorio completo
-- [ ] Redacción de la memoria TFM en `docs/memoria_tfm.md`
+- [ ] A discutir en la memoria...
 
 ---
 
